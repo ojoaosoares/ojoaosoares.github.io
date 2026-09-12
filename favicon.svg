@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="foolGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe270"/>
+      <stop offset="50%" stop-color="#f5c542"/>
+      <stop offset="100%" stop-color="#c99518"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <!-- Background -->
+  <rect width="64" height="64" rx="14" fill="#08080c" stroke="#f5c542" stroke-width="1.5" stroke-opacity="0.3"/>
+  <!-- The Fool's Symbol: Pupil-less Eye and Contorted Lines of Mystery -->
+  <!-- Outer sacred ring / constellation -->
+  <circle cx="32" cy="32" r="24" fill="none" stroke="url(#foolGold)" stroke-width="1.2" stroke-dasharray="2 4" opacity="0.6"/>
+  
+  <!-- Contorted Lines / Spiral of Secret History -->
+  <path d="M 32 14 C 42 14, 50 22, 50 32 C 50 40, 42 46, 34 46 C 26 46, 20 40, 20 33 C 20 27, 25 22, 31 22 C 36 22, 40 26, 40 31 C 40 35, 36 38, 32 38" 
+        fill="none" stroke="url(#foolGold)" stroke-width="1.8" stroke-linecap="round" opacity="0.85"/>
+  
+  <!-- The Pupil-less Eye (Central Eye of Mystery) -->
+  <path d="M 16 32 Q 32 19 48 32 Q 32 45 16 32 Z" 
+        fill="none" stroke="url(#foolGold)" stroke-width="2.2" stroke-linejoin="round" filter="url(#glow)"/>
+        
+  <!-- Core Star / Mystery Point -->
+  <circle cx="32" cy="32" r="3.5" fill="none" stroke="url(#foolGold)" stroke-width="1.6"/>
+  <circle cx="32" cy="32" r="1.2" fill="#ffe270"/>
+</svg>

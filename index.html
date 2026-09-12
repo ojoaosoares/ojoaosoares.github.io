@@ -1,0 +1,2678 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfólio profissional de João Soares — Pesquisador em Redes e Kernel (eBPF/XDP) no LECOM/UFMG e Engenheiro de Software Fullstack."
+    />
+    <meta name="author" content="João Soares" />
+    <meta name="theme-color" content="#08080b" />
+    <title>João Soares | Engenharia de Sistemas & Redes</title>
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Open Graph & Social Meta -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="João Soares | Sistemas, Kernel & Fullstack" />
+    <meta
+      property="og:description"
+      content="Pesquisador no LECOM/UFMG (eBPF/XDP) e Engenheiro de Software Fullstack. Portfólio minimalista de alta performance."
+    />
+    <meta property="og:image" content="profile.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <style>
+      :root {
+        --bg-void: #08080b;
+        --bg-surface: #0e0e14;
+        --bg-surface-elevated: #15151f;
+        --bg-card: rgba(18, 18, 26, 0.72);
+        --bg-card-hover: rgba(26, 26, 38, 0.85);
+
+        --gold-primary: #f5c542;
+        --gold-bright: #ffe066;
+        --gold-dim: #cca028;
+        --gold-dark: #7a5e12;
+        --gold-border: rgba(245, 197, 66, 0.2);
+        --gold-border-hover: rgba(245, 197, 66, 0.55);
+        --gold-glow: rgba(245, 197, 66, 0.18);
+        --gold-glow-soft: rgba(245, 197, 66, 0.07);
+
+        --text-pure: #ffffff;
+        --text-primary: #f1f1f5;
+        --text-secondary: #9c9cb0;
+        --text-muted: #67677a;
+
+        --font-serif: "Cinzel", Georgia, serif;
+        --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-mono: "JetBrains Mono", monospace;
+
+        --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        --radius-sm: 6px;
+        --radius-md: 12px;
+        --radius-lg: 18px;
+        --radius-full: 9999px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 5rem;
+        background-color: var(--bg-void);
+      }
+
+      body {
+        font-family: var(--font-sans);
+        background-color: var(--bg-void);
+        color: var(--text-primary);
+        line-height: 1.68;
+        overflow-x: hidden;
+        position: relative;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      :focus-visible {
+        outline: 2px solid var(--gold-primary);
+        outline-offset: 3px;
+      }
+
+      .skip-link {
+        position: fixed;
+        top: -4rem;
+        left: 1.5rem;
+        z-index: 1000;
+        background: var(--gold-primary);
+        color: #000;
+        padding: 0.6rem 1.2rem;
+        font-weight: 700;
+        border-radius: var(--radius-sm);
+        transition: top 0.2s;
+        text-decoration: none;
+        font-family: var(--font-mono);
+      }
+
+      .skip-link:focus {
+        top: 1.5rem;
+      }
+
+      /* Canvas & Minimalist Atmosphere */
+      #fog-canvas {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        pointer-events: none;
+      }
+
+      .ambient-glow {
+        position: fixed;
+        top: -15vw;
+        right: -10vw;
+        width: 45vw;
+        height: 45vw;
+        background: radial-gradient(
+          circle,
+          rgba(245, 197, 66, 0.05) 0%,
+          rgba(14, 14, 20, 0) 70%
+        );
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      .ambient-glow-bottom {
+        position: fixed;
+        bottom: -20vw;
+        left: -10vw;
+        width: 50vw;
+        height: 50vw;
+        background: radial-gradient(
+          circle,
+          rgba(245, 197, 66, 0.035) 0%,
+          rgba(14, 14, 20, 0) 70%
+        );
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      /* Typography Helpers */
+      h1, h2, h3, h4, .font-serif {
+        font-family: var(--font-serif);
+        letter-spacing: 0.04em;
+        color: var(--text-pure);
+      }
+
+      .font-mono {
+        font-family: var(--font-mono);
+      }
+
+      .gold-text {
+        color: var(--gold-primary);
+      }
+
+      .gold-gradient-text {
+        background: linear-gradient(135deg, #fff2a3 0%, #f5c542 50%, #cca028 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Navbar */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4.5rem;
+        background: rgba(8, 8, 11, 0.85);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--gold-border);
+        z-index: 100;
+        transition: var(--transition-smooth);
+      }
+
+      .navbar.scrolled {
+        border-bottom-color: rgba(245, 197, 66, 0.35);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        height: 100%;
+        padding: 0 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .nav-brand {
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+        text-decoration: none;
+        color: var(--text-pure);
+        font-family: var(--font-serif);
+        font-weight: 700;
+        font-size: 1.15rem;
+        letter-spacing: 0.06em;
+      }
+
+      .nav-brand-sigil {
+        width: 32px;
+        height: 32px;
+        transition: transform 0.4s ease;
+      }
+
+      .nav-brand:hover .nav-brand-sigil {
+        transform: rotate(45deg) scale(1.08);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        list-style: none;
+      }
+
+      .nav-link {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-size: 0.92rem;
+        font-weight: 500;
+        transition: var(--transition-smooth);
+        position: relative;
+        padding: 0.3rem 0;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 1.5px;
+        background: var(--gold-primary);
+        box-shadow: 0 0 8px var(--gold-primary);
+        transition: width 0.25s ease;
+      }
+
+      .nav-link:hover, .nav-link.active {
+        color: var(--gold-primary);
+      }
+
+      .nav-link:hover::after, .nav-link.active::after {
+        width: 100%;
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .lang-btn {
+        background: rgba(245, 197, 66, 0.08);
+        border: 1px solid var(--gold-border);
+        color: var(--gold-primary);
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding: 0.4rem 0.8rem;
+        border-radius: var(--radius-sm);
+        cursor: pointer;
+        transition: var(--transition-smooth);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+
+      .lang-btn:hover {
+        background: rgba(245, 197, 66, 0.2);
+        border-color: var(--gold-primary);
+        box-shadow: 0 0 12px var(--gold-glow);
+      }
+
+      .cv-btn-nav {
+        background: var(--gold-primary);
+        color: #08080b;
+        font-family: var(--font-sans);
+        font-size: 0.85rem;
+        font-weight: 700;
+        padding: 0.45rem 1rem;
+        border-radius: var(--radius-sm);
+        text-decoration: none;
+        transition: var(--transition-smooth);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+      }
+
+      .cv-btn-nav:hover {
+        background: var(--gold-bright);
+        box-shadow: 0 0 16px var(--gold-glow);
+        transform: translateY(-1px);
+      }
+
+      .mobile-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--gold-primary);
+        font-size: 1.4rem;
+        cursor: pointer;
+        padding: 0.4rem;
+      }
+
+      /* Sections & Layout */
+      .section-container {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 6rem 1.5rem;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+        position: relative;
+      }
+
+      .section-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        color: var(--gold-primary);
+        font-family: var(--font-mono);
+        font-size: 0.82rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        margin-bottom: 0.75rem;
+      }
+
+      .section-title {
+        font-size: 2.25rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+
+      .mystic-divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1.25rem;
+      }
+
+      .mystic-divider::before, .mystic-divider::after {
+        content: "";
+        height: 1px;
+        width: 60px;
+        background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+      }
+
+      .mystic-divider span {
+        color: var(--gold-primary);
+        font-size: 0.8rem;
+      }
+
+      /* Hero Section */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-top: 4.5rem;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .hero-honorific {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--gold-glow-soft);
+        border: 1px solid var(--gold-border);
+        color: var(--gold-primary);
+        font-family: var(--font-mono);
+        font-size: 0.82rem;
+        padding: 0.45rem 1rem;
+        border-radius: var(--radius-full);
+        margin-bottom: 1.5rem;
+        backdrop-filter: blur(8px);
+      }
+
+      .hero-title {
+        font-size: 3.5rem;
+        font-weight: 900;
+        line-height: 1.15;
+        margin-bottom: 1.25rem;
+      }
+
+      .hero-roles {
+        font-family: var(--font-mono);
+        font-size: 1.2rem;
+        color: var(--gold-bright);
+        margin-bottom: 1.75rem;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        min-height: 2.2rem;
+      }
+
+      .typewriter-cursor {
+        display: inline-block;
+        width: 2px;
+        height: 1.2em;
+        background: var(--gold-primary);
+        animation: blink 0.9s infinite;
+        vertical-align: middle;
+      }
+
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+
+      .hero-bio {
+        color: var(--text-secondary);
+        font-size: 1.12rem;
+        line-height: 1.75;
+        margin-bottom: 2.5rem;
+        max-width: 540px;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.1rem;
+        align-items: center;
+        margin-bottom: 2.5rem;
+      }
+
+      .btn-primary {
+        background: var(--gold-primary);
+        color: #08080b;
+        font-weight: 700;
+        font-size: 0.95rem;
+        padding: 0.85rem 1.75rem;
+        border-radius: var(--radius-sm);
+        text-decoration: none;
+        transition: var(--transition-smooth);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        border: 1px solid var(--gold-primary);
+      }
+
+      .btn-primary:hover {
+        background: var(--gold-bright);
+        box-shadow: 0 0 24px var(--gold-glow);
+        transform: translateY(-2px);
+      }
+
+      .btn-outline {
+        background: rgba(18, 18, 26, 0.5);
+        color: var(--text-primary);
+        font-weight: 600;
+        font-size: 0.95rem;
+        padding: 0.85rem 1.65rem;
+        border-radius: var(--radius-sm);
+        text-decoration: none;
+        transition: var(--transition-smooth);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        border: 1px solid var(--gold-border);
+        backdrop-filter: blur(8px);
+      }
+
+      .btn-outline:hover {
+        border-color: var(--gold-primary);
+        color: var(--gold-primary);
+        background: rgba(245, 197, 66, 0.08);
+        box-shadow: 0 0 16px var(--gold-glow-soft);
+        transform: translateY(-2px);
+      }
+
+      .hero-socials {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+      }
+
+      .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border-radius: var(--radius-sm);
+        background: rgba(22, 22, 32, 0.6);
+        border: 1px solid var(--gold-border);
+        color: var(--text-secondary);
+        font-size: 1.15rem;
+        text-decoration: none;
+        transition: var(--transition-smooth);
+      }
+
+      .social-link:hover {
+        color: var(--gold-primary);
+        border-color: var(--gold-primary);
+        transform: translateY(-3px);
+        box-shadow: 0 0 16px var(--gold-glow);
+        background: rgba(245, 197, 66, 0.1);
+      }
+
+      /* Hero Portrait Card */
+      .hero-portrait-wrapper {
+        position: relative;
+        display: flex;
+        justify-content: center;
+      }
+
+      .portrait-card-frame {
+        position: relative;
+        width: 320px;
+        aspect-ratio: 2 / 3;
+      }
+
+      .portrait-card {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background: linear-gradient(145deg, #13131c, #0a0a0e);
+        border-radius: var(--radius-md);
+        padding: 1rem;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8),
+                    inset 0 0 0 1px var(--gold-border),
+                    0 0 30px var(--gold-glow-soft);
+        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .portrait-card:hover {
+        transform: translateY(-6px) scale(1.02);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9),
+                    inset 0 0 0 1px var(--gold-primary),
+                    0 0 40px var(--gold-glow);
+      }
+
+      .portrait-inner-border {
+        border: 1px solid var(--gold-border);
+        border-radius: calc(var(--radius-md) - 4px);
+        width: 100%;
+        height: 100%;
+        padding: 1.25rem 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+      }
+
+      .portrait-badge-top {
+        font-family: var(--font-mono);
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--gold-primary);
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+
+      .portrait-img-box {
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 2px solid var(--gold-primary);
+        box-shadow: 0 0 20px var(--gold-glow);
+        margin-top: 1rem;
+        position: relative;
+      }
+
+      .portrait-img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+
+      .portrait-card:hover .portrait-img-box img {
+        transform: scale(1.06);
+      }
+
+      .portrait-footer {
+        text-align: center;
+        width: 100%;
+      }
+
+      .portrait-footer-title {
+        font-family: var(--font-serif);
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--gold-primary);
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 0.25rem;
+      }
+
+      .portrait-footer-sub {
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        color: var(--text-secondary);
+        letter-spacing: 0.08em;
+      }
+
+      /* Stats Counter Row */
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        margin-top: 4rem;
+      }
+
+      .stat-card {
+        background: var(--bg-card);
+        border: 1px solid var(--gold-border);
+        border-radius: var(--radius-md);
+        padding: 1.75rem 1.25rem;
+        text-align: center;
+        backdrop-filter: blur(12px);
+        transition: var(--transition-smooth);
+      }
+
+      .stat-card:hover {
+        border-color: var(--gold-primary);
+        background: var(--bg-card-hover);
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 20px var(--gold-glow-soft);
+      }
+
+      .stat-number {
+        font-family: var(--font-serif);
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: var(--gold-primary);
+        margin-bottom: 0.4rem;
+      }
+
+      .stat-label {
+        font-size: 0.88rem;
+        color: var(--text-secondary);
+        line-height: 1.4;
+      }
+
+      /* About Section */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3.5rem;
+        align-items: center;
+      }
+
+      .about-content p {
+        color: var(--text-secondary);
+        font-size: 1.05rem;
+        margin-bottom: 1.25rem;
+        line-height: 1.8;
+      }
+
+      .about-content strong {
+        color: var(--gold-primary);
+        font-weight: 600;
+      }
+
+      .about-details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .about-detail-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        background: rgba(22, 22, 32, 0.5);
+        border: 1px solid var(--gold-border);
+        padding: 0.85rem 1.1rem;
+        border-radius: var(--radius-sm);
+        font-size: 0.9rem;
+      }
+
+      .about-detail-item i {
+        color: var(--gold-primary);
+        font-size: 1.1rem;
+      }
+
+      .about-quote-box {
+        background: linear-gradient(145deg, rgba(20, 20, 30, 0.8), rgba(12, 12, 18, 0.9));
+        border: 1px solid var(--gold-border);
+        border-left: 4px solid var(--gold-primary);
+        border-radius: var(--radius-md);
+        padding: 2.25rem;
+        position: relative;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+      }
+
+      .quote-sigil {
+        position: absolute;
+        top: 1.25rem;
+        right: 1.5rem;
+        opacity: 0.15;
+        font-size: 2.5rem;
+        color: var(--gold-primary);
+      }
+
+      .engineering-quote-text {
+        font-family: var(--font-serif);
+        font-style: italic;
+        font-size: 1.1rem;
+        color: var(--text-primary);
+        line-height: 1.8;
+        margin-bottom: 1.25rem;
+      }
+
+      .quote-author {
+        font-family: var(--font-mono);
+        font-size: 0.82rem;
+        color: var(--gold-primary);
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+      }
+
+      /* Experience / Timeline Section */
+      .timeline {
+        position: relative;
+        max-width: 860px;
+        margin: 0 auto;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 20px;
+        width: 2px;
+        background: linear-gradient(180deg, var(--gold-primary), rgba(245, 197, 66, 0.1));
+      }
+
+      .timeline-item {
+        position: relative;
+        padding-left: 55px;
+        margin-bottom: 3rem;
+      }
+
+      .timeline-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .timeline-node {
+        position: absolute;
+        left: 12px;
+        top: 6px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: var(--bg-void);
+        border: 2px solid var(--gold-primary);
+        box-shadow: 0 0 12px var(--gold-glow);
+        transform: translateX(-50%);
+        transition: var(--transition-smooth);
+      }
+
+      .timeline-item:hover .timeline-node {
+        background: var(--gold-primary);
+        box-shadow: 0 0 20px var(--gold-primary);
+      }
+
+      .timeline-card {
+        background: var(--bg-card);
+        border: 1px solid var(--gold-border);
+        border-radius: var(--radius-md);
+        padding: 1.75rem;
+        backdrop-filter: blur(12px);
+        transition: var(--transition-smooth);
+      }
+
+      .timeline-card:hover {
+        border-color: var(--gold-border-hover);
+        background: var(--bg-card-hover);
+        transform: translateX(4px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      }
+
+      .timeline-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .timeline-period {
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        color: var(--gold-primary);
+        background: var(--gold-glow-soft);
+        border: 1px solid var(--gold-border);
+        padding: 0.25rem 0.65rem;
+        border-radius: var(--radius-full);
+      }
+
+      .timeline-institution {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+
+      .timeline-role {
+        font-size: 1.35rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+      }
+
+      .timeline-bullets {
+        list-style: none;
+        margin-top: 0.75rem;
+      }
+
+      .timeline-bullets li {
+        position: relative;
+        padding-left: 1.4rem;
+        margin-bottom: 0.5rem;
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      .timeline-bullets li::before {
+        content: "✦";
+        position: absolute;
+        left: 0;
+        top: 0.1rem;
+        color: var(--gold-primary);
+        font-size: 0.7rem;
+      }
+
+      .timeline-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1.25rem;
+      }
+
+      .tag-pill {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        background: rgba(22, 22, 32, 0.8);
+        border: 1px solid var(--gold-border);
+        color: var(--text-secondary);
+        padding: 0.25rem 0.65rem;
+        border-radius: var(--radius-sm);
+        transition: var(--transition-smooth);
+      }
+
+      .tag-pill:hover {
+        color: var(--gold-primary);
+        border-color: var(--gold-primary);
+      }
+
+      /* Projects Section */
+      .project-filters {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-bottom: 3rem;
+      }
+
+      .filter-btn {
+        background: rgba(18, 18, 26, 0.6);
+        border: 1px solid var(--gold-border);
+        color: var(--text-secondary);
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+        padding: 0.5rem 1.2rem;
+        border-radius: var(--radius-full);
+        cursor: pointer;
+        transition: var(--transition-smooth);
+      }
+
+      .filter-btn:hover, .filter-btn.active {
+        background: var(--gold-primary);
+        color: #08080b;
+        border-color: var(--gold-primary);
+        box-shadow: 0 0 16px var(--gold-glow);
+        font-weight: 600;
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+
+      .project-card {
+        background: var(--bg-card);
+        border: 1px solid var(--gold-border);
+        border-radius: var(--radius-md);
+        padding: 2rem;
+        backdrop-filter: blur(12px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: var(--transition-smooth);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .project-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .project-card:hover {
+        border-color: var(--gold-border-hover);
+        background: var(--bg-card-hover);
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 25px var(--gold-glow-soft);
+      }
+
+      .project-card:hover::before {
+        opacity: 1;
+      }
+
+      .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1.1rem;
+      }
+
+      .project-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--text-pure);
+      }
+
+      .project-links {
+        display: flex;
+        gap: 0.75rem;
+      }
+
+      .project-link-icon {
+        color: var(--text-secondary);
+        font-size: 1.15rem;
+        text-decoration: none;
+        transition: var(--transition-smooth);
+      }
+
+      .project-link-icon:hover {
+        color: var(--gold-primary);
+        transform: scale(1.15);
+      }
+
+      .project-desc {
+        color: var(--text-secondary);
+        font-size: 0.98rem;
+        line-height: 1.65;
+        margin-bottom: 1.5rem;
+      }
+
+      .project-metrics-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        background: rgba(245, 197, 66, 0.08);
+        border: 1px solid var(--gold-border);
+        color: var(--gold-primary);
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
+        padding: 0.35rem 0.75rem;
+        border-radius: var(--radius-sm);
+        margin-bottom: 1.25rem;
+      }
+
+      .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+      }
+
+      /* Live Sync Status Bar */
+      .sync-status-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+        background: rgba(22, 22, 32, 0.4);
+        border: 1px solid var(--gold-border);
+        border-radius: var(--radius-sm);
+        padding: 0.75rem 1.25rem;
+        margin-bottom: 2rem;
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+      }
+
+      .sync-status-indicator {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--gold-primary);
+      }
+
+      .sync-status-indicator .pulse-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--gold-primary);
+        box-shadow: 0 0 8px var(--gold-primary);
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.3); opacity: 0.5; }
+      }
+
+      /* Publications & Honors */
+      .pub-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.75rem;
+      }
+
+      .pub-card {
+        background: var(--bg-card);
+        border: 1px solid var(--gold-border);
+        border-radius: var(--radius-md);
+        padding: 1.75rem;
+        display: flex;
+        gap: 1.25rem;
+        align-items: flex-start;
+        backdrop-filter: blur(12px);
+        transition: var(--transition-smooth);
+        text-decoration: none;
+      }
+
+      .pub-card:hover {
+        border-color: var(--gold-border-hover);
+        background: var(--bg-card-hover);
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+      }
+
+      .pub-icon-box {
+        width: 44px;
+        height: 44px;
+        border-radius: var(--radius-sm);
+        background: rgba(245, 197, 66, 0.1);
+        border: 1px solid var(--gold-border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--gold-primary);
+        font-size: 1.2rem;
+        flex-shrink: 0;
+      }
+
+      .pub-content {
+        flex: 1;
+      }
+
+      .pub-venue {
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
+        color: var(--gold-primary);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 0.35rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .pub-title {
+        font-size: 1.12rem;
+        font-weight: 700;
+        color: var(--text-pure);
+        margin-bottom: 0.5rem;
+        line-height: 1.4;
+      }
+
+      .pub-desc {
+        color: var(--text-secondary);
+        font-size: 0.88rem;
+        line-height: 1.55;
+      }
+
+      .pub-link-badge {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        color: var(--gold-bright);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        margin-top: 0.6rem;
+      }
+
+      /* Skills Section */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.75rem;
+      }
+
+      .skill-group-card {
+        background: var(--bg-card);
+        border: 1px solid var(--gold-border);
+        border-radius: var(--radius-md);
+        padding: 1.75rem;
+        backdrop-filter: blur(12px);
+        transition: var(--transition-smooth);
+      }
+
+      .skill-group-card:hover {
+        border-color: var(--gold-border-hover);
+        background: var(--bg-card-hover);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        transform: translateY(-3px);
+      }
+
+      .skill-group-title {
+        font-size: 1.15rem;
+        font-weight: 700;
+        margin-bottom: 1.25rem;
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+        color: var(--gold-primary);
+      }
+
+      .skill-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .skill-pill {
+        background: rgba(22, 22, 32, 0.7);
+        border: 1px solid rgba(245, 197, 66, 0.15);
+        color: var(--text-primary);
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        padding: 0.35rem 0.75rem;
+        border-radius: var(--radius-sm);
+        transition: var(--transition-smooth);
+      }
+
+      .skill-pill:hover {
+        background: rgba(245, 197, 66, 0.15);
+        border-color: var(--gold-primary);
+        color: var(--gold-primary);
+      }
+
+      /* Contact Section */
+      .contact-card {
+        background: linear-gradient(145deg, rgba(20, 20, 30, 0.8), rgba(12, 12, 18, 0.95));
+        border: 1px solid var(--gold-border);
+        border-radius: var(--radius-lg);
+        padding: 3.5rem 2.5rem;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 30px var(--gold-glow-soft);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+      }
+
+      .contact-email-box {
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        background: rgba(8, 8, 12, 0.8);
+        border: 1px solid var(--gold-border);
+        padding: 0.85rem 1.5rem;
+        border-radius: var(--radius-sm);
+        margin: 2rem 0;
+        max-width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .email-text {
+        font-family: var(--font-mono);
+        color: var(--gold-bright);
+        font-size: 1.05rem;
+        text-decoration: none;
+      }
+
+      .copy-btn {
+        background: var(--gold-primary);
+        color: #08080b;
+        border: none;
+        padding: 0.4rem 0.9rem;
+        border-radius: var(--radius-sm);
+        font-family: var(--font-sans);
+        font-size: 0.8rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: var(--transition-smooth);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+
+      .copy-btn:hover {
+        background: var(--gold-bright);
+        box-shadow: 0 0 12px var(--gold-glow);
+      }
+
+      .academic-links-row {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .academic-badge-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(22, 22, 32, 0.6);
+        border: 1px solid var(--gold-border);
+        color: var(--text-secondary);
+        font-family: var(--font-mono);
+        font-size: 0.82rem;
+        padding: 0.5rem 1rem;
+        border-radius: var(--radius-sm);
+        text-decoration: none;
+        transition: var(--transition-smooth);
+      }
+
+      .academic-badge-link:hover {
+        color: var(--gold-primary);
+        border-color: var(--gold-primary);
+        background: rgba(245, 197, 66, 0.1);
+        transform: translateY(-2px);
+      }
+
+      .toast-msg {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        background: var(--bg-surface-elevated);
+        border: 1px solid var(--gold-primary);
+        color: var(--gold-bright);
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+        padding: 0.75rem 1.25rem;
+        border-radius: var(--radius-sm);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px var(--gold-glow);
+        transform: translateY(100px);
+        opacity: 0;
+        transition: var(--transition-smooth);
+        z-index: 1000;
+      }
+
+      .toast-msg.show {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      /* Footer */
+      .footer {
+        border-top: 1px solid var(--gold-border);
+        padding: 3rem 1.5rem 2.5rem;
+        text-align: center;
+        background: rgba(8, 8, 12, 0.95);
+      }
+
+      .footer-quote {
+        font-family: var(--font-serif);
+        font-style: italic;
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+      }
+
+      .footer-copy {
+        font-family: var(--font-mono);
+        color: var(--text-muted);
+        font-size: 0.8rem;
+      }
+
+      /* Responsive Media Queries */
+      @media (max-width: 968px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+          text-align: center;
+          gap: 3rem;
+        }
+
+        .hero-honorific {
+          margin: 0 auto 1.5rem;
+        }
+
+        .hero-bio {
+          margin: 0 auto 2.5rem;
+        }
+
+        .hero-roles {
+          justify-content: center;
+        }
+
+        .hero-actions {
+          justify-content: center;
+        }
+
+        .hero-socials {
+          justify-content: center;
+        }
+
+        .about-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .projects-grid, .pub-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .skills-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .stats-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-links, .cv-btn-nav {
+          display: none;
+        }
+
+        .mobile-menu-toggle {
+          display: block;
+        }
+
+        .nav-links.mobile-open {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          top: 4.5rem;
+          left: 0;
+          right: 0;
+          background: rgba(8, 8, 12, 0.98);
+          border-bottom: 1px solid var(--gold-border);
+          padding: 2rem 1.5rem;
+          gap: 1.5rem;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero-title {
+          font-size: 2.6rem;
+        }
+
+        .skills-grid, .stats-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .section-container {
+          padding: 4rem 1.25rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#inicio" class="skip-link" data-lang-key="skip_link">Pular para o conteúdo</a>
+
+    <!-- Ambient Subtle Fog & Dynamic Star Canvas -->
+    <canvas id="fog-canvas"></canvas>
+    <div class="ambient-glow"></div>
+    <div class="ambient-glow-bottom"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="#inicio" class="nav-brand" aria-label="João Soares Portfolio">
+          <!-- Minimalist Geometric Sigil -->
+          <svg class="nav-brand-sigil" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="26" stroke="#f5c542" stroke-width="1.5" stroke-dasharray="2 3" opacity="0.6"/>
+            <path d="M 32 15 C 41 15, 48 22, 48 32 C 48 39, 41 45, 34 45 C 27 45, 22 39, 22 33 C 22 28, 26 23, 31 23 C 35 23, 39 27, 39 31 C 39 34, 36 37, 32 37" 
+                  stroke="#f5c542" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M 17 32 Q 32 20 47 32 Q 32 44 17 32 Z" stroke="#f5c542" stroke-width="2"/>
+            <circle cx="32" cy="32" r="3" fill="#ffe066"/>
+          </svg>
+          <span>João Soares</span>
+        </a>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#inicio" class="nav-link active" data-lang-key="nav_home">Início</a></li>
+          <li><a href="#sobre" class="nav-link" data-lang-key="nav_about">Sobre</a></li>
+          <li><a href="#trajetoria" class="nav-link" data-lang-key="nav_experience">Trajetória</a></li>
+          <li><a href="#projetos" class="nav-link" data-lang-key="nav_projects">Projetos</a></li>
+          <li><a href="#publicacoes" class="nav-link" data-lang-key="nav_publications">Publicações</a></li>
+          <li><a href="#habilidades" class="nav-link" data-lang-key="nav_skills">Habilidades</a></li>
+          <li><a href="#contato" class="nav-link" data-lang-key="nav_contact">Contato</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="lang-btn" id="lang-toggle" aria-label="Alterar idioma / Change language">
+            <i class="fa-solid fa-globe"></i>
+            <span id="lang-text">EN</span>
+          </button>
+          <a href="curriculo.pdf" target="_blank" class="cv-btn-nav" id="cv-nav-link" download>
+            <i class="fa-solid fa-file-pdf"></i>
+            <span data-lang-key="cv_button">Currículo</span>
+          </a>
+          <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Abrir menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section class="hero" id="inicio">
+        <div class="section-container" style="padding-top: 2rem; padding-bottom: 3rem;">
+          <div class="hero-grid">
+            <div class="hero-content">
+              <div class="hero-honorific">
+                <i class="fa-solid fa-code-commit"></i>
+                <span data-lang-key="hero_honorific">Pesquisa em Sistemas & Engenharia de Software</span>
+              </div>
+
+              <h1 class="hero-title">
+                João <span class="gold-gradient-text">Soares</span>
+              </h1>
+
+              <div class="hero-roles">
+                <span>&gt; </span>
+                <span id="role-typewriter"></span>
+                <span class="typewriter-cursor"></span>
+              </div>
+
+              <p class="hero-bio" data-lang-key="hero_bio">
+                Pesquisador no LECOM/UFMG focado em redes de ultra-alta performance, processamento de pacotes no kernel Linux com <strong>eBPF/XDP</strong> e otimização de latência. Engenheiro de software na Tarken com o ecossistema <strong>TypeScript, React & NestJS</strong>.
+              </p>
+
+              <div class="hero-actions">
+                <a href="#projetos" class="btn-primary">
+                  <span data-lang-key="btn_projects">Ver Projetos</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="curriculo.pdf" id="hero-cv-btn" target="_blank" class="btn-outline" download>
+                  <i class="fa-solid fa-file-arrow-down gold-text"></i>
+                  <span data-lang-key="btn_resume">Baixar Currículo (PDF)</span>
+                </a>
+                <a href="#contato" class="btn-outline">
+                  <span data-lang-key="btn_contact">Contato</span>
+                </a>
+              </div>
+
+              <div class="hero-socials">
+                <a href="https://github.com/ojoaosoares" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/ojoaovsoares" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://orcid.org/0009-0002-7600-9784" target="_blank" rel="noopener noreferrer" class="social-link" title="ORCID iD">
+                  <i class="fa-brands fa-orcid"></i>
+                </a>
+                <a href="mailto:contato.ojoaosoares@gmail.com" class="social-link" title="E-mail">
+                  <i class="fa-solid fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="hero-portrait-wrapper">
+              <div class="portrait-card-frame">
+                <div class="portrait-card">
+                  <div class="portrait-inner-border">
+                    <div class="portrait-badge-top">UFMG · LECOM</div>
+                    <div class="portrait-img-box">
+                      <img src="profile.png" alt="João Soares" />
+                    </div>
+                    <div class="portrait-footer">
+                      <div class="portrait-footer-title">JOÃO SOARES</div>
+                      <div class="portrait-footer-sub" data-lang-key="portrait_role">SISTEMAS & KERNEL</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Metrics Bar -->
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-number">-51%</div>
+              <div class="stat-label" data-lang-key="stat_latency">Latência DNS (AtesN-DS vs hyDNS)</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">+213%</div>
+              <div class="stat-label" data-lang-key="stat_throughput">Vazão de Rede (AtesN-DS vs hyDNS)</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">SBESC & SBRC</div>
+              <div class="stat-label" data-lang-key="stat_events">Publicação e Minicurso (2025)</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">Relevância</div>
+              <div class="stat-label" data-lang-key="stat_award">Acadêmica DCC/UFMG 2025</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section class="section-container" id="sobre">
+        <div class="section-header">
+          <div class="section-eyebrow">
+            <i class="fa-solid fa-layer-group"></i>
+            <span data-lang-key="about_eyebrow">Perfil & Atuação</span>
+          </div>
+          <h2 class="section-title" data-lang-key="about_title">Sobre Mim</h2>
+          <div class="mystic-divider"><span>✦</span></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-content">
+            <p data-lang-key="about_p1">
+              Sou graduando em <strong>Sistemas de Informação</strong> pela <strong>Universidade Federal de Minas Gerais (UFMG)</strong> e atuo na interseção entre <strong>pesquisa científica em sistemas de baixo nível</strong> e <strong>engenharia de software moderna</strong>.
+            </p>
+            <p data-lang-key="about_p2">
+              No <strong>LECOM (Laboratório de Engenharia de Computadores)</strong>, desenvolvo pesquisa aplicada com ênfase em aceleração de pacotes de rede no kernel via <strong>eBPF/XDP</strong>, simulações em <strong>ns-3</strong> e processamento paralelo em <strong>GPU</strong>. Sou autor do <strong>AtesN-DS</strong>, resolvedor DNS recursivo indicado à Relevância Acadêmica na UFMG.
+            </p>
+            <p data-lang-key="about_p3">
+              Na <strong>Tarken</strong>, integro o time de engenharia desenvolvendo soluções completas com <strong>TypeScript, React, React Native, NestJS e TypeORM</strong>, unindo robustez de testes automatizados com arquiteturas escaláveis.
+            </p>
+
+            <div class="about-details">
+              <div class="about-detail-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span data-lang-key="location_bh">Belo Horizonte, MG · Brasil</span>
+              </div>
+              <div class="about-detail-item">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span data-lang-key="edu_ufmg">BSc. Sistemas de Informação · UFMG</span>
+              </div>
+              <div class="about-detail-item">
+                <i class="fa-solid fa-microchip"></i>
+                <span>eBPF · XDP · Linux Kernel</span>
+              </div>
+              <div class="about-detail-item">
+                <i class="fa-solid fa-language"></i>
+                <span data-lang-key="lang_skills">PT (Nativo) · EN (C1) · JA (JLPT)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-quote-box">
+            <div class="quote-sigil">
+              <i class="fa-solid fa-terminal"></i>
+            </div>
+            <p class="engineering-quote-text" data-lang-key="eng_quote">
+              "Construindo sistemas de alta eficiência: da aceleração no kernel Linux com eBPF/XDP à engenharia de software distribuída e escalável."
+            </p>
+            <div class="quote-author" data-lang-key="quote_author">
+              Filosofia de Engenharia · LECOM / UFMG
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience & Education -->
+      <section class="section-container" id="trajetoria">
+        <div class="section-header">
+          <div class="section-eyebrow">
+            <i class="fa-solid fa-timeline"></i>
+            <span data-lang-key="exp_eyebrow">Jornada Profissional & Acadêmica</span>
+          </div>
+          <h2 class="section-title" data-lang-key="exp_title">Trajetória</h2>
+          <div class="mystic-divider"><span>✦</span></div>
+        </div>
+
+        <div class="timeline">
+          <!-- Tarken (09/2025 - Presente) -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <span class="timeline-institution">Tarken</span>
+                <span class="timeline-period" data-lang-key="t_tarken_period">09/2025 — Presente</span>
+              </div>
+              <h3 class="timeline-role" data-lang-key="t_tarken_role">Estagiário Full Stack & Mobile</h3>
+              <ul class="timeline-bullets">
+                <li data-lang-key="t_tarken_b1">Desenvolveu interfaces com React.js e MUI, reduzindo o tempo de desenvolvimento em 50%.</li>
+                <li data-lang-key="t_tarken_b2">Desenvolveu APIs REST escaláveis utilizando NestJS, TypeORM e TypeScript.</li>
+                <li data-lang-key="t_tarken_b3">Cobriu 80% dos fluxos críticos com Playwright E2E e testes unitários, reduzindo bugs de regressão.</li>
+                <li data-lang-key="t_tarken_b4">Utilizou Spec-Driven Development (SDD) com Claude para definir especificações e planos de execução.</li>
+                <li data-lang-key="t_tarken_b5">Gerenciou deployments AWS e análise de logs, garantindo alta disponibilidade e resolução de bugs.</li>
+              </ul>
+              <div class="timeline-tags">
+                <span class="tag-pill">TypeScript</span>
+                <span class="tag-pill">React.js</span>
+                <span class="tag-pill">React Native</span>
+                <span class="tag-pill">NestJS</span>
+                <span class="tag-pill">TypeORM</span>
+                <span class="tag-pill">Playwright</span>
+                <span class="tag-pill">AWS</span>
+                <span class="tag-pill">REST APIs</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- LECOM (04/2024 - Presente) -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <span class="timeline-institution">LECOM — DCC / UFMG</span>
+                <span class="timeline-period" data-lang-key="t_lecom_period">04/2024 — Presente</span>
+              </div>
+              <h3 class="timeline-role" data-lang-key="t_lecom_role">Pesquisador Bolsista</h3>
+              <ul class="timeline-bullets">
+                <li data-lang-key="t_lecom_b1">Desenvolveu um Resolvedor DNS de alto desempenho (eBPF/XDP | C | Go), com 213% mais vazão e 51% menos latência no kernel (Publicado no SBESC 2025).</li>
+                <li data-lang-key="t_lecom_b2">Autor do minicurso "Processamento de Pacotes em GPU" no SBRC 2025, abordando paralelismo massivo (CUDA/DOCA) e gerenciamento de memória.</li>
+                <li data-lang-key="t_lecom_b3">Desenvolveu cache com eBPF/XDP e aceleração por hardware no AtesN-DS, com até 2,85× mais vazão, 51% menos latência e 35% menos CPU.</li>
+                <li data-lang-key="t_lecom_b4">Desenvolveu sistema de mitigação de DDoS em tempo real com Machine Learning (RF/DT/NN) no XDP e AF_XDP contornando o kernel.</li>
+              </ul>
+              <div class="timeline-tags">
+                <span class="tag-pill">eBPF</span>
+                <span class="tag-pill">XDP</span>
+                <span class="tag-pill">C</span>
+                <span class="tag-pill">Go</span>
+                <span class="tag-pill">CUDA/DOCA</span>
+                <span class="tag-pill">Kernel Linux</span>
+                <span class="tag-pill">AF_XDP</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Monitoria UFMG (06/2023 - 01/2024) -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <span class="timeline-institution">DCC / ICEx — UFMG</span>
+                <span class="timeline-period" data-lang-key="t_monitor_period">06/2023 — 01/2024</span>
+              </div>
+              <h3 class="timeline-role" data-lang-key="t_monitor_role">Monitor Bolsista (GAAL)</h3>
+              <ul class="timeline-bullets">
+                <li data-lang-key="t_monitor_b1">Orientou alunos de toda a UFMG com suporte técnico em conceitos algébricos complexos, espaços vetoriais, transformações lineares e matrizes.</li>
+              </ul>
+              <div class="timeline-tags">
+                <span class="tag-pill">Álgebra Linear</span>
+                <span class="tag-pill">Geometria Analítica</span>
+                <span class="tag-pill">Ensino</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formação Acadêmica (2023 - Fev 2027) -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <span class="timeline-institution">Universidade Federal de Minas Gerais (UFMG)</span>
+                <span class="timeline-period" data-lang-key="t_edu_period">2023 — Fev 2027 (Previsto)</span>
+              </div>
+              <h3 class="timeline-role" data-lang-key="t_edu_role">Bacharelado em Sistemas de Informação</h3>
+              <ul class="timeline-bullets">
+                <li data-lang-key="t_edu_b1">Formação sólida em sistemas operacionais, redes de computadores, arquiteturas distribuídas, estruturas de dados avançadas e engenharia de software.</li>
+                <li data-lang-key="t_edu_b2">Destaque acadêmico em sistemas de baixo nível, aceleração de hardware e redes de alta velocidade.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Projects -->
+      <section class="section-container" id="projetos">
+        <div class="section-header">
+          <div class="section-eyebrow">
+            <i class="fa-solid fa-code-branch"></i>
+            <span data-lang-key="proj_eyebrow">Criações & Código</span>
+          </div>
+          <h2 class="section-title" data-lang-key="proj_title">Projetos em Destaque</h2>
+          <div class="mystic-divider"><span>✦</span></div>
+        </div>
+
+        <!-- Sync Status Bar -->
+        <div class="sync-status-bar">
+          <div class="sync-status-indicator">
+            <div class="pulse-dot"></div>
+            <span id="sync-status-text">Sincronizado com GitHub & ORCID</span>
+          </div>
+          <div id="sync-date-text">Auto-Sync Ativo</div>
+        </div>
+
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all" data-lang-key="filter_all">Todos</button>
+          <button class="filter-btn" data-filter="systems" data-lang-key="filter_systems">Sistemas & Kernel</button>
+          <button class="filter-btn" data-filter="web" data-lang-key="filter_web">Web & Automação</button>
+          <button class="filter-btn" data-filter="algorithms" data-lang-key="filter_algorithms">Algoritmos & Redes</button>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+          <!-- AtesN-DS -->
+          <div class="project-card" data-category="systems">
+            <div>
+              <div class="project-header">
+                <h3 class="project-title">AtesN-DS</h3>
+                <div class="project-links">
+                  <a href="https://sol.sbc.org.br/index.php/sbesc_estendido/article/view/39485" target="_blank" rel="noopener noreferrer" class="project-link-icon" title="Artigo SBESC">
+                    <i class="fa-solid fa-book-bookmark"></i>
+                  </a>
+                  <a href="https://github.com/ojoaosoares/AtesN-DS" target="_blank" rel="noopener noreferrer" class="project-link-icon" title="Repositório GitHub">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="project-metrics-badge">
+                <i class="fa-solid fa-bolt"></i>
+                <span data-lang-key="atesnds_badge">+213% Throughput · -51% Latência · &lt;2% CPU</span>
+              </div>
+              <p class="project-desc" data-lang-key="atesnds_desc">
+                Resolvedor DNS recursivo de ultra-alta performance implementado em eBPF e XDP que opera diretamente no kernel do Linux, contornando toda a pilha de rede tradicional. Apresentado no SBESC 2025.
+              </p>
+            </div>
+            <div class="project-tags">
+              <span class="tag-pill">eBPF</span>
+              <span class="tag-pill">XDP</span>
+              <span class="tag-pill">C</span>
+              <span class="tag-pill">Kernel Linux</span>
+              <span class="tag-pill">DNS</span>
+            </div>
+          </div>
+
+          <!-- curriculum-gen -->
+          <div class="project-card" data-category="web">
+            <div>
+              <div class="project-header">
+                <h3 class="project-title">curriculum-gen</h3>
+                <div class="project-links">
+                  <a href="https://github.com/ojoaosoares/curriculum-gen" target="_blank" rel="noopener noreferrer" class="project-link-icon" title="Repositório GitHub">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="project-metrics-badge">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <span data-lang-key="currgen_badge">LaTeX Compiler · LLM Optimizer</span>
+              </div>
+              <p class="project-desc" data-lang-key="currgen_desc">
+                Gerador e compilador automatizado de currículos que combina ingestão flexível de dados YAML, compilação precisa em LaTeX, estimativa geométrica de espaço em página e otimização semântica por LLM.
+              </p>
+            </div>
+            <div class="project-tags">
+              <span class="tag-pill">Python</span>
+              <span class="tag-pill">LaTeX</span>
+              <span class="tag-pill">FastAPI</span>
+              <span class="tag-pill">React</span>
+              <span class="tag-pill">Tailwind</span>
+            </div>
+          </div>
+
+          <!-- Indexer & Query Processor -->
+          <div class="project-card" data-category="algorithms">
+            <div>
+              <div class="project-header">
+                <h3 class="project-title">Indexer & Query Processor</h3>
+                <div class="project-links">
+                  <a href="https://github.com/ojoaosoares/indexer-and-query-processor" target="_blank" rel="noopener noreferrer" class="project-link-icon" title="Repositório GitHub">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="project-metrics-badge">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span>SPIMI · V-Byte · BM25 & TF-IDF</span>
+              </div>
+              <p class="project-desc" data-lang-key="indexer_desc">
+                Motor de busca e indexador de alta performance com arquitetura concorrente e monitoramento de memória. Implementa inversão SPIMI em duas etapas, compressão por V-Byte e delta encoding, com suporte a ranqueamento BM25 e TF-IDF.
+              </p>
+            </div>
+            <div class="project-tags">
+              <span class="tag-pill">Python</span>
+              <span class="tag-pill">Information Retrieval</span>
+              <span class="tag-pill">Multiprocessing</span>
+              <span class="tag-pill">Algoritmos</span>
+            </div>
+          </div>
+
+          <!-- ns-3 GPSR -->
+          <div class="project-card" data-category="algorithms">
+            <div>
+              <div class="project-header">
+                <h3 class="project-title">ns-3 GPSR Planarization</h3>
+                <div class="project-links">
+                  <a href="https://github.com/ojoaosoares/ns3.29-with-gpsr" target="_blank" rel="noopener noreferrer" class="project-link-icon" title="Repositório GitHub">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="project-metrics-badge">
+                <i class="fa-solid fa-diagram-project"></i>
+                <span>Gabriel Graph (GG) · RNG</span>
+              </div>
+              <p class="project-desc" data-lang-key="ns3_desc">
+                Extensão do protocolo de roteamento geográfico (GPSR) no simulador de redes ns-3 com algoritmos de planarização dinâmica de grafos (Gabriel Graph e Relative Neighborhood Graph) para recuperação de vazios de roteamento.
+              </p>
+            </div>
+            <div class="project-tags">
+              <span class="tag-pill">C++</span>
+              <span class="tag-pill">ns-3</span>
+              <span class="tag-pill">Redes de Computadores</span>
+              <span class="tag-pill">Simulação</span>
+            </div>
+          </div>
+
+          <!-- xv6 RISC-V Kernel Modifications -->
+          <div class="project-card" data-category="systems">
+            <div>
+              <div class="project-header">
+                <h3 class="project-title">xv6 RISC-V Kernel</h3>
+                <div class="project-links">
+                  <a href="https://github.com/ojoaosoares/xv6-riscv-lottery-scheduler" target="_blank" rel="noopener noreferrer" class="project-link-icon" title="Repositório GitHub">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="project-metrics-badge">
+                <i class="fa-solid fa-microchip"></i>
+                <span>Lottery Scheduler · Syscalls</span>
+              </div>
+              <p class="project-desc" data-lang-key="xv6_desc">
+                Modificações e extensões no kernel do sistema operacional xv6 para a arquitetura RISC-V. Implementação de algoritmo de escalonamento proporcional por loteria e chamadas de sistema customizadas.
+              </p>
+            </div>
+            <div class="project-tags">
+              <span class="tag-pill">C</span>
+              <span class="tag-pill">RISC-V</span>
+              <span class="tag-pill">Kernel</span>
+              <span class="tag-pill">Sistemas Operacionais</span>
+            </div>
+          </div>
+
+          <!-- xdp_ping & xhttp -->
+          <div class="project-card" data-category="systems">
+            <div>
+              <div class="project-header">
+                <h3 class="project-title">xdp_ping & xhttp</h3>
+                <div class="project-links">
+                  <a href="https://github.com/ojoaosoares/xdp_ping" target="_blank" rel="noopener noreferrer" class="project-link-icon" title="Repositório GitHub">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="project-metrics-badge">
+                <i class="fa-solid fa-network-wired"></i>
+                <span>Driver Hook · Minimal HTTP</span>
+              </div>
+              <p class="project-desc" data-lang-key="xdp_desc">
+                Conjunto de ferramentas de rede de baixo nível: utilitário de diagnóstico ICMP executado diretamente via gancho XDP e servidor HTTP concorrente escrito em C para máxima eficiência.
+              </p>
+            </div>
+            <div class="project-tags">
+              <span class="tag-pill">eBPF</span>
+              <span class="tag-pill">XDP</span>
+              <span class="tag-pill">C</span>
+              <span class="tag-pill">Sockets</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Publications & Honors (Live Synced with ORCID) -->
+      <section class="section-container" id="publicacoes">
+        <div class="section-header">
+          <div class="section-eyebrow">
+            <i class="fa-solid fa-award"></i>
+            <span data-lang-key="pub_eyebrow">Produção Científica & Honrarias</span>
+          </div>
+          <h2 class="section-title" data-lang-key="pub_title">Publicações & Reconhecimento</h2>
+          <div class="mystic-divider"><span>✦</span></div>
+        </div>
+
+        <div class="pub-grid" id="publications-grid">
+          <!-- SBESC 2025 Paper -->
+          <a href="https://sol.sbc.org.br/index.php/sbesc_estendido/article/view/39485" target="_blank" rel="noopener noreferrer" class="pub-card">
+            <div class="pub-icon-box">
+              <i class="fa-solid fa-scroll"></i>
+            </div>
+            <div class="pub-content">
+              <div class="pub-venue">
+                <span>SBESC 2025 · Artigo</span>
+                <span class="gold-text"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              </div>
+              <h3 class="pub-title" data-lang-key="pub_sbesc_title">AtesN-DS: Acelerando o DNS com eBPF</h3>
+              <p class="pub-desc" data-lang-key="pub_sbesc_desc">
+                Publicação e apresentação no XV Simpósio Brasileiro de Engenharia de Sistemas Computacionais. Apresenta o resolvedor DNS híbrido operando no kernel do Linux via eBPF/XDP com redução de 51% na latência e +213% na taxa de transferência.
+              </p>
+              <div class="pub-link-badge">
+                <i class="fa-solid fa-link"></i> DOI: 10.5753/sbesc_estendido.2025.15177
+              </div>
+            </div>
+          </a>
+
+          <!-- SBRC 2025 Book Chapter -->
+          <a href="https://doi.org/10.5753/sbc.18862.9.1" target="_blank" rel="noopener noreferrer" class="pub-card">
+            <div class="pub-icon-box">
+              <i class="fa-solid fa-book-open"></i>
+            </div>
+            <div class="pub-content">
+              <div class="pub-venue">
+                <span>SBRC 2025 · Minicurso</span>
+                <span class="gold-text"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              </div>
+              <h3 class="pub-title" data-lang-key="pub_sbrc_title">Processamento de Pacotes Baseado em GPU (Capítulo de Livro)</h3>
+              <p class="pub-desc" data-lang-key="pub_sbrc_desc">
+                Coautoria do Capítulo 1 do Livro de Minicursos do Simpósio Brasileiro de Redes de Computadores (SBRC 2025), analisando arquiteturas e pipelines de aceleração de pacotes em hardware massivamente paralelo.
+              </p>
+              <div class="pub-link-badge">
+                <i class="fa-solid fa-link"></i> DOI: 10.5753/sbc.18862.9.1
+              </div>
+            </div>
+          </a>
+
+          <!-- UFMG Academic Relevance -->
+          <div class="pub-card">
+            <div class="pub-icon-box">
+              <i class="fa-solid fa-trophy"></i>
+            </div>
+            <div class="pub-content">
+              <div class="pub-venue">
+                <span>UFMG 2025 · Prêmio</span>
+              </div>
+              <h3 class="pub-title" data-lang-key="pub_award_title">Relevância Acadêmica na Semana do Conhecimento UFMG</h3>
+              <p class="pub-desc" data-lang-key="pub_award_desc">
+                Indicação concedida pelo Departamento de Ciência da Computação (DCC/UFMG) pelo impacto e inovação científica do projeto AtesN-DS na Semana de Iniciação Científica.
+              </p>
+            </div>
+          </div>
+
+          <!-- JLPT Certification -->
+          <div class="pub-card">
+            <div class="pub-icon-box">
+              <i class="fa-solid fa-certificate"></i>
+            </div>
+            <div class="pub-content">
+              <div class="pub-venue">
+                <span>Certificação Internacional</span>
+              </div>
+              <h3 class="pub-title" data-lang-key="pub_jlpt_title">Japanese-Language Proficiency Test (JLPT)</h3>
+              <p class="pub-desc" data-lang-key="pub_jlpt_desc">
+                Certificação de proficiência linguística japonesa, demonstrando capacidade de comunicação profissional e multidisciplinar.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technical Skills -->
+      <section class="section-container" id="habilidades">
+        <div class="section-header">
+          <div class="section-eyebrow">
+            <i class="fa-solid fa-cubes"></i>
+            <span data-lang-key="skills_eyebrow">Arsenal Técnico</span>
+          </div>
+          <h2 class="section-title" data-lang-key="skills_title">Habilidades & Tecnologias</h2>
+          <div class="mystic-divider"><span>✦</span></div>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Systems & Networking -->
+          <div class="skill-group-card">
+            <h3 class="skill-group-title">
+              <i class="fa-solid fa-server"></i>
+              <span data-lang-key="skill_g1">Kernel & Redes</span>
+            </h3>
+            <div class="skill-items">
+              <span class="skill-pill">eBPF</span>
+              <span class="skill-pill">XDP</span>
+              <span class="skill-pill">Linux Kernel</span>
+              <span class="skill-pill">ns-3</span>
+              <span class="skill-pill">DNS Protocols</span>
+              <span class="skill-pill">GPU Networking</span>
+              <span class="skill-pill">Serverless</span>
+              <span class="skill-pill">Sockets & POSIX</span>
+            </div>
+          </div>
+
+          <!-- Languages -->
+          <div class="skill-group-card">
+            <h3 class="skill-group-title">
+              <i class="fa-solid fa-code"></i>
+              <span data-lang-key="skill_g2">Linguagens</span>
+            </h3>
+            <div class="skill-items">
+              <span class="skill-pill">C</span>
+              <span class="skill-pill">Python</span>
+              <span class="skill-pill">TypeScript</span>
+              <span class="skill-pill">JavaScript</span>
+              <span class="skill-pill">C++</span>
+              <span class="skill-pill">SQL</span>
+              <span class="skill-pill">Bash / Shell</span>
+            </div>
+          </div>
+
+          <!-- Web & Mobile -->
+          <div class="skill-group-card">
+            <h3 class="skill-group-title">
+              <i class="fa-solid fa-laptop-code"></i>
+              <span data-lang-key="skill_g3">Web & Mobile</span>
+            </h3>
+            <div class="skill-items">
+              <span class="skill-pill">React.js</span>
+              <span class="skill-pill">React Native</span>
+              <span class="skill-pill">NestJS</span>
+              <span class="skill-pill">TypeORM</span>
+              <span class="skill-pill">Node.js</span>
+              <span class="skill-pill">Material UI (MUI)</span>
+              <span class="skill-pill">RESTful APIs</span>
+            </div>
+          </div>
+
+          <!-- Tools & Quality -->
+          <div class="skill-group-card">
+            <h3 class="skill-group-title">
+              <i class="fa-solid fa-vial-circle-check"></i>
+              <span data-lang-key="skill_g4">Qualidade & Ferramentas</span>
+            </h3>
+            <div class="skill-items">
+              <span class="skill-pill">Playwright</span>
+              <span class="skill-pill">Git & GitHub</span>
+              <span class="skill-pill">Linux Environments</span>
+              <span class="skill-pill">LaTeX</span>
+              <span class="skill-pill">Unit & E2E Testing</span>
+              <span class="skill-pill">Docker</span>
+            </div>
+          </div>
+
+          <!-- Theoretical & Scientific -->
+          <div class="skill-group-card">
+            <h3 class="skill-group-title">
+              <i class="fa-solid fa-brain"></i>
+              <span data-lang-key="skill_g5">Pesquisa & Algoritmos</span>
+            </h3>
+            <div class="skill-items">
+              <span class="skill-pill">Estruturas de Dados</span>
+              <span class="skill-pill">Grafos & Planarização</span>
+              <span class="skill-pill">Information Retrieval</span>
+              <span class="skill-pill">Álgebra Linear</span>
+              <span class="skill-pill">Metodologia Científica</span>
+            </div>
+          </div>
+
+          <!-- Languages / Idiomas -->
+          <div class="skill-group-card">
+            <h3 class="skill-group-title">
+              <i class="fa-solid fa-earth-americas"></i>
+              <span data-lang-key="skill_g6">Idiomas</span>
+            </h3>
+            <div class="skill-items">
+              <span class="skill-pill" data-lang-key="lang_pt">Português (Nativo)</span>
+              <span class="skill-pill" data-lang-key="lang_en">Inglês (Fluente / C1)</span>
+              <span class="skill-pill" data-lang-key="lang_ja">Japonês (Profissional / JLPT)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="section-container" id="contato">
+        <div class="section-header">
+          <div class="section-eyebrow">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span data-lang-key="contact_eyebrow">Comunicação</span>
+          </div>
+          <h2 class="section-title" data-lang-key="contact_title">Vamos Conversar?</h2>
+          <div class="mystic-divider"><span>✦</span></div>
+        </div>
+
+        <div class="contact-card">
+          <p style="color: var(--text-secondary); font-size: 1.15rem; max-width: 580px; margin: 0 auto 1.5rem;" data-lang-key="contact_desc">
+            Estou sempre aberto a diálogos sobre engenharia de software de alta performance, pesquisa em sistemas e redes, ou oportunidades de colaboração.
+          </p>
+
+          <div class="contact-email-box">
+            <i class="fa-solid fa-envelope gold-text"></i>
+            <a href="mailto:contato.ojoaosoares@gmail.com" class="email-text">contato.ojoaosoares@gmail.com</a>
+            <button class="copy-btn" id="copy-email-btn" title="Copiar e-mail">
+              <i class="fa-regular fa-copy"></i>
+              <span id="copy-btn-text" data-lang-key="copy_email">Copiar</span>
+            </button>
+          </div>
+
+          <div class="academic-links-row">
+            <a href="https://github.com/ojoaosoares" target="_blank" rel="noopener noreferrer" class="academic-badge-link">
+              <i class="fa-brands fa-github"></i>
+              <span>GitHub / @ojoaosoares</span>
+            </a>
+            <a href="https://www.linkedin.com/in/ojoaovsoares" target="_blank" rel="noopener noreferrer" class="academic-badge-link">
+              <i class="fa-brands fa-linkedin"></i>
+              <span>LinkedIn / in/ojoaovsoares</span>
+            </a>
+            <a href="https://orcid.org/0009-0002-7600-9784" target="_blank" rel="noopener noreferrer" class="academic-badge-link">
+              <i class="fa-brands fa-orcid"></i>
+              <span>ORCID / 0009-0002-7600-9784</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-quote" data-lang-key="footer_quote">
+        "Construído para alta performance, código limpo e arquitetura minimalista."
+      </div>
+      <div class="footer-copy">
+        © 2026 João Soares. <span data-lang-key="footer_rights">Todos os direitos reservados.</span>
+      </div>
+    </footer>
+
+    <!-- Feedback Toast -->
+    <div class="toast-msg" id="toast">
+      <i class="fa-solid fa-circle-check"></i>
+      <span id="toast-text">E-mail copiado para a área de transferência!</span>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+      // Translations Dictionary
+      const translations = {
+        pt: {
+          skip_link: "Pular para o conteúdo",
+          nav_home: "Início",
+          nav_about: "Sobre",
+          nav_experience: "Trajetória",
+          nav_projects: "Projetos",
+          nav_publications: "Publicações",
+          nav_skills: "Habilidades",
+          nav_contact: "Contato",
+          cv_button: "Currículo",
+          hero_honorific: "Pesquisa em Sistemas & Engenharia de Software",
+          portrait_role: "SISTEMAS & KERNEL",
+          hero_bio: "Pesquisador no LECOM/UFMG focado em redes de ultra-alta performance, processamento de pacotes no kernel Linux com <strong>eBPF/XDP</strong> e otimização de latência. Engenheiro de software na Tarken com o ecossistema <strong>TypeScript, React & NestJS</strong>.",
+          btn_projects: "Ver Projetos",
+          btn_resume: "Baixar Currículo (PDF)",
+          btn_contact: "Contato",
+          stat_latency: "Latência DNS (AtesN-DS vs hyDNS)",
+          stat_throughput: "Vazão de Rede (AtesN-DS vs hyDNS)",
+          stat_events: "Publicação e Minicurso (2025)",
+          stat_award: "Acadêmica DCC/UFMG 2025",
+          about_eyebrow: "Perfil & Atuação",
+          about_title: "Sobre Mim",
+          about_p1: "Sou graduando em <strong>Sistemas de Informação</strong> pela <strong>Universidade Federal de Minas Gerais (UFMG)</strong> e atuo na interseção entre <strong>pesquisa científica em sistemas de baixo nível</strong> e <strong>engenharia de software moderna</strong>.",
+          about_p2: "No <strong>LECOM (Laboratório de Engenharia de Computadores)</strong>, desenvolvo pesquisa aplicada com ênfase em aceleração de pacotes de rede no kernel via <strong>eBPF/XDP</strong>, simulações em <strong>ns-3</strong> e processamento paralelo em <strong>GPU</strong>. Sou autor do <strong>AtesN-DS</strong>, resolvedor DNS recursivo indicado à Relevância Acadêmica na UFMG.",
+          about_p3: "Na <strong>Tarken</strong>, integro o time de engenharia desenvolvendo soluções completas com <strong>TypeScript, React, React Native, NestJS e TypeORM</strong>, unindo robustez de testes automatizados com arquiteturas escaláveis.",
+          location_bh: "Belo Horizonte, MG · Brasil",
+          edu_ufmg: "BSc. Sistemas de Informação · UFMG",
+          lang_skills: "PT (Nativo) · EN (C1) · JA (JLPT)",
+          eng_quote: "\"Construindo sistemas de alta eficiência: da aceleração no kernel Linux com eBPF/XDP à engenharia de software distribuída e escalável.\"",
+          quote_author: "Filosofia de Engenharia · LECOM / UFMG",
+          exp_eyebrow: "Jornada Profissional & Acadêmica",
+          exp_title: "Trajetória",
+          t_tarken_period: "09/2025 — Presente",
+          t_tarken_role: "Estagiário Full Stack & Mobile",
+          t_tarken_b1: "Desenvolveu interfaces com React.js e MUI, reduzindo o tempo de desenvolvimento em 50%.",
+          t_tarken_b2: "Desenvolveu APIs REST escaláveis utilizando NestJS, TypeORM e TypeScript.",
+          t_tarken_b3: "Cobriu 80% dos fluxos críticos com Playwright E2E e testes unitários, reduzindo bugs de regressão.",
+          t_tarken_b4: "Utilizou Spec-Driven Development (SDD) com Claude para definir especificações e planos de execução.",
+          t_tarken_b5: "Gerenciou deployments AWS e análise de logs, garantindo alta disponibilidade e resolução de bugs.",
+          t_lecom_period: "04/2024 — Presente",
+          t_lecom_role: "Pesquisador Bolsista",
+          t_lecom_b1: "Desenvolveu um Resolvedor DNS de alto desempenho (eBPF/XDP | C | Go), com 213% mais vazão e 51% menos latência no kernel (Publicado no SBESC 2025).",
+          t_lecom_b2: "Autor do minicurso \"Processamento de Pacotes em GPU\" no SBRC 2025, abordando paralelismo massivo (CUDA/DOCA) e gerenciamento de memória.",
+          t_lecom_b3: "Desenvolveu cache com eBPF/XDP e aceleração por hardware no AtesN-DS, com até 2,85× mais vazão, 51% menos latência e 35% menos CPU.",
+          t_lecom_b4: "Desenvolveu sistema de mitigação de DDoS em tempo real com Machine Learning (RF/DT/NN) no XDP e AF_XDP contornando o kernel.",
+          t_monitor_period: "06/2023 — 01/2024",
+          t_monitor_role: "Monitor Bolsista (GAAL)",
+          t_monitor_b1: "Orientou alunos de toda a UFMG com suporte técnico em conceitos algébricos complexos, espaços vetoriais, transformações lineares e matrizes.",
+          t_edu_period: "2023 — Fev 2027 (Previsto)",
+          t_edu_role: "Bacharelado em Sistemas de Informação",
+          t_edu_b1: "Formação sólida em sistemas operacionais, redes de computadores, arquiteturas distribuídas, estruturas de dados avançadas e engenharia de software.",
+          t_edu_b2: "Destaque acadêmico em sistemas de baixo nível, aceleração de hardware e redes de alta velocidade.",
+          proj_eyebrow: "Criações & Código",
+          proj_title: "Projetos em Destaque",
+          filter_all: "Todos",
+          filter_systems: "Sistemas & Kernel",
+          filter_web: "Web & Automação",
+          filter_algorithms: "Algoritmos & Redes",
+          atesnds_badge: "+213% Throughput · -51% Latência · <2% CPU",
+          atesnds_desc: "Resolvedor DNS recursivo de ultra-alta performance implementado em eBPF e XDP que opera diretamente no kernel do Linux, contornando toda a pilha de rede tradicional. Apresentado no SBESC 2025.",
+          currgen_badge: "LaTeX Compiler · LLM Optimizer",
+          currgen_desc: "Gerador e compilador automatizado de currículos que combina ingestão flexível de dados YAML, compilação precisa em LaTeX, estimativa geométrica de espaço em página e otimização semântica por LLM.",
+          indexer_desc: "Motor de busca e indexador de alta performance com arquitetura concorrente e monitoramento de memória. Implementa inversão SPIMI em duas etapas, compressão por V-Byte e delta encoding, com suporte a ranqueamento BM25 e TF-IDF.",
+          ns3_desc: "Extensão do protocolo de roteamento geográfico (GPSR) no simulador de redes ns-3 com algoritmos de planarização dinâmica de grafos (Gabriel Graph e Relative Neighborhood Graph) para recuperação de vazios de roteamento.",
+          xv6_desc: "Modificações e extensões no kernel do sistema operacional xv6 para a arquitetura RISC-V. Implementação de algoritmo de escalonamento proporcional por loteria e chamadas de sistema customizadas.",
+          xdp_desc: "Conjunto de ferramentas de rede de baixo nível: utilitário de diagnóstico ICMP executado diretamente via gancho XDP e servidor HTTP concorrente escrito em C para máxima eficiência.",
+          pub_eyebrow: "Produção Científica & Honrarias",
+          pub_title: "Publicações & Reconhecimento",
+          pub_sbesc_title: "AtesN-DS: Acelerando o DNS com eBPF",
+          pub_sbesc_desc: "Publicação e apresentação no XV Simpósio Brasileiro de Engenharia de Sistemas Computacionais. Apresenta o resolvedor DNS híbrido operando no kernel do Linux via eBPF/XDP com redução de 51% na latência e +213% na taxa de transferência.",
+          pub_sbrc_title: "Processamento de Pacotes Baseado em GPU (Capítulo de Livro)",
+          pub_sbrc_desc: "Coautoria do Capítulo 1 do Livro de Minicursos do Simpósio Brasileiro de Redes de Computadores (SBRC 2025), analisando arquiteturas e pipelines de aceleração de pacotes em hardware massivamente paralelo.",
+          pub_award_title: "Relevância Acadêmica na Semana do Conhecimento UFMG",
+          pub_award_desc: "Indicação concedida pelo Departamento de Ciência da Computação (DCC/UFMG) pelo impacto e inovação científica do projeto AtesN-DS na Semana de Iniciação Científica.",
+          pub_jlpt_title: "Japanese-Language Proficiency Test (JLPT)",
+          pub_jlpt_desc: "Certificação de proficiência linguística japonesa, demonstrando capacidade de comunicação profissional e multidisciplinar.",
+          skills_eyebrow: "Arsenal Técnico",
+          skills_title: "Habilidades & Tecnologias",
+          skill_g1: "Kernel & Redes",
+          skill_g2: "Linguagens",
+          skill_g3: "Web & Mobile",
+          skill_g4: "Qualidade & Ferramentas",
+          skill_g5: "Pesquisa & Algoritmos",
+          skill_g6: "Idiomas",
+          lang_pt: "Português (Nativo)",
+          lang_en: "Inglês (Fluente / C1)",
+          lang_ja: "Japonês (Profissional / JLPT)",
+          contact_eyebrow: "Comunicação",
+          contact_title: "Vamos Conversar?",
+          contact_desc: "Estou sempre aberto a diálogos sobre engenharia de software de alta performance, pesquisa em sistemas e redes, ou oportunidades de colaboração.",
+          copy_email: "Copiar",
+          copied_email: "Copiado!",
+          toast_copied: "E-mail copiado para a área de transferência!",
+          footer_quote: "\"Construído para alta performance, código limpo e arquitetura minimalista.\"",
+          footer_rights: "Todos os direitos reservados."
+        },
+        en: {
+          skip_link: "Skip to content",
+          nav_home: "Home",
+          nav_about: "About",
+          nav_experience: "Experience",
+          nav_projects: "Projects",
+          nav_publications: "Publications",
+          nav_skills: "Skills",
+          nav_contact: "Contact",
+          cv_button: "Resume",
+          hero_honorific: "Systems Research & Software Engineering",
+          portrait_role: "SYSTEMS & NETWORKING",
+          hero_bio: "Researcher at LECOM/UFMG focusing on ultra-low-latency networking, Linux kernel packet processing with <strong>eBPF/XDP</strong>. Software engineer at Tarken crafting scalable platforms with <strong>TypeScript, React & NestJS</strong>.",
+          btn_projects: "View Projects",
+          btn_resume: "Download Resume (PDF)",
+          btn_contact: "Get in Touch",
+          stat_latency: "DNS Latency (AtesN-DS vs hyDNS)",
+          stat_throughput: "Network Throughput (AtesN-DS vs hyDNS)",
+          stat_events: "Paper & Short Course (2025)",
+          stat_award: "Academic Honor DCC/UFMG 2025",
+          about_eyebrow: "Profile & Focus",
+          about_title: "About Me",
+          about_p1: "I am an undergraduate in <strong>Information Systems</strong> at the <strong>Federal University of Minas Gerais (UFMG)</strong>, bridging low-level systems research and modern software engineering.",
+          about_p2: "At <strong>LECOM (Computer Engineering Laboratory)</strong>, I conduct applied research in kernel network acceleration using <strong>eBPF/XDP</strong>, simulations in <strong>ns-3</strong>, and parallel processing with <strong>GPUs</strong>. Author of <strong>AtesN-DS</strong>, a high-performance recursive DNS resolver recognized with Academic Relevance at UFMG.",
+          about_p3: "At <strong>Tarken</strong>, I build production-grade web and mobile applications using <strong>TypeScript, React, React Native, NestJS, and TypeORM</strong>, combining robust automated test suites with scalable architectures.",
+          location_bh: "Belo Horizonte, MG · Brazil",
+          edu_ufmg: "BSc. Information Systems · UFMG",
+          lang_skills: "PT (Native) · EN (C1) · JA (JLPT)",
+          eng_quote: "\"Building high-efficiency computing systems: from in-kernel Linux acceleration with eBPF/XDP to scalable distributed software engineering.\"",
+          quote_author: "Engineering Philosophy · LECOM / UFMG",
+          exp_eyebrow: "Career & Education",
+          exp_title: "Journey",
+          t_tarken_period: "Sep 2025 — Present",
+          t_tarken_role: "Full Stack & Mobile Intern",
+          t_tarken_b1: "Built responsive interfaces with React.js and MUI, cutting development time by 50%.",
+          t_tarken_b2: "Engineered scalable REST APIs using NestJS, TypeORM, and TypeScript.",
+          t_tarken_b3: "Covered 80% of critical paths with Playwright E2E and unit testing, reducing regressions.",
+          t_tarken_b4: "Employed Spec-Driven Development (SDD) with Claude to define specs and execution plans.",
+          t_tarken_b5: "Managed AWS deployments and log observability, ensuring high availability and quick bug resolution.",
+          t_lecom_period: "Apr 2024 — Present",
+          t_lecom_role: "Scientific Research Fellow",
+          t_lecom_b1: "Developed AtesN-DS, high-performance in-kernel DNS resolver (eBPF/XDP | C | Go) with +213% throughput and -51% latency (SBESC 2025).",
+          t_lecom_b2: "Co-authored GPU Packet Processing short course at SBRC 2025 covering massive parallelism (CUDA/DOCA) and high-speed memory management.",
+          t_lecom_b3: "Engineered eBPF/XDP cache and hardware offloading (up to 2.85× throughput, tail latency reduced by >70ms, -35% CPU).",
+          t_lecom_b4: "Designed real-time DDoS mitigation with ML (RF/DT/NN) in XDP and AF_XDP kernel-bypass.",
+          t_monitor_period: "Jun 2023 — Jan 2024",
+          t_monitor_role: "Teaching Assistant (GAAL)",
+          t_monitor_b1: "Mentored undergraduate students across UFMG in advanced linear algebra, linear transformations, and vector spaces.",
+          t_edu_period: "2023 — Feb 2027 (Expected)",
+          t_edu_role: "BSc in Information Systems",
+          t_edu_b1: "Rigorous curriculum covering operating systems, computer networks, distributed architectures, algorithms, and software engineering.",
+          t_edu_b2: "Academic focus on low-level systems programming, hardware acceleration, and high-performance networks.",
+          proj_eyebrow: "Creations & Code",
+          proj_title: "Featured Projects",
+          filter_all: "All",
+          filter_systems: "Systems & Kernel",
+          filter_web: "Web & Automation",
+          filter_algorithms: "Algorithms & Networks",
+          atesnds_badge: "+213% Throughput · -51% Latência · <2% CPU",
+          atesnds_desc: "Ultra-high-performance recursive DNS resolver in eBPF and XDP operating directly in the Linux kernel, bypassing standard network stack. Presented at SBESC 2025.",
+          currgen_badge: "LaTeX Compiler · LLM Optimizer",
+          currgen_desc: "Automated resume generator & compiler combining YAML profiles, pixel-perfect LaTeX formatting, geometric space estimation, and LLM semantic tuning.",
+          indexer_desc: "High-performance inverted index engine with multi-core parallelism and memory management. Features SPIMI two-phase indexing, V-Byte compression, BM25 and TF-IDF ranked retrieval.",
+          ns3_desc: "Geographic Perimeter Stateless Routing (GPSR) extension in ns-3 with dynamic graph planarization algorithms (Gabriel Graph & RNG) for void handling.",
+          xv6_desc: "Modifications to the xv6 educational operating system for RISC-V: lottery proportional scheduler and custom getcnt system call.",
+          xdp_desc: "Low-level networking utility suite: ICMP ping diagnostics run directly at the XDP driver level, accompanied by a lightweight high-concurrency HTTP server.",
+          pub_eyebrow: "Scientific Works & Honors",
+          pub_title: "Publications & Recognition",
+          pub_sbesc_title: "AtesN-DS: Accelerating DNS with eBPF",
+          pub_sbesc_desc: "Paper and oral presentation at the XV Brazilian Symposium on Computing Systems Engineering. Proposes in-kernel recursive DNS resolver via eBPF/XDP reducing latency by 51% and increasing throughput by 213%.",
+          pub_sbrc_title: "GPU-based Packet Processing (Book Chapter)",
+          pub_sbrc_desc: "Co-author of Chapter 1 in the Brazilian Symposium on Computer Networks (SBRC 2025) Book of Short Courses, analyzing GPU-based networking acceleration pipelines.",
+          pub_award_title: "Academic Relevance Award at UFMG 2025",
+          pub_award_desc: "Distinction awarded by the Department of Computer Science (DCC/UFMG) during Knowledge Week for AtesN-DS research.",
+          pub_jlpt_title: "Japanese-Language Proficiency Test (JLPT)",
+          pub_jlpt_desc: "Official certification of Japanese language proficiency, demonstrating global communication abilities.",
+          skills_eyebrow: "Technical Arsenal",
+          skills_title: "Skills & Technologies",
+          skill_g1: "Kernel & Networking",
+          skill_g2: "Programming Languages",
+          skill_g3: "Web & Mobile",
+          skill_g4: "Quality & Tooling",
+          skill_g5: "Research & Algorithms",
+          skill_g6: "Languages",
+          lang_pt: "Portuguese (Native)",
+          lang_en: "English (Fluent / C1)",
+          lang_ja: "Japanese (Professional / JLPT)",
+          contact_eyebrow: "Get in Touch",
+          contact_title: "Let's Connect",
+          contact_desc: "Always open to discussions regarding high-performance systems, kernel networking, software engineering, and exciting collaborative ventures.",
+          copy_email: "Copy",
+          copied_email: "Copied!",
+          toast_copied: "Email address copied to clipboard!",
+          footer_quote: "\"Engineered for high performance, clean code, and minimalist architecture.\"",
+          footer_rights: "All rights reserved."
+        }
+      };
+
+      // Typewriter Role Phrases
+      const rolePhrases = {
+        pt: [
+          "Pesquisador em Redes & Kernel (eBPF/XDP)",
+          "Engenheiro de Software Fullstack",
+          "Graduando em Sistemas de Informação na UFMG",
+          "Desenvolvedor de Sistemas de Alta Performance"
+        ],
+        en: [
+          "Systems & Kernel Researcher (eBPF/XDP)",
+          "Fullstack Software Engineer",
+          "Information Systems at UFMG",
+          "High-Performance Systems Builder"
+        ]
+      };
+
+      // State
+      let currentLang = localStorage.getItem("portfolio_lang") || 
+        (navigator.language.toLowerCase().startsWith("pt") ? "pt" : "en");
+
+      // Elements
+      const langToggle = document.getElementById("lang-toggle");
+      const langText = document.getElementById("lang-text");
+      const cvNavLink = document.getElementById("cv-nav-link");
+      const heroCvBtn = document.getElementById("hero-cv-btn");
+      const roleTypewriter = document.getElementById("role-typewriter");
+      const mobileToggle = document.getElementById("mobile-toggle");
+      const navLinks = document.getElementById("nav-links");
+      const navbar = document.getElementById("navbar");
+      const copyEmailBtn = document.getElementById("copy-email-btn");
+      const copyBtnText = document.getElementById("copy-btn-text");
+      const toast = document.getElementById("toast");
+      const toastText = document.getElementById("toast-text");
+      const syncDateText = document.getElementById("sync-date-text");
+
+      // Apply Language
+      function setLanguage(lang) {
+        currentLang = lang;
+        localStorage.setItem("portfolio_lang", lang);
+        document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
+        langText.textContent = lang === "pt" ? "EN" : "PT";
+
+        // Update CV download target
+        const cvFile = lang === "pt" ? "curriculo.pdf" : "resume.pdf";
+        cvNavLink.setAttribute("href", cvFile);
+        heroCvBtn.setAttribute("href", cvFile);
+
+        // Update all elements with data-lang-key
+        document.querySelectorAll("[data-lang-key]").forEach((elem) => {
+          const key = elem.getAttribute("data-lang-key");
+          if (translations[lang] && translations[lang][key]) {
+            elem.innerHTML = translations[lang][key];
+          }
+        });
+
+        // Reset typewriter
+        phraseIdx = 0;
+        charIdx = 0;
+        isDeleting = false;
+      }
+
+      langToggle.addEventListener("click", () => {
+        setLanguage(currentLang === "pt" ? "en" : "pt");
+      });
+
+      // Typewriter Effect
+      let phraseIdx = 0;
+      let charIdx = 0;
+      let isDeleting = false;
+      let typeTimeout = null;
+
+      function updateTypewriter() {
+        const phrases = rolePhrases[currentLang];
+        const currentPhrase = phrases[phraseIdx % phrases.length];
+
+        if (isDeleting) {
+          roleTypewriter.textContent = currentPhrase.substring(0, charIdx - 1);
+          charIdx--;
+        } else {
+          roleTypewriter.textContent = currentPhrase.substring(0, charIdx + 1);
+          charIdx++;
+        }
+
+        let speed = isDeleting ? 30 : 60;
+
+        if (!isDeleting && charIdx === currentPhrase.length) {
+          speed = 2200;
+          isDeleting = true;
+        } else if (isDeleting && charIdx === 0) {
+          isDeleting = false;
+          phraseIdx++;
+          speed = 400;
+        }
+
+        clearTimeout(typeTimeout);
+        typeTimeout = setTimeout(updateTypewriter, speed);
+      }
+
+      // Mobile Menu Toggle
+      mobileToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("mobile-open");
+        const icon = mobileToggle.querySelector("i");
+        if (navLinks.classList.contains("mobile-open")) {
+          icon.classList.remove("fa-bars");
+          icon.classList.add("fa-xmark");
+        } else {
+          icon.classList.remove("fa-xmark");
+          icon.classList.add("fa-bars");
+        }
+      });
+
+      // Close mobile menu on click
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("mobile-open");
+          const icon = mobileToggle.querySelector("i");
+          if (icon) {
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+          }
+        });
+      });
+
+      // Scroll Spy & Navbar Styling
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 40) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+
+        const sections = document.querySelectorAll("section[id]");
+        let currentSectionId = "";
+        sections.forEach((sec) => {
+          const top = sec.offsetTop - 120;
+          const height = sec.offsetHeight;
+          if (window.scrollY >= top && window.scrollY < top + height) {
+            currentSectionId = sec.getAttribute("id");
+          }
+        });
+
+        document.querySelectorAll(".nav-link").forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${currentSectionId}`) {
+            link.classList.add("active");
+          }
+        });
+      });
+
+      // Project Filters
+      const filterBtns = document.querySelectorAll(".filter-btn");
+      const projectCards = document.querySelectorAll(".project-card");
+
+      filterBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          filterBtns.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          const filterValue = btn.getAttribute("data-filter");
+
+          projectCards.forEach((card) => {
+            if (filterValue === "all" || card.getAttribute("data-category") === filterValue) {
+              card.style.display = "flex";
+              card.style.opacity = "1";
+            } else {
+              card.style.display = "none";
+              card.style.opacity = "0";
+            }
+          });
+        });
+      });
+
+      // Copy Email to Clipboard
+      copyEmailBtn.addEventListener("click", () => {
+        const email = "contato.ojoaosoares@gmail.com";
+        navigator.clipboard.writeText(email).then(() => {
+          copyBtnText.textContent = translations[currentLang].copied_email;
+          toastText.textContent = translations[currentLang].toast_copied;
+          toast.classList.add("show");
+
+          setTimeout(() => {
+            copyBtnText.textContent = translations[currentLang].copy_email;
+            toast.classList.remove("show");
+          }, 2600);
+        }).catch(() => {
+          window.location.href = `mailto:${email}`;
+        });
+      });
+
+      // Load Synced Data from data/portfolio_data.json
+      async function loadSyncedData() {
+        try {
+          const res = await fetch("data/portfolio_data.json");
+          if (!res.ok) return;
+          const data = await res.json();
+
+          if (data.last_sync && syncDateText) {
+            const date = new Date(data.last_sync);
+            syncDateText.textContent = `Última sincronização: ${date.toLocaleDateString()}`;
+          }
+
+          // If GitHub has updated stars, we can reflect them
+          if (data.github && data.github.total_stars > 0) {
+            console.log(`Synced GitHub repositories: ${data.github.public_repos}, Total Stars: ${data.github.total_stars}`);
+          }
+        } catch (e) {
+          // Gracefully fallback to static embedded values
+          console.debug("Local data loaded.");
+        }
+      }
+
+      // Minimalist Atmospheric Canvas (Stars & Faint Nebula)
+      const canvas = document.getElementById("fog-canvas");
+      const ctx = canvas.getContext("2d");
+      let particles = [];
+      let width = (canvas.width = window.innerWidth);
+      let height = (canvas.height = window.innerHeight);
+
+      function resizeCanvas() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+        initParticles();
+      }
+
+      window.addEventListener("resize", resizeCanvas);
+
+      class MinimalParticle {
+        constructor() {
+          this.x = Math.random() * width;
+          this.y = Math.random() * height;
+          this.size = Math.random() * 1.6 + 0.4;
+          this.vx = (Math.random() - 0.5) * 0.25;
+          this.vy = (Math.random() - 0.5) * 0.25 - 0.08;
+          this.alpha = Math.random() * 0.55 + 0.15;
+          this.isGold = Math.random() > 0.4;
+        }
+
+        update() {
+          this.x += this.vx;
+          this.y += this.vy;
+
+          if (this.x < 0) this.x = width;
+          if (this.x > width) this.x = 0;
+          if (this.y < 0) this.y = height;
+          if (this.y > height) this.y = 0;
+        }
+
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fillStyle = this.isGold
+            ? `rgba(245, 197, 66, ${this.alpha})`
+            : `rgba(180, 180, 205, ${this.alpha * 0.6})`;
+          ctx.shadowBlur = this.isGold ? 8 : 0;
+          ctx.shadowColor = "#f5c542";
+          ctx.fill();
+        }
+      }
+
+      function initParticles() {
+        particles = [];
+        const count = Math.min(Math.floor(width * 0.06), 75);
+        for (let i = 0; i < count; i++) {
+          particles.push(new MinimalParticle());
+        }
+      }
+
+      const prefersReducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      function renderCanvas() {
+        ctx.clearRect(0, 0, width, height);
+
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < 85) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = `rgba(245, 197, 66, ${0.12 * (1 - dist / 85)})`;
+              ctx.lineWidth = 0.6;
+              ctx.stroke();
+            }
+          }
+        }
+
+        particles.forEach((p) => {
+          if (!prefersReducedMotion) p.update();
+          p.draw();
+        });
+
+        if (!prefersReducedMotion) {
+          requestAnimationFrame(renderCanvas);
+        }
+      }
+
+      // Initialize
+      setLanguage(currentLang);
+      updateTypewriter();
+      initParticles();
+      renderCanvas();
+      loadSyncedData();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,457 @@
+{
+  "last_sync": "2026-09-12T20:03:55.654200+00:00",
+  "profile": {
+    "name": "João Soares",
+    "institution": "Universidade Federal de Minas Gerais (UFMG)",
+    "location": "Belo Horizonte, MG, Brasil",
+    "email": "contato.ojoaosoares@gmail.com",
+    "github_username": "ojoaosoares",
+    "github_url": "https://github.com/ojoaosoares",
+    "orcid_id": "0009-0002-7600-9784",
+    "orcid_url": "https://orcid.org/0009-0002-7600-9784",
+    "linkedin_url": "https://www.linkedin.com/in/ojoaovsoares"
+  },
+  "github": {
+    "username": "ojoaosoares",
+    "public_repos": 42,
+    "total_stars": 4,
+    "repos": [
+      {
+        "name": "QuantumSimulator",
+        "full_name": "ojoaosoares/QuantumSimulator",
+        "description": "Financial simulator and portfolio optimizer using Monte Carlo simulations, GBM, and Modern Portfolio Theory, with a FastAPI backend and Streamlit frontend",
+        "html_url": "https://github.com/ojoaosoares/QuantumSimulator",
+        "language": "Python",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-09-12T19:15:46Z",
+        "is_featured": false
+      },
+      {
+        "name": "xdp_ping",
+        "full_name": "ojoaosoares/xdp_ping",
+        "description": "High-speed ICMP and UDP packet generator using eBPF/XDP and Linux's BPF_PROG_RUN Live Frames for low-overhead packet injection and network benchmarking.",
+        "html_url": "https://github.com/ojoaosoares/xdp_ping",
+        "language": "C",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-09-12T15:06:20Z",
+        "is_featured": true
+      },
+      {
+        "name": "moovy-mvp",
+        "full_name": "ojoaosoares/moovy-mvp",
+        "description": "A cross-platform movie app with personal libraries, audio reviews, and offline-first support.",
+        "html_url": "https://github.com/ojoaosoares/moovy-mvp",
+        "language": "TypeScript",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-09-12T15:00:29Z",
+        "is_featured": false
+      },
+      {
+        "name": "ojoaosoares",
+        "full_name": "ojoaosoares/ojoaosoares",
+        "description": "",
+        "html_url": "https://github.com/ojoaosoares/ojoaosoares",
+        "language": "Code",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-09-12T14:53:53Z",
+        "is_featured": false
+      },
+      {
+        "name": "curriculum-gen",
+        "full_name": "ojoaosoares/curriculum-gen",
+        "description": "Gerador de currículos técnicos LaTeX ATS de 1 página com IA, busca semântica e métricas reais",
+        "html_url": "https://github.com/ojoaosoares/curriculum-gen",
+        "language": "Python",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-09-11T06:51:21Z",
+        "is_featured": true
+      },
+      {
+        "name": "AtesN-DS",
+        "full_name": "ojoaosoares/AtesN-DS",
+        "description": "A High-Performance Hybrid Recursive DNS Resolver Leveraging XDP",
+        "html_url": "https://github.com/ojoaosoares/AtesN-DS",
+        "language": "C",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-09-11T01:31:28Z",
+        "is_featured": true
+      },
+      {
+        "name": "GPSR-NS3",
+        "full_name": "ojoaosoares/GPSR-NS3",
+        "description": "GPSR in NS3",
+        "html_url": "https://github.com/ojoaosoares/GPSR-NS3",
+        "language": "C++",
+        "stars": 2,
+        "forks": 0,
+        "updated_at": "2026-07-02T23:48:22Z",
+        "is_featured": false
+      },
+      {
+        "name": "RIP",
+        "full_name": "ojoaosoares/RIP",
+        "description": "",
+        "html_url": "https://github.com/ojoaosoares/RIP",
+        "language": "Python",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-06-24T20:37:09Z",
+        "is_featured": false
+      },
+      {
+        "name": "mock-packet-parser",
+        "full_name": "ojoaosoares/mock-packet-parser",
+        "description": "Este projeto foi desenvolvido como parte de uma atividade acadêmica com o objetivo principal de explorar e configurar o GitHub Actions para integração contínua (CI).",
+        "html_url": "https://github.com/ojoaosoares/mock-packet-parser",
+        "language": "Python",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-06-12T11:53:43Z",
+        "is_featured": false
+      },
+      {
+        "name": "PyJupyter",
+        "full_name": "ojoaosoares/PyJupyter",
+        "description": "",
+        "html_url": "https://github.com/ojoaosoares/PyJupyter",
+        "language": "Python",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-04-27T00:53:31Z",
+        "is_featured": false
+      },
+      {
+        "name": "web-crawler",
+        "full_name": "ojoaosoares/web-crawler",
+        "description": "",
+        "html_url": "https://github.com/ojoaosoares/web-crawler",
+        "language": "Python",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-04-12T22:35:28Z",
+        "is_featured": false
+      },
+      {
+        "name": "Sorting-Algorithm-Analysis",
+        "full_name": "ojoaosoares/Sorting-Algorithm-Analysis",
+        "description": "A sorting algorithm analysis",
+        "html_url": "https://github.com/ojoaosoares/Sorting-Algorithm-Analysis",
+        "language": "C++",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2025-11-10T13:45:28Z",
+        "is_featured": false
+      },
+      {
+        "name": "encryption-lab",
+        "full_name": "ojoaosoares/encryption-lab",
+        "description": "",
+        "html_url": "https://github.com/ojoaosoares/encryption-lab",
+        "language": "Python",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2025-09-12T03:12:22Z",
+        "is_featured": false
+      },
+      {
+        "name": "Location-Service-NS3",
+        "full_name": "ojoaosoares/Location-Service-NS3",
+        "description": "",
+        "html_url": "https://github.com/ojoaosoares/Location-Service-NS3",
+        "language": "C++",
+        "stars": 1,
+        "forks": 0,
+        "updated_at": "2025-09-05T18:17:13Z",
+        "is_featured": false
+      },
+      {
+        "name": "local-sonarqube-guide",
+        "full_name": "ojoaosoares/local-sonarqube-guide",
+        "description": "How to use SonarQube Localy",
+        "html_url": "https://github.com/ojoaosoares/local-sonarqube-guide",
+        "language": "Code",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2025-08-05T22:40:53Z",
+        "is_featured": false
+      },
+      {
+        "name": "myConfiguration",
+        "full_name": "ojoaosoares/myConfiguration",
+        "description": "My Configuration",
+        "html_url": "https://github.com/ojoaosoares/myConfiguration",
+        "language": "Vim Script",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2025-03-11T18:13:34Z",
+        "is_featured": false
+      },
+      {
+        "name": "Fermat-Numbers-Factors",
+        "full_name": "ojoaosoares/Fermat-Numbers-Factors",
+        "description": "Fermat Number Factors and Primality Test",
+        "html_url": "https://github.com/ojoaosoares/Fermat-Numbers-Factors",
+        "language": "C++",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2025-03-07T19:59:06Z",
+        "is_featured": false
+      },
+      {
+        "name": "Pepins-Test",
+        "full_name": "ojoaosoares/Pepins-Test",
+        "description": "Pepin's Primality Test on Fermat Numbers",
+        "html_url": "https://github.com/ojoaosoares/Pepins-Test",
+        "language": "C++",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2025-03-07T19:57:01Z",
+        "is_featured": false
+      },
+      {
+        "name": "Mersenne-Primality-Checker",
+        "full_name": "ojoaosoares/Mersenne-Primality-Checker",
+        "description": "A Mersenne Primality Test that implements the Lucas-Lehmer Test",
+        "html_url": "https://github.com/ojoaosoares/Mersenne-Primality-Checker",
+        "language": "C++",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2025-02-27T02:19:23Z",
+        "is_featured": false
+      },
+      {
+        "name": "The-Lost-Woods",
+        "full_name": "ojoaosoares/The-Lost-Woods",
+        "description": "Dijkstra vs A* and Adjacency Matrix vs Lists comparison",
+        "html_url": "https://github.com/ojoaosoares/The-Lost-Woods",
+        "language": "C++",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2025-02-14T05:35:49Z",
+        "is_featured": false
+      },
+      {
+        "name": "Q-Learning",
+        "full_name": "ojoaosoares/Q-Learning",
+        "description": "An implementation of Q-Learning for a college work",
+        "html_url": "https://github.com/ojoaosoares/Q-Learning",
+        "language": "Python",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2025-02-14T05:07:51Z",
+        "is_featured": false
+      },
+      {
+        "name": "spoj",
+        "full_name": "ojoaosoares/spoj",
+        "description": "Spoj solutions",
+        "html_url": "https://github.com/ojoaosoares/spoj",
+        "language": "C",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2025-02-14T04:59:02Z",
+        "is_featured": false
+      },
+      {
+        "name": "codeForces",
+        "full_name": "ojoaosoares/codeForces",
+        "description": "CodeForces solutions",
+        "html_url": "https://github.com/ojoaosoares/codeForces",
+        "language": "C++",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2025-02-14T04:58:12Z",
+        "is_featured": false
+      },
+      {
+        "name": "Minimum-Path",
+        "full_name": "ojoaosoares/Minimum-Path",
+        "description": "",
+        "html_url": "https://github.com/ojoaosoares/Minimum-Path",
+        "language": "C++",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2024-12-10T19:46:21Z",
+        "is_featured": false
+      },
+      {
+        "name": "Carmichael-Numbers",
+        "full_name": "ojoaosoares/Carmichael-Numbers",
+        "description": "",
+        "html_url": "https://github.com/ojoaosoares/Carmichael-Numbers",
+        "language": "C++",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2024-09-21T22:54:07Z",
+        "is_featured": false
+      },
+      {
+        "name": "Prime-Counting",
+        "full_name": "ojoaosoares/Prime-Counting",
+        "description": "A study about prime numbers density",
+        "html_url": "https://github.com/ojoaosoares/Prime-Counting",
+        "language": "C++",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2024-09-05T02:42:33Z",
+        "is_featured": false
+      },
+      {
+        "name": "Sieve-of-Eratosthenes",
+        "full_name": "ojoaosoares/Sieve-of-Eratosthenes",
+        "description": "Eratosthenes prime number generator method",
+        "html_url": "https://github.com/ojoaosoares/Sieve-of-Eratosthenes",
+        "language": "C++",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2024-08-31T02:12:49Z",
+        "is_featured": false
+      },
+      {
+        "name": "Fermat-Factorization",
+        "full_name": "ojoaosoares/Fermat-Factorization",
+        "description": "Fermat's factorization method",
+        "html_url": "https://github.com/ojoaosoares/Fermat-Factorization",
+        "language": "C++",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2024-08-29T03:08:29Z",
+        "is_featured": false
+      },
+      {
+        "name": "algorithms",
+        "full_name": "ojoaosoares/algorithms",
+        "description": "Algorithms and Data Structures",
+        "html_url": "https://github.com/ojoaosoares/algorithms",
+        "language": "C++",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2024-07-07T20:10:40Z",
+        "is_featured": false
+      },
+      {
+        "name": "Teacher-Pay-Student-Performance",
+        "full_name": "ojoaosoares/Teacher-Pay-Student-Performance",
+        "description": "",
+        "html_url": "https://github.com/ojoaosoares/Teacher-Pay-Student-Performance",
+        "language": "Jupyter Notebook",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2024-06-24T02:31:33Z",
+        "is_featured": false
+      },
+      {
+        "name": "atividade-semana-3-iJunior",
+        "full_name": "ojoaosoares/atividade-semana-3-iJunior",
+        "description": "",
+        "html_url": "https://github.com/ojoaosoares/atividade-semana-3-iJunior",
+        "language": "TypeScript",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2024-05-13T03:10:19Z",
+        "is_featured": false
+      },
+      {
+        "name": "orcamento-pessoal",
+        "full_name": "ojoaosoares/orcamento-pessoal",
+        "description": "A JavaScript-based database designed using localStorage",
+        "html_url": "https://github.com/ojoaosoares/orcamento-pessoal",
+        "language": "HTML",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2024-03-06T06:32:47Z",
+        "is_featured": false
+      },
+      {
+        "name": "school_sharp",
+        "full_name": "ojoaosoares/school_sharp",
+        "description": "An e-commerce of a E-Learning plataform ",
+        "html_url": "https://github.com/ojoaosoares/school_sharp",
+        "language": "HTML",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2024-03-06T06:04:52Z",
+        "is_featured": false
+      },
+      {
+        "name": "section-dropdown-nav",
+        "full_name": "ojoaosoares/section-dropdown-nav",
+        "description": "Intro Section with Dropdown Navigation",
+        "html_url": "https://github.com/ojoaosoares/section-dropdown-nav",
+        "language": "HTML",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2024-03-06T06:04:41Z",
+        "is_featured": false
+      },
+      {
+        "name": "e-commerce-programming-school",
+        "full_name": "ojoaosoares/e-commerce-programming-school",
+        "description": "An e-commerce of a programming school",
+        "html_url": "https://github.com/ojoaosoares/e-commerce-programming-school",
+        "language": "CSS",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2024-03-06T06:04:29Z",
+        "is_featured": false
+      },
+      {
+        "name": "tic-tac-toe",
+        "full_name": "ojoaosoares/tic-tac-toe",
+        "description": "Tic tac toe using javascript",
+        "html_url": "https://github.com/ojoaosoares/tic-tac-toe",
+        "language": "JavaScript",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2024-03-06T06:03:17Z",
+        "is_featured": false
+      },
+      {
+        "name": "beecrowd",
+        "full_name": "ojoaosoares/beecrowd",
+        "description": "BeeCrowd solutions",
+        "html_url": "https://github.com/ojoaosoares/beecrowd",
+        "language": "C++",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2024-03-06T06:01:07Z",
+        "is_featured": false
+      },
+      {
+        "name": "JoinUs",
+        "full_name": "ojoaosoares/JoinUs",
+        "description": "Join Us is a web application that collects and manages emails using MySQL",
+        "html_url": "https://github.com/ojoaosoares/JoinUs",
+        "language": "JavaScript",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2024-03-06T06:00:28Z",
+        "is_featured": false
+      }
+    ]
+  },
+  "orcid": [
+    {
+      "title": "Processamento de Pacotes Baseado em GPU",
+      "venue": "Minicursos do SBRC 2025",
+      "year": "2025",
+      "type": "book-chapter",
+      "url": "http://dx.doi.org/10.5753/sbc.18862.9.1",
+      "doi": "https://doi.org/10.5753/sbc.18862.9.1"
+    },
+    {
+      "title": "AtesN-DS: Acelerando o DNS com eBPF",
+      "venue": "Anais Estendidos do XV Simpósio de Engenharia de Sistemas Computacionais",
+      "year": "2025",
+      "type": "conference-paper",
+      "url": "https://sol.sbc.org.br/index.php/sbesc_estendido/article/view/39485",
+      "doi": "https://doi.org/10.5753/sbesc_estendido.2025.15177"
+    }
+  ]
+}
