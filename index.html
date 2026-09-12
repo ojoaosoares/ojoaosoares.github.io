@@ -348,6 +348,29 @@
         box-shadow: 0 0 12px var(--gold-glow);
       }
 
+      .retro-btn-nav {
+        background: rgba(245, 197, 66, 0.08);
+        border: 1px solid var(--gold-border);
+        color: var(--gold-primary);
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding: 0.4rem 0.75rem;
+        border-radius: var(--radius-sm);
+        cursor: pointer;
+        transition: var(--transition-smooth);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+
+      .retro-btn-nav:hover {
+        background: rgba(245, 197, 66, 0.2);
+        border-color: var(--gold-primary);
+        box-shadow: 0 0 12px var(--gold-glow);
+        transform: translateY(-1px);
+      }
+
       .cv-btn-nav {
         background: var(--gold-primary);
         color: #08080b;
@@ -379,7 +402,7 @@
         padding: 0.4rem;
       }
 
-      .mobile-cv-item {
+      .mobile-cv-item, .mobile-retro-item {
         display: none;
       }
 
@@ -1522,6 +1545,264 @@
         gap: 0.35rem 0.6rem;
       }
 
+      /* ==========================================================================
+         Retro Mode Styles (Academic Web 1.0 Computer Science Researcher)
+         ========================================================================== */
+      #retro-container {
+        display: none;
+        background-color: #ffffff;
+        color: #000000;
+        font-family: "Times New Roman", Times, "Nimbus Roman No9 L", serif;
+        font-size: 16px;
+        line-height: 1.45;
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 24px 20px 48px;
+        box-sizing: border-box;
+      }
+
+      body.retro-mode {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        font-family: "Times New Roman", Times, "Nimbus Roman No9 L", serif !important;
+        line-height: 1.45 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow-x: hidden !important;
+      }
+
+      body.retro-mode .navbar,
+      body.retro-mode #fog-canvas,
+      body.retro-mode .ambient-glow,
+      body.retro-mode .ambient-glow-secondary,
+      body.retro-mode .skip-link,
+      body.retro-mode main,
+      body.retro-mode .footer,
+      body.retro-mode .toast-msg {
+        display: none !important;
+      }
+
+      body.retro-mode #retro-container {
+        display: block !important;
+      }
+
+      /* Retro Navigation Toolbar */
+      .retro-toolbar {
+        background: #ece9d8;
+        border: 2px outset #ffffff;
+        padding: 8px 12px;
+        margin-bottom: 24px;
+        font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .retro-toolbar-title {
+        font-weight: bold;
+        color: #333333;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .retro-toolbar-actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .retro-btn {
+        background: #ece9d8;
+        color: #000000 !important;
+        border: 2px outset #ffffff;
+        padding: 4px 10px;
+        font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none !important;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .retro-btn:hover {
+        background: #f5f3e9;
+      }
+
+      .retro-btn:active {
+        border-style: inset;
+        padding: 5px 9px 3px 11px;
+      }
+
+      .retro-btn-primary {
+        background: #dfdac8;
+        font-weight: bold;
+        color: #000066 !important;
+      }
+
+      /* Retro Typography & Links */
+      #retro-container h1 {
+        font-size: 2.2rem;
+        margin: 0 0 6px 0;
+        color: #000000;
+        font-weight: bold;
+      }
+
+      #retro-container h2 {
+        font-size: 1.45rem;
+        margin: 22px 0 8px 0;
+        color: #000000;
+        font-weight: bold;
+        border-bottom: 1px solid #000000;
+        padding-bottom: 2px;
+      }
+
+      #retro-container h3 {
+        font-size: 1.15rem;
+        margin: 14px 0 6px 0;
+        color: #000000;
+        font-weight: bold;
+      }
+
+      #retro-container p {
+        margin: 8px 0;
+      }
+
+      #retro-container a {
+        color: #0000ee !important;
+        text-decoration: underline !important;
+      }
+
+      #retro-container a:visited {
+        color: #551a8b !important;
+      }
+
+      #retro-container a:hover,
+      #retro-container a:active {
+        color: #ee0000 !important;
+      }
+
+      #retro-container hr {
+        border: 0;
+        border-top: 1px solid #000000;
+        margin: 18px 0;
+        width: 100%;
+      }
+
+      #retro-container ul {
+        margin: 6px 0 14px 24px;
+        padding: 0;
+      }
+
+      #retro-container li {
+        margin-bottom: 6px;
+      }
+
+      /* Retro Header Layout */
+      .retro-header-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 14px;
+      }
+
+      .retro-header-table td {
+        vertical-align: top;
+        padding: 4px;
+      }
+
+      .retro-photo-cell {
+        width: 195px;
+        padding-right: 20px !important;
+      }
+
+      .retro-photo {
+        width: 180px;
+        max-width: 100%;
+        height: auto;
+        border: 1px solid #000000;
+        padding: 2px;
+        background: #ffffff;
+        display: block;
+      }
+
+      .retro-links-bar {
+        margin: 10px 0;
+        font-size: 0.95rem;
+      }
+
+      .retro-highlight-note {
+        margin: 12px 0;
+        padding: 8px 12px;
+        background: #ffffcc;
+        border: 1px solid #cccccc;
+        font-size: 0.95rem;
+      }
+
+      .retro-pub-item {
+        margin-bottom: 12px;
+      }
+
+      .retro-pub-title {
+        font-weight: bold;
+      }
+
+      .retro-pub-meta {
+        font-style: italic;
+      }
+
+      .retro-pub-tags {
+        font-size: 0.9rem;
+        margin-top: 2px;
+      }
+
+      .retro-pet-box {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-top: 8px;
+      }
+
+      .retro-pet-img {
+        width: 130px;
+        border: 1px solid #000000;
+        padding: 2px;
+        background: #ffffff;
+      }
+
+      .retro-footer {
+        margin-top: 30px;
+        font-size: 0.88rem;
+        color: #444444;
+      }
+
+      @media (max-width: 680px) {
+        .retro-header-table, .retro-header-table tbody, .retro-header-table tr, .retro-header-table td {
+          display: block;
+          width: 100% !important;
+          padding: 0 !important;
+        }
+
+        .retro-photo-cell {
+          margin-bottom: 14px;
+          text-align: center;
+        }
+
+        .retro-photo {
+          margin: 0 auto;
+        }
+
+        .retro-pet-box {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
       /* Responsive Media Queries */
       @media (max-width: 1024px) {
         .about-grid {
@@ -1582,6 +1863,10 @@
           display: none;
         }
 
+        .retro-btn-nav span {
+          display: none;
+        }
+
         .mobile-menu-toggle {
           display: flex;
           align-items: center;
@@ -1603,14 +1888,16 @@
           backdrop-filter: blur(20px);
         }
 
-        .nav-links.mobile-open .mobile-cv-item {
+        .nav-links.mobile-open .mobile-cv-item,
+        .nav-links.mobile-open .mobile-retro-item {
           display: block;
           margin-top: 0.5rem;
           padding-top: 1rem;
           border-top: 1px solid rgba(245, 197, 66, 0.15);
         }
 
-        .mobile-cv-link {
+        .mobile-cv-link,
+        .mobile-retro-link {
           display: inline-flex;
           align-items: center;
           gap: 0.5rem;
@@ -1619,6 +1906,7 @@
           font-family: var(--font-mono);
           font-size: 0.9rem;
           text-decoration: none;
+          cursor: pointer;
         }
 
         .hero-title {
@@ -1877,9 +2165,19 @@
               <span data-lang-key="cv_button">Currículo</span>
             </a>
           </li>
+          <li class="mobile-retro-item">
+            <a href="javascript:void(0)" class="mobile-retro-link" id="mobile-retro-toggle">
+              <i class="fa-solid fa-floppy-disk"></i>
+              <span id="mobile-retro-text">Modo Acadêmico 90s</span>
+            </a>
+          </li>
         </ul>
 
         <div class="nav-actions">
+          <button class="retro-btn-nav" id="retro-toggle" title="Modo Acadêmico Retrô (Web 1.0)">
+            <i class="fa-solid fa-floppy-disk"></i>
+            <span id="retro-btn-text">Modo 90s</span>
+          </button>
           <button class="lang-btn" id="lang-toggle" aria-label="Alterar idioma / Change language">
             <i class="fa-solid fa-globe"></i>
             <span id="lang-text">EN</span>
@@ -2616,6 +2914,351 @@
       </section>
     </main>
 
+    <!-- ==========================================================================
+         Retro Mode Academic Webpage (Web 1.0 Computer Science Researcher Style)
+         ========================================================================== -->
+    <div id="retro-container" role="region" aria-label="Academic Homepage (Web 1.0 Style)">
+      <!-- Retro Navigation Bar -->
+      <div class="retro-toolbar">
+        <div class="retro-toolbar-title">
+          <span>💾</span>
+          <span class="retro-pt">Visualização Acadêmica Retrô (Estilo Web 1.0 / DCC UFMG)</span>
+          <span class="retro-en" style="display:none;">Academic Retro View (Web 1.0 Style / DCC UFMG)</span>
+        </div>
+        <div class="retro-toolbar-actions">
+          <button type="button" class="retro-btn" id="retro-lang-btn">
+            🌐 Switch to English (EN)
+          </button>
+          <a href="curriculo.pdf" target="_blank" class="retro-btn" id="retro-cv-link" download>
+            📄 Baixar Currículo (PDF)
+          </a>
+          <button type="button" class="retro-btn retro-btn-primary" id="retro-exit-btn">
+            ⬅️ <span class="retro-pt">Voltar ao Portfólio Moderno</span><span class="retro-en" style="display:none;">Back to Modern Portfolio</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Header Table -->
+      <table class="retro-header-table" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td class="retro-photo-cell">
+            <img src="profile.jpg" alt="João Soares" class="retro-photo" width="180">
+          </td>
+          <td>
+            <h1>João Soares</h1>
+            <p>
+              <strong>
+                <span class="retro-pt">Pesquisador de Sistemas & Engenheiro de Software</span>
+                <span class="retro-en" style="display:none;">Systems Researcher & Software Engineer</span>
+              </strong><br>
+              <a href="https://lecom.dcc.ufmg.br/" target="_blank" rel="noopener noreferrer">LECOM</a> — Laboratório de Engenharia de Computadores<br>
+              <a href="https://dcc.ufmg.br/" target="_blank" rel="noopener noreferrer">Departamento de Ciência da Computação</a> (DCC)<br>
+              <a href="https://ufmg.br/" target="_blank" rel="noopener noreferrer">Universidade Federal de Minas Gerais</a> (UFMG)
+            </p>
+            <p>
+              <em>
+                <span class="retro-pt">A Universidade Federal de Minas Gerais (UFMG) é a escola número um em Ciência da Computação na América do Sul.</span>
+                <span class="retro-en" style="display:none;">Federal University of Minas Gerais is the number one school in Computer Science in South America.</span>
+              </em>
+            </p>
+            <div class="retro-links-bar">
+              [ <a href="https://lattes.cnpq.br/1035800800676947" target="_blank" rel="noopener noreferrer">Currículo Lattes (CNPq)</a> | 
+              <a href="https://orcid.org/0009-0002-7600-9784" target="_blank" rel="noopener noreferrer">ORCID</a> | 
+              <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer">Google Scholar</a> | 
+              <a href="https://github.com/ojoaosoares" target="_blank" rel="noopener noreferrer">GitHub</a> | 
+              <a href="https://linkedin.com/in/ojoaosoares" target="_blank" rel="noopener noreferrer">LinkedIn</a> | 
+              <a href="curriculo.pdf" target="_blank" download id="retro-cv-inline-link">CV (PDF)</a> ]
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <!-- Bio / Contact Invitation -->
+      <div class="retro-highlight-note">
+        <p class="retro-pt">
+          Sou graduando em Sistemas de Informação pela Universidade Federal de Minas Gerais (UFMG) e pesquisador no LECOM (DCC/UFMG). Minha pesquisa foca em aceleração de redes no kernel Linux com <strong>eBPF/XDP</strong>, processamento massivo de pacotes com GPUs/CUDA e sistemas de ultra-baixa latência. Também atuo na indústria como Engenheiro de Software Full Stack na Tarken (TypeScript, React, NestJS).
+        </p>
+        <p class="retro-en" style="display:none;">
+          I am an undergraduate student in Information Systems at the Federal University of Minas Gerais (UFMG) and researcher at LECOM (DCC/UFMG). My research focuses on in-kernel network acceleration with <strong>eBPF/XDP</strong>, massive packet processing with GPUs/CUDA, and ultra-low-latency systems. In industry, I work as a Full Stack Software Engineer at Tarken (TypeScript, React, NestJS).
+        </p>
+        <p class="retro-pt">
+          Se você tiver interesse em pesquisas em redes, eBPF/XDP, engenharia de sistemas ou colaborações técnicas, favor mandar um e-mail para mim: <code>joaomarcus {at} dcc {dot} ufmg {dot} br</code> ou <code>joaomarcusms {at} gmail {dot} com</code>.
+        </p>
+        <p class="retro-en" style="display:none;">
+          If you are interested in computer networking research, eBPF/XDP acceleration, systems engineering, or technical collaborations, please drop me an email: <code>joaomarcus {at} dcc {dot} ufmg {dot} br</code> or <code>joaomarcusms {at} gmail {dot} com</code>.
+        </p>
+      </div>
+
+      <hr>
+
+      <!-- Areas of Interest -->
+      <h2>
+        <span class="retro-pt">Áreas de Interesse</span>
+        <span class="retro-en" style="display:none;">Areas of Interest</span>
+      </h2>
+      <ul>
+        <li>
+          <strong class="retro-pt">Redes de Computadores e Sistemas Distribuídos:</strong>
+          <strong class="retro-en" style="display:none;">Computer Networking & Distributed Systems:</strong>
+          <span class="retro-pt">Arquiteturas de rede de alto desempenho, processamento de pacotes e protocolos de comunicação.</span>
+          <span class="retro-en" style="display:none;">High-performance network architectures, packet processing, and transport protocols.</span>
+        </li>
+        <li>
+          <strong class="retro-pt">Aceleração no Kernel do Linux (eBPF, XDP & AF_XDP):</strong>
+          <strong class="retro-en" style="display:none;">In-Kernel Network Acceleration (eBPF, XDP & AF_XDP):</strong>
+          <span class="retro-pt">Processamento direto no driver de rede (kernel-bypass e in-kernel), offloading de cache e filtragem DDoS em tempo real.</span>
+          <span class="retro-en" style="display:none;">Driver-level packet inspection, in-kernel caching offload, and wire-speed DDoS mitigation.</span>
+        </li>
+        <li>
+          <strong class="retro-pt">Sistemas Operacionais & Programação Paralela:</strong>
+          <strong class="retro-en" style="display:none;">Operating Systems & Parallel Computing:</strong>
+          <span class="retro-pt">Linux, xv6 (RISC-V), paralelismo massivo em GPUs (CUDA/DOCA) e sincronização concorrente de memória.</span>
+          <span class="retro-en" style="display:none;">Linux kernel, xv6 (RISC-V), GPU-based acceleration (CUDA/DOCA), and lock-free concurrent memory structures.</span>
+        </li>
+        <li>
+          <strong class="retro-pt">Simulação de Redes & Algoritmos de Roteamento:</strong>
+          <strong class="retro-en" style="display:none;">Network Simulation & Routing Algorithms:</strong>
+          <span class="retro-pt">Simulação com ns-3, roteamento geográfico (GPSR) e planarização dinâmica de grafos (Gabriel Graph e RNG).</span>
+          <span class="retro-en" style="display:none;">Discrete-event simulation with ns-3, Geographic Perimeter Stateless Routing (GPSR), and planar graph algorithms.</span>
+        </li>
+        <li>
+          <strong class="retro-pt">Engenharia de Software & Arquitetura Web/Mobile:</strong>
+          <strong class="retro-en" style="display:none;">Software Engineering & Web/Mobile Architecture:</strong>
+          <span class="retro-pt">TypeScript, React, React Native, NestJS, TypeORM, testes automatizados (Playwright/Jest) e Spec-Driven Development (SDD).</span>
+          <span class="retro-en" style="display:none;">TypeScript, React, React Native, NestJS, TypeORM, automated testing (Playwright/Jest), and Spec-Driven Development.</span>
+        </li>
+      </ul>
+
+      <hr>
+
+      <!-- Publications & Honors -->
+      <h2>
+        <span class="retro-pt">Publicações & Trabalhos Científicos</span>
+        <span class="retro-en" style="display:none;">Publications & Preprints</span>
+      </h2>
+      <ul>
+        <li class="retro-pub-item">
+          <span class="retro-pub-title">
+            <span class="retro-pt">AtesN-DS: Acelerando a Resolução Recursiva de DNS com eBPF/XDP</span>
+            <span class="retro-en" style="display:none;">AtesN-DS: Accelerating Recursive DNS Resolution with eBPF/XDP</span>
+          </span><br>
+          <span class="retro-pub-meta">
+            João M. Soares.
+          </span><br>
+          <span class="retro-pt">
+            <em>XV Simpósio Brasileiro de Engenharia de Sistemas Computacionais (SBESC 2025)</em>, Natal, RN, Brasil.
+          </span>
+          <span class="retro-en" style="display:none;">
+            <em>XV Brazilian Symposium on Computing Systems Engineering (SBESC 2025)</em>, Natal, RN, Brazil.
+          </span><br>
+          <span class="retro-pub-tags">
+            [ Artigo Completo & Apresentação Oral ] · Resolução de DNS no kernel Linux com bypass de pilha, atingindo +213% de vazão e -51% de latência.
+          </span>
+        </li>
+
+        <li class="retro-pub-item">
+          <span class="retro-pub-title">
+            <span class="retro-pt">Processamento de Pacotes em Alta Velocidade com GPUs (Capítulo de Livro)</span>
+            <span class="retro-en" style="display:none;">High-Speed Packet Processing with GPUs (Book Chapter)</span>
+          </span><br>
+          <span class="retro-pub-meta">
+            Capítulo 1, Livro de Minicursos do XLIII Simpósio Brasileiro de Redes de Computadores e Sistemas Distribuídos (SBRC 2025).
+          </span><br>
+          <span class="retro-pub-tags">
+            [ Co-autor ] · Técnicas de paralelismo massivo em hardware acelerado, pipelines CUDA/DOCA e gerenciamento de buffers para redes 100Gbps+.
+          </span>
+        </li>
+
+        <li class="retro-pub-item">
+          <span class="retro-pub-title">
+            <span class="retro-pt">Prêmio de Relevância Acadêmica na XXXIV Semana do Conhecimento UFMG (2025)</span>
+            <span class="retro-en" style="display:none;">Academic Relevance Award at UFMG Knowledge Week (2025)</span>
+          </span><br>
+          <span class="retro-pub-meta">
+            Departamento de Ciência da Computação (DCC) / Instituto de Ciências Exatas (ICEx) / UFMG.
+          </span><br>
+          <span class="retro-pub-tags">
+            Distinção outorgada aos projetos científicos de maior destaque e impacto tecnológico do departamento.
+          </span>
+        </li>
+
+        <li class="retro-pub-item">
+          <span class="retro-pub-title">
+            <span class="retro-pt">Japanese-Language Proficiency Test (JLPT)</span>
+            <span class="retro-en" style="display:none;">Japanese-Language Proficiency Test (JLPT)</span>
+          </span><br>
+          <span class="retro-pub-meta">
+            The Japan Foundation & Japan Educational Exchanges and Services.
+          </span><br>
+          <span class="retro-pub-tags">
+            Certificação oficial internacional de proficiência no idioma japonês.
+          </span>
+        </li>
+      </ul>
+
+      <hr>
+
+      <!-- Selected Projects & Software -->
+      <h2>
+        <span class="retro-pt">Projetos Selecionados & Software</span>
+        <span class="retro-en" style="display:none;">Selected Projects & Software</span>
+      </h2>
+      <ul>
+        <li>
+          <strong><a href="https://github.com/ojoaosoares/AtesN-DS" target="_blank" rel="noopener noreferrer">AtesN-DS</a></strong> — 
+          <span class="retro-pt">Resolvedor DNS recursivo de ultra-alta vazão programado em C, eBPF e Go. Processa consultas diretamente na camada de driver de rede via XDP (eBPF maps, Ring Buffer e AF_XDP). +213% de vazão comparado ao hyDNS e redução de até 70ms na latência de cauda.</span>
+          <span class="retro-en" style="display:none;">Ultra-high-throughput recursive DNS resolver written in C, eBPF, and Go. Processes queries directly in the network driver layer using XDP (eBPF maps, Ring Buffer, and AF_XDP). +213% throughput vs. hyDNS and up to 70ms tail latency reduction.</span>
+        </li>
+        <li>
+          <strong><a href="https://github.com/ojoaosoares/CurrGen" target="_blank" rel="noopener noreferrer">CurrGen</a></strong> — 
+          <span class="retro-pt">Engine e pipeline de compilação automatizada de currículos acadêmicos e profissionais. Combina perfis em YAML, renderização em LaTeX de alta precisão tipográfica, cálculo geométrico de densidade e sintonia semântica via LLMs.</span>
+          <span class="retro-en" style="display:none;">Automated curriculum compiler and engine combining YAML profiles, pixel-perfect LaTeX typesetting, geometric space budget estimation, and semantic optimization via LLMs.</span>
+        </li>
+        <li>
+          <strong><a href="https://github.com/ojoaosoares/inverted-index" target="_blank" rel="noopener noreferrer">SPIMI Inverted Index Engine</a></strong> — 
+          <span class="retro-pt">Motor de indexação invertida de alta eficiência com paralelismo multi-core em C++. Implementa arquitetura SPIMI (Single-Pass In-Memory Indexing), compressão de inteiros com V-Byte e ranqueamento de relevância por BM25 e TF-IDF.</span>
+          <span class="retro-en" style="display:none;">High-efficiency inverted index engine with multi-core parallelism in C++. Implements SPIMI (Single-Pass In-Memory Indexing), V-Byte integer compression, and BM25/TF-IDF ranked retrieval.</span>
+        </li>
+        <li>
+          <strong><a href="https://github.com/ojoaosoares/ns3-gpsr-planarization" target="_blank" rel="noopener noreferrer">ns-3 GPSR Planarization</a></strong> — 
+          <span class="retro-pt">Extensão do simulador de redes de eventos discretos ns-3 para o protocolo Geographic Perimeter Stateless Routing (GPSR), com suporte a grafos planares dinâmicos (Gabriel Graph e Relative Neighborhood Graph) para recuperação de vazios de roteamento.</span>
+          <span class="retro-en" style="display:none;">ns-3 discrete-event network simulator extension for Geographic Perimeter Stateless Routing (GPSR) with dynamic graph planarization (Gabriel Graph and RNG) for void recovery.</span>
+        </li>
+        <li>
+          <strong><a href="https://github.com/ojoaosoares/xv6-riscv-extensions" target="_blank" rel="noopener noreferrer">xv6 RISC-V Kernel Hacking</a></strong> — 
+          <span class="retro-pt">Modificações no kernel educacional xv6 para arquitetura RISC-V: escalonador proporcional por loteria com alocação determinística de tickets e implementação de nova chamada de sistema (syscall) com rastreamento de contadores.</span>
+          <span class="retro-en" style="display:none;">Modifications to the xv6 RISC-V operating system kernel: lottery proportional-share CPU scheduler and custom system calls with process accounting.</span>
+        </li>
+        <li>
+          <strong><a href="https://github.com/ojoaosoares/xdp-tools-suite" target="_blank" rel="noopener noreferrer">XDP Network Utilities & HTTP Server</a></strong> — 
+          <span class="retro-pt">Utilitários de baixo nível executados diretamente no contexto do driver de placa de rede: resposta imediata a ICMP Echo (ping) em nível XDP e servidor HTTP de alta concorrência em C.</span>
+          <span class="retro-en" style="display:none;">Low-level networking utilities running directly in the network driver: zero-overhead ICMP Echo (ping) responder in XDP and lightweight concurrent HTTP server in C.</span>
+        </li>
+      </ul>
+
+      <hr>
+
+      <!-- Trajectory / Experience -->
+      <h2>
+        <span class="retro-pt">Trajetória Acadêmica & Profissional</span>
+        <span class="retro-en" style="display:none;">Academic Journey & Experience</span>
+      </h2>
+      <ul>
+        <li>
+          <strong>Tarken</strong> — <em><span class="retro-pt">Engenheiro de Software Full Stack & Mobile</span><span class="retro-en" style="display:none;">Full Stack & Mobile Software Engineer Intern</span></em> (Set 2025 — Presente)<br>
+          <span class="retro-pt">Desenvolvimento de sistemas corporativos escaláveis e aplicativos móveis. Arquitetura de APIs REST com NestJS, TypeORM e TypeScript. Construção de interfaces com React e React Native. Testes end-to-end com Playwright e Jest (80% de cobertura nos fluxos críticos). Infraestrutura na AWS e observabilidade de logs.</span>
+          <span class="retro-en" style="display:none;">Building enterprise web and mobile applications. REST API architecture with NestJS, TypeORM, and TypeScript. Front-end development with React and React Native. E2E and unit testing with Playwright and Jest (80% critical path coverage). AWS deployments and observability.</span>
+        </li>
+        <li>
+          <strong>LECOM / DCC / UFMG</strong> — <em><span class="retro-pt">Bolsista de Iniciação Científica (Pesquisa em Sistemas)</span><span class="retro-en" style="display:none;">Scientific Research Fellow (Systems Research)</span></em> (Abr 2024 — Presente)<br>
+          <span class="retro-pt">Pesquisa em aceleração de redes no kernel Linux. Criação do AtesN-DS (eBPF/XDP), minicurso SBRC 2025 sobre processamento com GPUs, mitigação de DDoS com Machine Learning no kernel e offload de hardware.</span>
+          <span class="retro-en" style="display:none;">Applied research in Linux kernel networking. Development of AtesN-DS (eBPF/XDP), SBRC 2025 short-course on GPU packet processing, in-kernel ML-based DDoS mitigation, and hardware offloading.</span>
+        </li>
+        <li>
+          <strong>DCC / UFMG</strong> — <em><span class="retro-pt">Monitor da Graduação — GAAL</span><span class="retro-en" style="display:none;">Teaching Assistant — Linear Algebra</span></em> (Jun 2023 — Jan 2024)<br>
+          <span class="retro-pt">Monitoria acadêmica na disciplina de Geometria Analítica e Álgebra Linear para estudantes dos cursos de ciências exatas da UFMG. Atendimento a dúvidas, resolução de listas de exercícios e preparação para exames.</span>
+          <span class="retro-en" style="display:none;">Mentored undergraduate engineering and science students across UFMG in Linear Algebra and Analytic Geometry: vector spaces, linear transformations, eigenvalues, and matrix decomposition.</span>
+        </li>
+        <li>
+          <strong>UFMG</strong> — <em><span class="retro-pt">Bacharelado em Sistemas de Informação</span><span class="retro-en" style="display:none;">B.Sc. in Information Systems</span></em> (2023 — Fev 2027)<br>
+          <span class="retro-pt">Formação no Departamento de Ciência da Computação com ênfase em sistemas computacionais, redes, arquitetura de computadores, banco de dados e algoritmos avançados.</span>
+          <span class="retro-en" style="display:none;">Department of Computer Science (DCC/UFMG) with a core focus on systems engineering, computer networking, operating systems, and advanced algorithms.</span>
+        </li>
+      </ul>
+
+      <hr>
+
+      <!-- Others facts -->
+      <h2>
+        <span class="retro-pt">Outros Fatos (Others facts)</span>
+        <span class="retro-en" style="display:none;">Others facts</span>
+      </h2>
+      <ul>
+        <li>
+          <div class="retro-pet-box">
+            <div>
+              <span class="retro-pt">
+                Minha companheira fiel durante longas madrugadas de depuração de ponteiros em C, verificação de programas eBPF no kernel e redação de artigos é a minha calopsita:
+              </span>
+              <span class="retro-en" style="display:none;">
+                My faithful companion during late-night C pointer debugging, Linux kernel eBPF verifier wrestling, and research paper writing is my cockatiel:
+              </span>
+            </div>
+            <img src="joao-sobre.png" alt="João Soares e sua calopsita" class="retro-pet-img" width="130">
+          </div>
+        </li>
+        <li>
+          <span class="retro-pt">
+            Estudante apaixonado pela língua e cultura japonesa, certificado no exame oficial <strong>JLPT (Japanese-Language Proficiency Test)</strong>.
+          </span>
+          <span class="retro-en" style="display:none;">
+            Passionate student of Japanese language and culture, certified by the official <strong>JLPT (Japanese-Language Proficiency Test)</strong>.
+          </span>
+        </li>
+        <li>
+          <span class="retro-pt">
+            Orgulho de estudar na <strong>Universidade Federal de Minas Gerais (UFMG)</strong>, a melhor instituição em Ciência da Computação da América do Sul.
+          </span>
+          <span class="retro-en" style="display:none;">
+            Proud student at the <strong>Federal University of Minas Gerais (UFMG)</strong>, the number one school in Computer Science in South America.
+          </span>
+        </li>
+      </ul>
+
+      <hr>
+
+      <!-- Contact -->
+      <h2>
+        <span class="retro-pt">Contato (Contact)</span>
+        <span class="retro-en" style="display:none;">Contact</span>
+      </h2>
+      <p>
+        <strong>
+          <span class="retro-pt">Endereço Físico / Laboratório:</span>
+          <span class="retro-en" style="display:none;">Physical Address / Lab:</span>
+        </strong><br>
+        João Soares<br>
+        Laboratório de Engenharia de Computadores (LECOM)<br>
+        Departamento de Ciência da Computação (DCC)<br>
+        Instituto de Ciências Exatas (ICEx) — Universidade Federal de Minas Gerais (UFMG)<br>
+        Av. Antônio Carlos, 6627 — Pampulha<br>
+        Belo Horizonte — MG — CEP 31270-901 — Brasil
+      </p>
+      <p>
+        <strong>E-mail:</strong><br>
+        <code>joaomarcus {at} dcc {dot} ufmg {dot} br</code><br>
+        <code>joaomarcusms {at} gmail {dot} com</code>
+      </p>
+      <p>
+        <strong>
+          <span class="retro-pt">Links Acadêmicos & Redes:</span>
+          <span class="retro-en" style="display:none;">Academic & Professional Links:</span>
+        </strong><br>
+        Lattes: <a href="https://lattes.cnpq.br/1035800800676947" target="_blank" rel="noopener noreferrer">lattes.cnpq.br/1035800800676947</a><br>
+        ORCID: <a href="https://orcid.org/0009-0002-7600-9784" target="_blank" rel="noopener noreferrer">0009-0002-7600-9784</a><br>
+        GitHub: <a href="https://github.com/ojoaosoares" target="_blank" rel="noopener noreferrer">github.com/ojoaosoares</a><br>
+        LinkedIn: <a href="https://linkedin.com/in/ojoaosoares" target="_blank" rel="noopener noreferrer">linkedin.com/in/ojoaosoares</a>
+      </p>
+
+      <hr>
+
+      <!-- Retro Footer -->
+      <div class="retro-footer">
+        <p>
+          [ <a href="#retro-container"><span class="retro-pt">Voltar ao Topo</span><span class="retro-en" style="display:none;">Back to Top</span></a> ] | 
+          [ <a href="javascript:void(0)" id="retro-bottom-exit"><span class="retro-pt">Voltar ao Portfólio Moderno</span><span class="retro-en" style="display:none;">Back to Modern Portfolio</span></a> ]
+        </p>
+        <p>
+          <span class="retro-pt">
+            <em>Última atualização: Setembro de 2026. Página confeccionada em HTML e CSS clássicos no espírito dos pioneiros da computação. Sem rastreadores, sem dependências externas pesadas.</em>
+          </span>
+          <span class="retro-en" style="display:none;">
+            <em>Last updated: September 2026. Handcrafted in classic HTML and CSS in the spirit of computer science pioneers. No trackers, zero bloat.</em>
+          </span>
+        </p>
+      </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
       <div class="footer-quote" data-lang-key="footer_quote">
@@ -2890,6 +3533,35 @@
           }
         });
 
+        // Update retro language elements
+        document.querySelectorAll(".retro-pt").forEach((el) => {
+          el.style.display = lang === "pt" ? "" : "none";
+        });
+        document.querySelectorAll(".retro-en").forEach((el) => {
+          el.style.display = lang === "en" ? "" : "none";
+        });
+        const retroLangBtn = document.getElementById("retro-lang-btn");
+        if (retroLangBtn) {
+          retroLangBtn.textContent = lang === "pt" ? "🌐 Switch to English (EN)" : "🌐 Mudar para Português (PT)";
+        }
+        const retroCvLink = document.getElementById("retro-cv-link");
+        if (retroCvLink) {
+          retroCvLink.setAttribute("href", cvFile);
+          retroCvLink.textContent = lang === "pt" ? "📄 Baixar Currículo (PDF)" : "📄 Download CV (PDF)";
+        }
+        const retroCvInlineLink = document.getElementById("retro-cv-inline-link");
+        if (retroCvInlineLink) {
+          retroCvInlineLink.setAttribute("href", cvFile);
+        }
+        const retroBtnText = document.getElementById("retro-btn-text");
+        if (retroBtnText) {
+          retroBtnText.textContent = lang === "pt" ? "Modo 90s" : "90s Mode";
+        }
+        const mobileRetroText = document.getElementById("mobile-retro-text");
+        if (mobileRetroText) {
+          mobileRetroText.textContent = lang === "pt" ? "Modo Acadêmico 90s" : "90s Academic Mode";
+        }
+
         // Reset typewriter
         phraseIdx = 0;
         charIdx = 0;
@@ -3133,12 +3805,81 @@
         }
       }
 
+      // Retro Mode Management (Academic Web 1.0 Style)
+      function setRetroMode(isRetro) {
+        if (isRetro) {
+          document.body.classList.add("retro-mode");
+          localStorage.setItem("portfolio_mode", "retro");
+          if (window.location.hash !== "#retro") {
+            history.replaceState(null, "", "#retro");
+          }
+          window.scrollTo(0, 0);
+        } else {
+          document.body.classList.remove("retro-mode");
+          localStorage.setItem("portfolio_mode", "modern");
+          if (window.location.hash === "#retro") {
+            history.replaceState(null, "", window.location.pathname + window.location.search);
+          }
+        }
+      }
+
+      const retroToggle = document.getElementById("retro-toggle");
+      if (retroToggle) {
+        retroToggle.addEventListener("click", () => setRetroMode(true));
+      }
+
+      const mobileRetroToggle = document.getElementById("mobile-retro-toggle");
+      if (mobileRetroToggle) {
+        mobileRetroToggle.addEventListener("click", () => {
+          navLinks.classList.remove("mobile-open");
+          const icon = mobileToggle.querySelector("i");
+          if (icon) {
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+          }
+          setRetroMode(true);
+        });
+      }
+
+      const retroExitBtn = document.getElementById("retro-exit-btn");
+      if (retroExitBtn) {
+        retroExitBtn.addEventListener("click", () => setRetroMode(false));
+      }
+
+      const retroBottomExit = document.getElementById("retro-bottom-exit");
+      if (retroBottomExit) {
+        retroBottomExit.addEventListener("click", () => setRetroMode(false));
+      }
+
+      const retroLangBtn = document.getElementById("retro-lang-btn");
+      if (retroLangBtn) {
+        retroLangBtn.addEventListener("click", () => {
+          setLanguage(currentLang === "pt" ? "en" : "pt");
+        });
+      }
+
+      window.addEventListener("hashchange", () => {
+        if (window.location.hash === "#retro") {
+          setRetroMode(true);
+        } else if (document.body.classList.contains("retro-mode")) {
+          setRetroMode(false);
+        }
+      });
+
       // Initialize
       setLanguage(currentLang);
       updateTypewriter();
       initParticles();
       renderCanvas();
       loadSyncedData();
+
+      // Check initial mode: Default is ALWAYS modern. Only enter retro if hash is #retro or ?mode=retro
+      const urlParams = new URLSearchParams(window.location.search);
+      if (window.location.hash === "#retro" || urlParams.get("mode") === "retro") {
+        setRetroMode(true);
+      } else {
+        setRetroMode(false);
+      }
     </script>
   </body>
 </html>
