@@ -1,5 +1,5 @@
 {
-  "last_sync": "2026-09-12T20:03:55.654200+00:00",
+  "last_sync": "2026-09-12T20:12:48.099863+00:00",
   "profile": {
     "name": "João Soares",
     "institution": "Universidade Federal de Minas Gerais (UFMG)",
@@ -13,9 +13,20 @@
   },
   "github": {
     "username": "ojoaosoares",
-    "public_repos": 42,
+    "public_repos": 43,
     "total_stars": 4,
     "repos": [
+      {
+        "name": "ojoaosoares.github.io",
+        "full_name": "ojoaosoares/ojoaosoares.github.io",
+        "description": "",
+        "html_url": "https://github.com/ojoaosoares/ojoaosoares.github.io",
+        "language": "HTML",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-09-12T20:12:36Z",
+        "is_featured": false
+      },
       {
         "name": "QuantumSimulator",
         "full_name": "ojoaosoares/QuantumSimulator",
