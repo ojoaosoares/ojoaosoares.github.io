@@ -17,8 +17,9 @@ import datetime
 CONFIG = {
     "github_username": "ojoaosoares",
     "orcid_id": "0009-0002-7600-9784",
+    "lattes_url": "https://lattes.cnpq.br/1035800800676947",
     "linkedin_url": "https://www.linkedin.com/in/ojoaovsoares",
-    "email": "contato.ojoaosoares@gmail.com",
+    "email": "joaosoares@dcc.ufmg.br",
     "name": "João Soares",
     "institution": "Universidade Federal de Minas Gerais (UFMG)",
     "location": "Belo Horizonte, MG, Brasil"
@@ -152,6 +153,7 @@ def main():
             "github_url": f"https://github.com/{CONFIG['github_username']}",
             "orcid_id": CONFIG["orcid_id"],
             "orcid_url": f"https://orcid.org/{CONFIG['orcid_id']}",
+            "lattes_url": CONFIG["lattes_url"],
             "linkedin_url": CONFIG["linkedin_url"]
         },
         "github": github_info,

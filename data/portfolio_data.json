@@ -1,14 +1,15 @@
 {
-  "last_sync": "2026-09-12T20:12:48.099863+00:00",
+  "last_sync": "2026-09-12T20:50:49.372075+00:00",
   "profile": {
     "name": "João Soares",
     "institution": "Universidade Federal de Minas Gerais (UFMG)",
     "location": "Belo Horizonte, MG, Brasil",
-    "email": "contato.ojoaosoares@gmail.com",
+    "email": "joaosoares@dcc.ufmg.br",
     "github_username": "ojoaosoares",
     "github_url": "https://github.com/ojoaosoares",
     "orcid_id": "0009-0002-7600-9784",
     "orcid_url": "https://orcid.org/0009-0002-7600-9784",
+    "lattes_url": "https://lattes.cnpq.br/1035800800676947",
     "linkedin_url": "https://www.linkedin.com/in/ojoaovsoares"
   },
   "github": {
@@ -24,7 +25,7 @@
         "language": "HTML",
         "stars": 0,
         "forks": 0,
-        "updated_at": "2026-09-12T20:12:36Z",
+        "updated_at": "2026-09-12T20:18:12Z",
         "is_featured": false
       },
       {
