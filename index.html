@@ -23,15 +23,72 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
 
+    <!-- Canonical & Search Engine Directives -->
+    <link rel="canonical" href="https://ojoaosoares.github.io/" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
     <!-- Open Graph & Social Meta -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Portfólio de João Soares" />
     <meta property="og:title" content="João Soares | Sistemas, Kernel & Fullstack" />
     <meta
       property="og:description"
       content="Pesquisador no LECOM/UFMG (eBPF/XDP) e Engenheiro de Software Fullstack. Portfólio minimalista de alta performance."
     />
-    <meta property="og:image" content="profile.png" />
+    <meta property="og:url" content="https://ojoaosoares.github.io/" />
+    <meta property="og:image" content="https://ojoaosoares.github.io/profile.png" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="João Soares | Sistemas, Kernel & Fullstack" />
+    <meta
+      name="twitter:description"
+      content="Pesquisador no LECOM/UFMG (eBPF/XDP) e Engenheiro de Software Fullstack."
+    />
+    <meta name="twitter:image" content="https://ojoaosoares.github.io/profile.png" />
+
+    <!-- Structured Data (Schema.org) for Search Engines -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "João Soares",
+        "alternateName": "João Vitor Soares Santos",
+        "url": "https://ojoaosoares.github.io/",
+        "image": "https://ojoaosoares.github.io/profile.png",
+        "jobTitle": "Pesquisador Científico & Engenheiro de Software",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Tarken"
+        },
+        "affiliation": [
+          {
+            "@type": "EducationalOrganization",
+            "name": "Universidade Federal de Minas Gerais",
+            "alternateName": "UFMG",
+            "url": "https://ufmg.br/"
+          },
+          {
+            "@type": "ResearchOrganization",
+            "name": "Laboratório de Engenharia de Computadores (LECOM)"
+          }
+        ],
+        "sameAs": [
+          "https://github.com/ojoaosoares",
+          "https://www.linkedin.com/in/ojoaovsoares",
+          "https://orcid.org/0009-0002-7600-9784"
+        ],
+        "knowsAbout": [
+          "eBPF",
+          "XDP",
+          "Linux Kernel",
+          "Computer Networks",
+          "Fullstack Development",
+          "TypeScript",
+          "React",
+          "NestJS"
+        ]
+      }
+    </script>
 
     <style>
       :root {
