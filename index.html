@@ -593,12 +593,15 @@
         position: relative;
         display: flex;
         justify-content: center;
+        align-items: center;
+        width: 100%;
       }
 
       .portrait-card-frame {
         position: relative;
         width: 320px;
         aspect-ratio: 2 / 3;
+        margin: 0 auto;
       }
 
       .portrait-card {
@@ -1481,6 +1484,7 @@
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px var(--gold-glow);
         transform: translateY(100px);
         opacity: 0;
+        pointer-events: none;
         transition: var(--transition-smooth);
         z-index: 1000;
       }
@@ -1488,6 +1492,7 @@
       .toast-msg.show {
         transform: translateY(0);
         opacity: 1;
+        pointer-events: auto;
       }
 
       /* Footer */
@@ -1509,7 +1514,12 @@
       .footer-copy {
         font-family: var(--font-mono);
         color: var(--text-muted);
-        font-size: 0.8rem;
+        font-size: 0.82rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.35rem 0.6rem;
       }
 
       /* Responsive Media Queries */
@@ -1540,10 +1550,12 @@
 
         .hero-actions {
           justify-content: center;
+          margin-bottom: 2rem;
         }
 
         .hero-socials {
           justify-content: center;
+          margin-bottom: 1.5rem;
         }
 
         .about-grid {
@@ -1649,7 +1661,7 @@
           flex-direction: column;
           width: 100%;
           max-width: 360px;
-          margin: 0 auto;
+          margin: 0 auto 2rem;
           gap: 0.75rem;
         }
 
@@ -1661,22 +1673,25 @@
         }
 
         .hero-socials {
-          gap: 0.75rem;
+          gap: 0.85rem;
+          margin-bottom: 2rem;
+          justify-content: center;
         }
 
         .social-link {
-          width: 40px;
-          height: 40px;
-          font-size: 1.05rem;
+          width: 42px;
+          height: 42px;
+          font-size: 1.1rem;
         }
 
-        .portrait-card {
-          width: 250px;
+        .portrait-card-frame {
+          width: 280px;
+          margin: 0 auto;
         }
 
         .portrait-img-box {
-          width: 155px;
-          height: 185px;
+          width: 180px;
+          height: 220px;
         }
 
         .about-details {
@@ -1755,6 +1770,30 @@
           width: 100%;
           justify-content: center;
         }
+
+        .footer {
+          padding: 2.5rem 1.25rem calc(2.5rem + env(safe-area-inset-bottom, 0px));
+        }
+
+        .footer-quote {
+          font-size: 0.88rem;
+          line-height: 1.5;
+          margin-bottom: 0.85rem;
+          padding: 0 0.5rem;
+        }
+
+        .footer-copy {
+          font-size: 0.76rem;
+          flex-direction: column;
+          gap: 0.35rem;
+          line-height: 1.5;
+          text-align: center;
+        }
+
+        .footer-rights {
+          display: block;
+          word-break: normal;
+        }
       }
 
       @media (max-width: 420px) {
@@ -1781,13 +1820,22 @@
           gap: 0.25rem;
         }
 
-        .portrait-card {
-          width: 230px;
+        .portrait-card-frame {
+          width: 250px;
+          margin: 0 auto;
         }
 
         .portrait-img-box {
-          width: 140px;
-          height: 170px;
+          width: 165px;
+          height: 200px;
+        }
+
+        .footer {
+          padding: 2.25rem 1rem calc(2.5rem + env(safe-area-inset-bottom, 0px));
+        }
+
+        .footer-copy {
+          font-size: 0.72rem;
         }
       }
     </style>
@@ -2574,7 +2622,8 @@
         "Construído para alta performance, código limpo e arquitetura minimalista."
       </div>
       <div class="footer-copy">
-        © 2026 João Soares. <span data-lang-key="footer_rights">Todos os direitos reservados.</span>
+        <span class="footer-author">© 2026 João Soares.</span>
+        <span class="footer-rights" data-lang-key="footer_rights">Todos os direitos reservados.</span>
       </div>
     </footer>
 
