@@ -37,14 +37,14 @@
       content="Pesquisador no LECOM/UFMG (eBPF/XDP) e Engenheiro de Software Fullstack. Portfólio minimalista de alta performance."
     />
     <meta property="og:url" content="https://ojoaosoares.github.io/" />
-    <meta property="og:image" content="https://ojoaosoares.github.io/profile.png" />
+    <meta property="og:image" content="https://ojoaosoares.github.io/profile.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="João Soares | Sistemas, Kernel & Fullstack" />
     <meta
       name="twitter:description"
       content="Pesquisador no LECOM/UFMG (eBPF/XDP) e Engenheiro de Software Fullstack."
     />
-    <meta name="twitter:image" content="https://ojoaosoares.github.io/profile.png" />
+    <meta name="twitter:image" content="https://ojoaosoares.github.io/profile.jpg" />
 
     <!-- Structured Data (Schema.org) for Search Engines -->
     <script type="application/ld+json">
@@ -54,7 +54,7 @@
         "name": "João Soares",
         "alternateName": "João Vitor Soares Santos",
         "url": "https://ojoaosoares.github.io/",
-        "image": "https://ojoaosoares.github.io/profile.png",
+        "image": "https://ojoaosoares.github.io/profile.jpg",
         "jobTitle": "Pesquisador Científico & Engenheiro de Software",
         "worksFor": {
           "@type": "Organization",
@@ -646,31 +646,29 @@
       }
 
       .portrait-img-box {
-        width: 190px;
-        height: 220px;
+        width: 200px;
+        height: 240px;
         border-radius: var(--radius-md);
         overflow: hidden;
         border: 1px solid var(--gold-border);
         box-shadow: 0 0 25px var(--gold-glow);
-        margin-top: 0.85rem;
+        margin: 0.85rem 0;
         position: relative;
-        background: radial-gradient(circle at 50% 55%, rgba(245, 197, 66, 0.22) 0%, rgba(14, 14, 20, 0.85) 75%);
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         justify-content: center;
       }
 
       .portrait-img-box img {
         width: 100%;
         height: 100%;
-        object-fit: contain;
-        object-position: bottom center;
-        filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.65));
-        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        object-fit: cover;
+        object-position: center 20%;
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
       }
 
       .portrait-card:hover .portrait-img-box img {
-        transform: scale(1.06) translateY(-4px);
+        transform: scale(1.06);
       }
 
       .portrait-footer {
@@ -819,67 +817,79 @@
       .about-visual-column {
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 1.75rem;
       }
 
       .about-photo-card {
         border-radius: var(--radius-md);
         border: 1px solid var(--gold-border);
-        background: var(--bg-surface);
-        padding: 0.5rem;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        background: radial-gradient(circle at 50% 30%, rgba(245, 197, 66, 0.14) 0%, rgba(16, 16, 24, 0.96) 72%);
+        padding: 1.25rem 1.25rem 0;
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.65);
         transition: var(--transition-smooth);
         position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
       .about-photo-card:hover {
         border-color: var(--gold-border-hover);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 25px var(--gold-glow-soft);
-        transform: translateY(-3px);
+        box-shadow: 0 25px 55px rgba(0, 0, 0, 0.85), 0 0 35px var(--gold-glow-soft);
+        transform: translateY(-4px);
+      }
+
+      .about-photo-header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid rgba(245, 197, 66, 0.15);
+        margin-bottom: 0.5rem;
+      }
+
+      .about-photo-tag {
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        color: var(--gold-primary);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+      }
+
+      .about-photo-sub {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        letter-spacing: 0.05em;
       }
 
       .about-photo-frame {
         position: relative;
         width: 100%;
-        height: 290px;
-        border-radius: var(--radius-sm);
+        height: 520px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
         overflow: hidden;
       }
 
       .about-photo-frame img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
-        object-position: center 25%;
+        object-fit: contain;
+        object-position: bottom center;
+        filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.85));
         transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
       }
 
       .about-photo-card:hover .about-photo-frame img {
-        transform: scale(1.04);
-      }
-
-      .about-photo-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 1.25rem 1rem 0.85rem;
-        background: linear-gradient(180deg, transparent 0%, rgba(8, 8, 12, 0.85) 50%, rgba(8, 8, 12, 0.98) 100%);
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-      }
-
-      .about-photo-tag {
-        font-family: var(--font-mono);
-        font-size: 0.78rem;
-        color: var(--gold-primary);
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        background: rgba(14, 14, 20, 0.75);
-        padding: 0.3rem 0.75rem;
-        border-radius: var(--radius-full);
-        border: 1px solid var(--gold-border);
+        transform: scale(1.03) translateY(-4px);
       }
 
       .about-quote-box {
@@ -1624,6 +1634,10 @@
         .section-container {
           padding: 4.5rem 1.5rem;
         }
+
+        .about-photo-frame {
+          height: 440px;
+        }
       }
 
       @media (max-width: 640px) {
@@ -1675,7 +1689,7 @@
         }
 
         .about-photo-frame {
-          height: 240px;
+          height: 380px;
         }
 
         .skills-grid {
@@ -1755,6 +1769,10 @@
 
         .stat-card {
           padding: 1.15rem 0.85rem;
+        }
+
+        .about-photo-frame {
+          height: 310px;
         }
 
         .lattes-text-wrap {
@@ -1894,7 +1912,7 @@
                   <div class="portrait-inner-border">
                     <div class="portrait-badge-top">UFMG · LECOM</div>
                     <div class="portrait-img-box">
-                      <img src="profile.png" alt="João Soares" />
+                      <img src="profile.jpg" alt="João Soares" />
                     </div>
                     <div class="portrait-footer">
                       <div class="portrait-footer-title">JOÃO SOARES</div>
@@ -1980,11 +1998,12 @@
 
           <div class="about-visual-column">
             <div class="about-photo-card">
+              <div class="about-photo-header">
+                <span class="about-photo-tag"><i class="fa-solid fa-code-branch gold-text"></i> LECOM / UFMG</span>
+                <span class="about-photo-sub">Pesquisa & Engenharia</span>
+              </div>
               <div class="about-photo-frame">
-                <img src="joao-soares.jpg" alt="João Soares" loading="lazy" />
-                <div class="about-photo-overlay">
-                  <div class="about-photo-tag">LECOM · Pesquisa & Engenharia</div>
-                </div>
+                <img src="joao-sobre.png" alt="João Soares" loading="lazy" />
               </div>
             </div>
 
