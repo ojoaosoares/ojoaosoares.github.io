@@ -2650,6 +2650,33 @@
             </div>
           </div>
 
+          <!-- DPDK_ping -->
+          <div class="project-card" data-category="systems">
+            <div>
+              <div class="project-header">
+                <h3 class="project-title">DPDK_ping</h3>
+                <div class="project-links">
+                  <a href="https://github.com/ojoaosoares/DPDK_ping" target="_blank" rel="noopener noreferrer" class="project-link-icon" title="Repositório GitHub">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="project-metrics-badge">
+                <i class="fa-solid fa-gauge-high"></i>
+                <span data-lang-key="dpdk_badge">Kernel-Bypass · DPDK · Poll-Mode Driver</span>
+              </div>
+              <p class="project-desc" data-lang-key="dpdk_desc">
+                Servidor de ICMP Echo (Ping) de ultra-alto desempenho com bypass completo de kernel via DPDK, operando em poll-mode em CPU dedicada com atualização incremental de checksum em tempo constante O(1).
+              </p>
+            </div>
+            <div class="project-tags">
+              <span class="tag-pill">DPDK</span>
+              <span class="tag-pill">C</span>
+              <span class="tag-pill">Kernel-Bypass</span>
+              <span class="tag-pill">Networking</span>
+            </div>
+          </div>
+
           <!-- xhttp -->
           <div class="project-card" data-category="systems">
             <div>
@@ -3156,6 +3183,11 @@
           <span class="retro-en" style="display:none;">High-speed ICMP and UDP packet generator using eBPF/XDP and Linux's BPF_PROG_RUN Live Frames for low-overhead packet injection and network benchmarking.</span>
         </li>
         <li>
+          <strong><a href="https://github.com/ojoaosoares/DPDK_ping" target="_blank" rel="noopener noreferrer">DPDK_ping</a></strong> — 
+          <span class="retro-pt">Servidor ICMP Echo de alta performance com bypass de kernel via DPDK (Data Plane Development Kit), manipulando pacotes em poll-mode em CPU dedicada e checksum incremental O(1).</span>
+          <span class="retro-en" style="display:none;">High-performance DPDK ICMP Echo (Ping) server using full kernel bypass, dedicated core poll-mode packet processing, and O(1) incremental checksum updates.</span>
+        </li>
+        <li>
           <strong><a href="https://github.com/ojoaosoares/xhttp" target="_blank" rel="noopener noreferrer">xhttp</a></strong> — 
           <span class="retro-pt">Acelerador HTTP de ultra-alta performance e cache em nível de kernel construído com eBPF, XDP e TC, projetado para contornar a pilha de sockets do Linux e fornecer respostas HTTP com baixa latência e alta vazão.</span>
           <span class="retro-en" style="display:none;">Ultra-high-performance HTTP accelerator and in-kernel cache built with eBPF, XDP, and TC, designed to bypass the traditional Linux socket stack and deliver low-latency, high-throughput HTTP responses.</span>
@@ -3397,6 +3429,8 @@
           xv6_desc: "Implementação de algoritmo de escalonamento proporcional por loteria (Lottery Scheduling) no kernel do sistema operacional educacional xv6 para a arquitetura RISC-V.",
           xdpping_badge: "BPF_PROG_RUN · Live Frames · Benchmarking",
           xdpping_desc: "Gerador e injetor de pacotes ICMP e UDP de alta velocidade utilizando eBPF/XDP e BPF_PROG_RUN Live Frames do Linux para injeção de pacotes com baixa sobrecarga e benchmarking de rede.",
+          dpdk_badge: "Kernel-Bypass · DPDK · Poll-Mode Driver",
+          dpdk_desc: "Servidor de ICMP Echo (Ping) de ultra-alto desempenho com bypass completo de kernel via DPDK, operando em poll-mode em CPU dedicada com atualização incremental de checksum em tempo constante O(1).",
           xhttp_badge: "In-Kernel Cache · eBPF/XDP/TC · Kernel Bypass",
           xhttp_desc: "Acelerador HTTP e cache em nível de kernel construído com eBPF, XDP e TC, projetado para contornar a pilha de sockets do Linux e fornecer respostas HTTP de ultra-baixa latência e alta vazão.",
           quantum_badge: "Monte Carlo · GBM · Portfolio Optimization",
@@ -3502,6 +3536,8 @@
           xv6_desc: "Implementation of a lottery proportional-share CPU scheduler in the xv6 educational operating system for the RISC-V architecture.",
           xdpping_badge: "BPF_PROG_RUN · Live Frames · Benchmarking",
           xdpping_desc: "High-speed ICMP and UDP packet generator using eBPF/XDP and Linux's BPF_PROG_RUN Live Frames for low-overhead packet injection and network benchmarking.",
+          dpdk_badge: "Kernel-Bypass · DPDK · Poll-Mode Driver",
+          dpdk_desc: "Ultra-high-performance DPDK ICMP Echo (Ping) server leveraging kernel-bypass, dedicated core poll-mode processing, and O(1) incremental checksum calculation.",
           xhttp_badge: "In-Kernel Cache · eBPF/XDP/TC · Kernel Bypass",
           xhttp_desc: "Ultra-high-performance HTTP accelerator and in-kernel cache built with eBPF, XDP, and TC, designed to bypass the traditional Linux socket stack and deliver low-latency, high-throughput HTTP responses.",
           quantum_badge: "Monte Carlo · GBM · Portfolio Optimization",

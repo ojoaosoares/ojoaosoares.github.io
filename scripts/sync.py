@@ -51,6 +51,7 @@ def sync_github(username):
         "GPSR-NS3",
         "xv6-riscv-lottery-scheduler",
         "xdp_ping",
+        "DPDK_ping",
         "xhttp",
         "QuantumSimulator",
         "KIDDS"
