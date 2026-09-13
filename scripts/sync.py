@@ -48,10 +48,11 @@ def sync_github(username):
         "AtesN-DS",
         "curriculum-gen",
         "indexer-and-query-processor",
-        "ns3.29-with-gpsr",
+        "GPSR-NS3",
         "xv6-riscv-lottery-scheduler",
         "xdp_ping",
         "xhttp",
+        "QuantumSimulator",
         "KIDDS"
     ]
 
