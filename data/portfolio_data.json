@@ -1,5 +1,5 @@
 {
-  "last_sync": "2026-09-14T17:51:50.252723+00:00",
+  "last_sync": "2026-09-20T02:34:23.209113+00:00",
   "profile": {
     "name": "João Soares",
     "institution": "Universidade Federal de Minas Gerais (UFMG)",
@@ -25,18 +25,7 @@
         "language": "Code",
         "stars": 0,
         "forks": 0,
-        "updated_at": "2026-09-14T17:32:01Z",
-        "is_featured": false
-      },
-      {
-        "name": "ojoaosoares.github.io",
-        "full_name": "ojoaosoares/ojoaosoares.github.io",
-        "description": "My personal site",
-        "html_url": "https://github.com/ojoaosoares/ojoaosoares.github.io",
-        "language": "HTML",
-        "stars": 0,
-        "forks": 0,
-        "updated_at": "2026-09-13T02:17:15Z",
+        "updated_at": "2026-09-19T15:14:45Z",
         "is_featured": false
       },
       {
@@ -47,8 +36,19 @@
         "language": "C",
         "stars": 0,
         "forks": 0,
-        "updated_at": "2026-09-13T01:55:30Z",
+        "updated_at": "2026-09-15T02:58:31Z",
         "is_featured": true
+      },
+      {
+        "name": "ojoaosoares.github.io",
+        "full_name": "ojoaosoares/ojoaosoares.github.io",
+        "description": "My personal site",
+        "html_url": "https://github.com/ojoaosoares/ojoaosoares.github.io",
+        "language": "HTML",
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-09-14T17:51:51Z",
+        "is_featured": false
       },
       {
         "name": "QuantumSimulator",
