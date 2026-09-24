@@ -1094,32 +1094,49 @@
       }
 
       /* Projects Section */
-      .project-filters {
+      .project-sort-bar {
         display: flex;
         justify-content: center;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-        margin-bottom: 3rem;
+        align-items: center;
+        margin-bottom: 2.5rem;
       }
 
-      .filter-btn {
-        background: rgba(18, 18, 26, 0.6);
+      .sort-group {
+        display: inline-flex;
+        align-items: center;
+        background: rgba(18, 18, 26, 0.85);
+        padding: 0.35rem;
+        border-radius: var(--radius-full);
         border: 1px solid var(--gold-border);
+        gap: 0.35rem;
+        backdrop-filter: blur(12px);
+      }
+
+      .sort-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        background: transparent;
+        border: 1px solid transparent;
         color: var(--text-secondary);
         font-family: var(--font-mono);
         font-size: 0.85rem;
-        padding: 0.5rem 1.2rem;
+        padding: 0.55rem 1.35rem;
         border-radius: var(--radius-full);
         cursor: pointer;
         transition: var(--transition-smooth);
       }
 
-      .filter-btn:hover, .filter-btn.active {
+      .sort-btn:hover {
+        color: var(--gold-primary);
+      }
+
+      .sort-btn.active {
         background: var(--gold-primary);
         color: #08080b;
+        font-weight: 600;
         border-color: var(--gold-primary);
         box-shadow: 0 0 16px var(--gold-glow);
-        font-weight: 600;
       }
 
       .projects-grid {
@@ -1169,18 +1186,46 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        margin-bottom: 1.1rem;
+        margin-bottom: 0.85rem;
+        gap: 1rem;
       }
 
       .project-title {
-        font-size: 1.4rem;
+        font-size: 1.35rem;
         font-weight: 700;
+        line-height: 1.3;
+      }
+
+      .project-title a {
         color: var(--text-pure);
+        text-decoration: none;
+        transition: var(--transition-smooth);
+      }
+
+      .project-title a:hover {
+        color: var(--gold-primary);
+        text-shadow: 0 0 12px var(--gold-glow-soft);
       }
 
       .project-links {
         display: flex;
+        align-items: center;
         gap: 0.75rem;
+        flex-shrink: 0;
+      }
+
+      .project-star-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: var(--gold-primary);
+        background: rgba(245, 197, 66, 0.12);
+        border: 1px solid var(--gold-border);
+        padding: 0.2rem 0.6rem;
+        border-radius: var(--radius-full);
       }
 
       .project-link-icon {
@@ -1195,31 +1240,101 @@
         transform: scale(1.15);
       }
 
-      .project-desc {
-        color: var(--text-secondary);
-        font-size: 0.98rem;
-        line-height: 1.65;
-        margin-bottom: 1.5rem;
-      }
-
-      .project-metrics-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.4rem;
-        background: rgba(245, 197, 66, 0.08);
-        border: 1px solid var(--gold-border);
-        color: var(--gold-primary);
-        font-family: var(--font-mono);
-        font-size: 0.78rem;
-        padding: 0.35rem 0.75rem;
-        border-radius: var(--radius-sm);
-        margin-bottom: 1.25rem;
-      }
-
-      .project-tags {
+      /* Palavras-chaves em dourado e acima da descrição */
+      .project-keywords {
         display: flex;
         flex-wrap: wrap;
         gap: 0.45rem;
+        margin-bottom: 1.15rem;
+      }
+
+      .keyword-tag {
+        display: inline-flex;
+        align-items: center;
+        font-family: var(--font-mono);
+        font-size: 0.74rem;
+        font-weight: 500;
+        color: var(--gold-primary);
+        background: rgba(245, 197, 66, 0.08);
+        border: 1px solid var(--gold-border);
+        padding: 0.22rem 0.6rem;
+        border-radius: var(--radius-sm);
+        letter-spacing: 0.02em;
+        transition: var(--transition-smooth);
+      }
+
+      .keyword-tag:hover {
+        background: rgba(245, 197, 66, 0.18);
+        border-color: var(--gold-primary);
+        box-shadow: 0 0 10px var(--gold-glow-soft);
+        transform: translateY(-1px);
+      }
+
+      .project-desc {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1.25rem;
+      }
+
+      .project-card-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: var(--font-mono);
+        font-size: 0.76rem;
+        color: var(--text-muted);
+        border-top: 1px solid rgba(245, 197, 66, 0.12);
+        padding-top: 1rem;
+        margin-top: auto;
+      }
+
+      .repo-lang {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        color: var(--text-secondary);
+      }
+
+      .repo-date {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        color: var(--text-muted);
+      }
+
+      .expand-projects-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 2.75rem;
+      }
+
+      .btn-expand-projects {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
+        background: rgba(18, 18, 26, 0.85);
+        border: 1px solid var(--gold-border);
+        color: var(--gold-primary);
+        font-family: var(--font-mono);
+        font-size: 0.9rem;
+        font-weight: 600;
+        padding: 0.8rem 2.2rem;
+        border-radius: var(--radius-full);
+        cursor: pointer;
+        transition: var(--transition-smooth);
+        backdrop-filter: blur(12px);
+      }
+
+      .btn-expand-projects:hover {
+        background: rgba(245, 197, 66, 0.15);
+        border-color: var(--gold-primary);
+        box-shadow: 0 0 22px var(--gold-glow-soft);
+        transform: translateY(-2px);
+      }
+
+      .btn-expand-projects i {
+        transition: transform 0.3s ease;
       }
 
       /* Live Sync Status Bar */
@@ -2474,263 +2589,30 @@
           <div id="sync-date-text">Auto-Sync Ativo</div>
         </div>
 
-        <div class="project-filters">
-          <button class="filter-btn active" data-filter="all" data-lang-key="filter_all">Todos</button>
-          <button class="filter-btn" data-filter="systems" data-lang-key="filter_systems">Sistemas & Kernel</button>
-          <button class="filter-btn" data-filter="web" data-lang-key="filter_web">Web & Automação</button>
-          <button class="filter-btn" data-filter="algorithms" data-lang-key="filter_algorithms">Algoritmos & Redes</button>
+        <!-- Sorting Controls -->
+        <div class="project-sort-bar">
+          <div class="sort-group">
+            <button class="sort-btn active" data-sort="stars" id="sort-stars-btn" title="Ordenar por repositórios com mais estrelas">
+              <i class="fa-solid fa-star"></i>
+              <span data-lang-key="sort_stars">Mais Estrelas</span>
+            </button>
+            <button class="sort-btn" data-sort="recent" id="sort-recent-btn" title="Ordenar por repositórios atualizados mais recentemente">
+              <i class="fa-regular fa-clock"></i>
+              <span data-lang-key="sort_recent">Mais Recentes</span>
+            </button>
+          </div>
         </div>
 
         <div class="projects-grid" id="projects-grid">
-          <!-- AtesN-DS -->
-          <div class="project-card" data-category="systems">
-            <div>
-              <div class="project-header">
-                <h3 class="project-title">AtesN-DS</h3>
-                <div class="project-links">
-                  <a href="https://sol.sbc.org.br/index.php/sbesc_estendido/article/view/39485" target="_blank" rel="noopener noreferrer" class="project-link-icon" title="Artigo SBESC">
-                    <i class="fa-solid fa-book-bookmark"></i>
-                  </a>
-                  <a href="https://github.com/ojoaosoares/AtesN-DS" target="_blank" rel="noopener noreferrer" class="project-link-icon" title="Repositório GitHub">
-                    <i class="fa-brands fa-github"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="project-metrics-badge">
-                <i class="fa-solid fa-bolt"></i>
-                <span data-lang-key="atesnds_badge">+213% Throughput · -51% Latência · &lt;2% CPU</span>
-              </div>
-              <p class="project-desc" data-lang-key="atesnds_desc">
-                Resolvedor DNS recursivo de ultra-alta performance implementado em eBPF e XDP que opera diretamente no kernel do Linux, contornando toda a pilha de rede tradicional. Apresentado no SBESC 2025.
-              </p>
-            </div>
-            <div class="project-tags">
-              <span class="tag-pill">eBPF</span>
-              <span class="tag-pill">XDP</span>
-              <span class="tag-pill">C</span>
-              <span class="tag-pill">Kernel Linux</span>
-              <span class="tag-pill">DNS</span>
-            </div>
-          </div>
+          <!-- Projetos carregados dinamicamente via API / portfolio_data.json -->
+        </div>
 
-          <!-- curriculum-gen -->
-          <div class="project-card" data-category="web">
-            <div>
-              <div class="project-header">
-                <h3 class="project-title">curriculum-gen</h3>
-                <div class="project-links">
-                  <a href="https://github.com/ojoaosoares/curriculum-gen" target="_blank" rel="noopener noreferrer" class="project-link-icon" title="Repositório GitHub">
-                    <i class="fa-brands fa-github"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="project-metrics-badge">
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
-                <span data-lang-key="currgen_badge">LaTeX Compiler · LLM Optimizer</span>
-              </div>
-              <p class="project-desc" data-lang-key="currgen_desc">
-                Gerador e compilador automatizado de currículos que combina ingestão flexível de dados YAML, compilação precisa em LaTeX, estimativa geométrica de espaço em página e otimização semântica por LLM.
-              </p>
-            </div>
-            <div class="project-tags">
-              <span class="tag-pill">Python</span>
-              <span class="tag-pill">LaTeX</span>
-              <span class="tag-pill">FastAPI</span>
-              <span class="tag-pill">React</span>
-              <span class="tag-pill">Tailwind</span>
-            </div>
-          </div>
-
-          <!-- indexer-and-query-processor -->
-          <div class="project-card" data-category="algorithms">
-            <div>
-              <div class="project-header">
-                <h3 class="project-title">indexer-and-query-processor</h3>
-                <div class="project-links">
-                  <a href="https://github.com/ojoaosoares/indexer-and-query-processor" target="_blank" rel="noopener noreferrer" class="project-link-icon" title="Repositório GitHub">
-                    <i class="fa-brands fa-github"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="project-metrics-badge">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <span data-lang-key="indexer_badge">SPIMI · V-Byte · BM25 & TF-IDF</span>
-              </div>
-              <p class="project-desc" data-lang-key="indexer_desc">
-                Motor de busca e indexador de alta performance com arquitetura concorrente e monitoramento de memória. Implementa inversão SPIMI em duas etapas, compressão por V-Byte e delta encoding, com suporte a ranqueamento BM25 e TF-IDF.
-              </p>
-            </div>
-            <div class="project-tags">
-              <span class="tag-pill">Python</span>
-              <span class="tag-pill">Information Retrieval</span>
-              <span class="tag-pill">Multiprocessing</span>
-              <span class="tag-pill">Algoritmos</span>
-            </div>
-          </div>
-
-          <!-- GPSR-NS3 -->
-          <div class="project-card" data-category="algorithms">
-            <div>
-              <div class="project-header">
-                <h3 class="project-title">GPSR-NS3</h3>
-                <div class="project-links">
-                  <a href="https://github.com/ojoaosoares/GPSR-NS3" target="_blank" rel="noopener noreferrer" class="project-link-icon" title="Repositório GitHub">
-                    <i class="fa-brands fa-github"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="project-metrics-badge">
-                <i class="fa-solid fa-diagram-project"></i>
-                <span data-lang-key="gpsr_badge">ns-3 · Geographic Routing · Simulation</span>
-              </div>
-              <p class="project-desc" data-lang-key="gpsr_desc">
-                Implementação e avaliação do protocolo Geographic Perimeter Stateless Routing (GPSR) no simulador de redes de eventos discretos ns-3.
-              </p>
-            </div>
-            <div class="project-tags">
-              <span class="tag-pill">C++</span>
-              <span class="tag-pill">ns-3</span>
-              <span class="tag-pill">Redes de Computadores</span>
-              <span class="tag-pill">Simulação</span>
-            </div>
-          </div>
-
-          <!-- xv6-riscv-lottery-scheduler -->
-          <div class="project-card" data-category="systems">
-            <div>
-              <div class="project-header">
-                <h3 class="project-title">xv6-riscv-lottery-scheduler</h3>
-                <div class="project-links">
-                  <a href="https://github.com/ojoaosoares/xv6-riscv-lottery-scheduler" target="_blank" rel="noopener noreferrer" class="project-link-icon" title="Repositório GitHub">
-                    <i class="fa-brands fa-github"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="project-metrics-badge">
-                <i class="fa-solid fa-microchip"></i>
-                <span data-lang-key="xv6_badge">Lottery Scheduler · RISC-V · Syscalls</span>
-              </div>
-              <p class="project-desc" data-lang-key="xv6_desc">
-                Implementação de algoritmo de escalonamento proporcional por loteria (Lottery Scheduling) no kernel do sistema operacional educacional xv6 para a arquitetura RISC-V.
-              </p>
-            </div>
-            <div class="project-tags">
-              <span class="tag-pill">C</span>
-              <span class="tag-pill">RISC-V</span>
-              <span class="tag-pill">Kernel</span>
-              <span class="tag-pill">Sistemas Operacionais</span>
-            </div>
-          </div>
-
-          <!-- xdp_ping -->
-          <div class="project-card" data-category="systems">
-            <div>
-              <div class="project-header">
-                <h3 class="project-title">xdp_ping</h3>
-                <div class="project-links">
-                  <a href="https://github.com/ojoaosoares/xdp_ping" target="_blank" rel="noopener noreferrer" class="project-link-icon" title="Repositório GitHub">
-                    <i class="fa-brands fa-github"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="project-metrics-badge">
-                <i class="fa-solid fa-network-wired"></i>
-                <span data-lang-key="xdpping_badge">BPF_PROG_RUN · Live Frames · Benchmarking</span>
-              </div>
-              <p class="project-desc" data-lang-key="xdpping_desc">
-                Gerador e injetor de pacotes ICMP e UDP de alta velocidade utilizando eBPF/XDP e BPF_PROG_RUN Live Frames do Linux para injeção de pacotes com baixa sobrecarga e benchmarking de rede.
-              </p>
-            </div>
-            <div class="project-tags">
-              <span class="tag-pill">eBPF</span>
-              <span class="tag-pill">XDP</span>
-              <span class="tag-pill">C</span>
-              <span class="tag-pill">Kernel Linux</span>
-              <span class="tag-pill">Benchmarking</span>
-            </div>
-          </div>
-
-          <!-- DPDK_ping -->
-          <div class="project-card" data-category="systems">
-            <div>
-              <div class="project-header">
-                <h3 class="project-title">DPDK_ping</h3>
-                <div class="project-links">
-                  <a href="https://github.com/ojoaosoares/DPDK_ping" target="_blank" rel="noopener noreferrer" class="project-link-icon" title="Repositório GitHub">
-                    <i class="fa-brands fa-github"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="project-metrics-badge">
-                <i class="fa-solid fa-gauge-high"></i>
-                <span data-lang-key="dpdk_badge">Kernel-Bypass · DPDK · Poll-Mode Driver</span>
-              </div>
-              <p class="project-desc" data-lang-key="dpdk_desc">
-                Servidor de ICMP Echo (Ping) de ultra-alto desempenho com bypass completo de kernel via DPDK, operando em poll-mode em CPU dedicada com atualização incremental de checksum em tempo constante O(1).
-              </p>
-            </div>
-            <div class="project-tags">
-              <span class="tag-pill">DPDK</span>
-              <span class="tag-pill">C</span>
-              <span class="tag-pill">Kernel-Bypass</span>
-              <span class="tag-pill">Networking</span>
-            </div>
-          </div>
-
-          <!-- xhttp -->
-          <div class="project-card" data-category="systems">
-            <div>
-              <div class="project-header">
-                <h3 class="project-title">xhttp</h3>
-                <div class="project-links">
-                  <a href="https://github.com/ojoaosoares/xhttp" target="_blank" rel="noopener noreferrer" class="project-link-icon" title="Repositório GitHub">
-                    <i class="fa-brands fa-github"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="project-metrics-badge">
-                <i class="fa-solid fa-bolt"></i>
-                <span data-lang-key="xhttp_badge">In-Kernel Cache · eBPF/XDP/TC · Kernel Bypass</span>
-              </div>
-              <p class="project-desc" data-lang-key="xhttp_desc">
-                Acelerador HTTP e cache em nível de kernel com eBPF, XDP e TC, projetado para contornar a pilha de sockets do Linux e fornecer respostas HTTP com ultra-baixa latência e alta vazão.
-              </p>
-            </div>
-            <div class="project-tags">
-              <span class="tag-pill">eBPF</span>
-              <span class="tag-pill">XDP</span>
-              <span class="tag-pill">TC</span>
-              <span class="tag-pill">C</span>
-              <span class="tag-pill">Kernel Linux</span>
-            </div>
-          </div>
-
-          <!-- QuantumSimulator -->
-          <div class="project-card" data-category="web">
-            <div>
-              <div class="project-header">
-                <h3 class="project-title">QuantumSimulator</h3>
-                <div class="project-links">
-                  <a href="https://github.com/ojoaosoares/QuantumSimulator" target="_blank" rel="noopener noreferrer" class="project-link-icon" title="Repositório GitHub">
-                    <i class="fa-brands fa-github"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="project-metrics-badge">
-                <i class="fa-solid fa-chart-line"></i>
-                <span data-lang-key="quantum_badge">Monte Carlo · GBM · Portfolio Optimization</span>
-              </div>
-              <p class="project-desc" data-lang-key="quantum_desc">
-                Simulador financeiro e otimizador de portfólio usando simulações de Monte Carlo, Movimento Browniano Geométrico e Teoria Moderna do Portfólio, com backend FastAPI e frontend Streamlit.
-              </p>
-            </div>
-            <div class="project-tags">
-              <span class="tag-pill">Python</span>
-              <span class="tag-pill">FastAPI</span>
-              <span class="tag-pill">Streamlit</span>
-              <span class="tag-pill">Finanças</span>
-            </div>
-          </div>
+        <!-- Expand / View More Button -->
+        <div class="expand-projects-container" id="expand-projects-container">
+          <button class="btn-expand-projects" id="btn-expand-projects">
+            <span id="expand-btn-text" data-lang-key="show_more_projects">Ver mais repositórios</span>
+            <i class="fa-solid fa-chevron-down" id="expand-btn-icon"></i>
+          </button>
         </div>
       </section>
 
@@ -3413,10 +3295,11 @@
           t_edu_b2: "Destaque acadêmico em sistemas de baixo nível, aceleração de hardware e redes de alta velocidade.",
           proj_eyebrow: "Criações & Código",
           proj_title: "Projetos em Destaque",
-          filter_all: "Todos",
-          filter_systems: "Sistemas & Kernel",
-          filter_web: "Web & Automação",
-          filter_algorithms: "Algoritmos & Redes",
+          sort_stars: "Mais Estrelas",
+          sort_recent: "Mais Recentes",
+          show_more_projects: "Ver mais repositórios",
+          show_less_projects: "Mostrar menos",
+          sync_status_text: "Sincronizado com GitHub & ORCID",
           atesnds_badge: "+213% Throughput · -51% Latência · <2% CPU",
           atesnds_desc: "Resolvedor DNS recursivo de ultra-alta performance implementado em eBPF e XDP que opera diretamente no kernel do Linux, contornando toda a pilha de rede tradicional. Apresentado no SBESC 2025.",
           currgen_badge: "LaTeX Compiler · LLM Optimizer",
@@ -3520,10 +3403,11 @@
           t_edu_b2: "Academic focus on low-level systems programming, hardware acceleration, and high-performance networks.",
           proj_eyebrow: "Creations & Code",
           proj_title: "Featured Projects",
-          filter_all: "All",
-          filter_systems: "Systems & Kernel",
-          filter_web: "Web & Automation",
-          filter_algorithms: "Algorithms & Networks",
+          sort_stars: "Most Stars",
+          sort_recent: "Most Recent",
+          show_more_projects: "Show more repositories",
+          show_less_projects: "Show less",
+          sync_status_text: "Synced with GitHub & ORCID",
           atesnds_badge: "+213% Throughput · -51% Latency · <2% CPU",
           atesnds_desc: "Ultra-high-performance recursive DNS resolver in eBPF and XDP operating directly in the Linux kernel, bypassing standard network stack. Presented at SBESC 2025.",
           currgen_badge: "LaTeX Compiler · LLM Optimizer",
@@ -3660,6 +3544,10 @@
           mobileRetroText.textContent = lang === "pt" ? "Modo Acadêmico 90s" : "90s Academic Mode";
         }
 
+        if (typeof renderProjectsGrid === "function") {
+          renderProjectsGrid();
+        }
+
         // Reset typewriter
         phraseIdx = 0;
         charIdx = 0;
@@ -3754,27 +3642,790 @@
         });
       });
 
-      // Project Filters
-      const filterBtns = document.querySelectorAll(".filter-btn");
-      const projectCards = document.querySelectorAll(".project-card");
+      // Embedded Fallback Repositories (for offline / instant rendering)
+      const FALLBACK_REPOS = [
+  {
+    "name": "ojoaosoares.github.io",
+    "description": "My personal site",
+    "html_url": "https://github.com/ojoaosoares/ojoaosoares.github.io",
+    "language": "HTML",
+    "topics": [
+      "css",
+      "github-actions",
+      "html",
+      "python"
+    ],
+    "stars": 0,
+    "updated_at": "2026-09-20T02:34:23Z"
+  },
+  {
+    "name": "DPDK_ping",
+    "description": "High-performance DPDK ICMP Echo (Ping) server using kernel bypass",
+    "html_url": "https://github.com/ojoaosoares/DPDK_ping",
+    "language": "C",
+    "topics": [
+      "dpdk",
+      "dpdk-examples",
+      "ping"
+    ],
+    "stars": 0,
+    "updated_at": "2026-09-15T02:58:31Z"
+  },
+  {
+    "name": "QuantumSimulator",
+    "description": "Financial simulator and portfolio optimizer using Monte Carlo simulations, GBM, and Modern Portfolio Theory, with a FastAPI backend and Streamlit frontend",
+    "html_url": "https://github.com/ojoaosoares/QuantumSimulator",
+    "language": "Python",
+    "topics": [
+      "finance",
+      "financial-analysis",
+      "python"
+    ],
+    "stars": 0,
+    "updated_at": "2026-09-12T19:15:46Z"
+  },
+  {
+    "name": "xdp_ping",
+    "description": "High-speed ICMP and UDP packet generator using eBPF/XDP and Linux's BPF_PROG_RUN Live Frames for low-overhead packet injection and network benchmarking.",
+    "html_url": "https://github.com/ojoaosoares/xdp_ping",
+    "language": "C",
+    "topics": [
+      "c",
+      "ebpf",
+      "ping",
+      "xdp"
+    ],
+    "stars": 0,
+    "updated_at": "2026-09-12T15:06:20Z"
+  },
+  {
+    "name": "moovy-mvp",
+    "description": "A cross-platform movie app with personal libraries, audio reviews, and offline-first support.",
+    "html_url": "https://github.com/ojoaosoares/moovy-mvp",
+    "language": "TypeScript",
+    "topics": [
+      "nestjs",
+      "react",
+      "react-native",
+      "typescript",
+      "watermelondb"
+    ],
+    "stars": 0,
+    "updated_at": "2026-09-12T15:00:29Z"
+  },
+  {
+    "name": "curriculum-gen",
+    "description": "Gerador de currículos técnicos LaTeX ATS de 1 página com IA, busca semântica e métricas reais",
+    "html_url": "https://github.com/ojoaosoares/curriculum-gen",
+    "language": "Python",
+    "topics": [
+      "information-retrieval",
+      "python",
+      "react",
+      "token-optimization"
+    ],
+    "stars": 0,
+    "updated_at": "2026-09-11T06:51:21Z"
+  },
+  {
+    "name": "AtesN-DS",
+    "description": "A High-Performance Hybrid Recursive DNS Resolver Leveraging XDP",
+    "html_url": "https://github.com/ojoaosoares/AtesN-DS",
+    "language": "C",
+    "topics": [
+      "dns",
+      "dns-resolver",
+      "ebpf",
+      "ebpf-programs",
+      "in-kernel",
+      "xdp"
+    ],
+    "stars": 0,
+    "updated_at": "2026-09-11T01:31:28Z"
+  },
+  {
+    "name": "GPSR-NS3",
+    "description": "GPSR in NS3",
+    "html_url": "https://github.com/ojoaosoares/GPSR-NS3",
+    "language": "C++",
+    "topics": [
+      "ns-3",
+      "c++",
+      "routing",
+      "simulation"
+    ],
+    "stars": 2,
+    "updated_at": "2026-07-02T23:48:22Z"
+  },
+  {
+    "name": "RIP",
+    "description": "Routing Information Protocol (RIP) implementation in Python.",
+    "html_url": "https://github.com/ojoaosoares/RIP",
+    "language": "Python",
+    "topics": [
+      "networking",
+      "routing",
+      "python"
+    ],
+    "stars": 0,
+    "updated_at": "2026-06-24T20:37:09Z"
+  },
+  {
+    "name": "mock-packet-parser",
+    "description": "Este projeto foi desenvolvido como parte de uma atividade acadêmica com o objetivo principal de explorar e configurar o GitHub Actions para integração contínua (CI).",
+    "html_url": "https://github.com/ojoaosoares/mock-packet-parser",
+    "language": "Python",
+    "topics": [
+      "python",
+      "networking",
+      "packets"
+    ],
+    "stars": 0,
+    "updated_at": "2026-06-12T11:53:43Z"
+  },
+  {
+    "name": "PyJupyter",
+    "description": "Interactive Jupyter environment and Python utilities.",
+    "html_url": "https://github.com/ojoaosoares/PyJupyter",
+    "language": "Python",
+    "topics": [
+      "Python"
+    ],
+    "stars": 0,
+    "updated_at": "2026-04-27T00:53:31Z"
+  },
+  {
+    "name": "web-crawler",
+    "description": "Automated web crawler and scraper built with Python.",
+    "html_url": "https://github.com/ojoaosoares/web-crawler",
+    "language": "Python",
+    "topics": [
+      "python",
+      "crawler",
+      "automation"
+    ],
+    "stars": 0,
+    "updated_at": "2026-04-12T22:35:28Z"
+  },
+  {
+    "name": "Sorting-Algorithm-Analysis",
+    "description": "A sorting algorithm analysis",
+    "html_url": "https://github.com/ojoaosoares/Sorting-Algorithm-Analysis",
+    "language": "C++",
+    "topics": [
+      "bubble-sort",
+      "bucket-sort",
+      "counting-sort",
+      "insertion-sort",
+      "mergesort",
+      "quicksort",
+      "radix-sort",
+      "selection-sort",
+      "sorting-algorithms",
+      "sorting-algorithms-implemented"
+    ],
+    "stars": 0,
+    "updated_at": "2025-11-10T13:45:28Z"
+  },
+  {
+    "name": "encryption-lab",
+    "description": "Cryptographic algorithms and security protocols laboratory.",
+    "html_url": "https://github.com/ojoaosoares/encryption-lab",
+    "language": "Python",
+    "topics": [
+      "cryptography",
+      "security",
+      "python"
+    ],
+    "stars": 0,
+    "updated_at": "2025-09-12T03:12:22Z"
+  },
+  {
+    "name": "Location-Service-NS3",
+    "description": "Location Service implementation in ns-3 simulator for mobile ad-hoc networks (MANET).",
+    "html_url": "https://github.com/ojoaosoares/Location-Service-NS3",
+    "language": "C++",
+    "topics": [
+      "ns-3",
+      "c++",
+      "manet",
+      "routing"
+    ],
+    "stars": 1,
+    "updated_at": "2025-09-05T18:17:13Z"
+  },
+  {
+    "name": "local-sonarqube-guide",
+    "description": "How to use SonarQube Localy",
+    "html_url": "https://github.com/ojoaosoares/local-sonarqube-guide",
+    "language": "Code",
+    "topics": [],
+    "stars": 0,
+    "updated_at": "2025-08-05T22:40:53Z"
+  },
+  {
+    "name": "unbound_AF_XDP",
+    "description": "Unbound is a validating, recursive, and caching DNS resolver.",
+    "html_url": "https://github.com/ojoaosoares/unbound_AF_XDP",
+    "language": "Code",
+    "topics": [
+      "af_xdp",
+      "ebpf",
+      "dns",
+      "c"
+    ],
+    "stars": 1,
+    "updated_at": "2025-05-13T13:31:11Z"
+  },
+  {
+    "name": "myConfiguration",
+    "description": "My Configuration",
+    "html_url": "https://github.com/ojoaosoares/myConfiguration",
+    "language": "Vim Script",
+    "topics": [
+      "bash",
+      "bashrc",
+      "bashrc-configs",
+      "tmux",
+      "tmux-conf",
+      "tmux-configs",
+      "vim",
+      "vimrc",
+      "vimrc-configuration",
+      "vimrc-settings"
+    ],
+    "stars": 0,
+    "updated_at": "2025-03-11T18:13:34Z"
+  },
+  {
+    "name": "Fermat-Numbers-Factors",
+    "description": "Fermat Number Factors and Primality Test",
+    "html_url": "https://github.com/ojoaosoares/Fermat-Numbers-Factors",
+    "language": "C++",
+    "topics": [
+      "euler",
+      "euler-method",
+      "fermat",
+      "fermat-factorization"
+    ],
+    "stars": 0,
+    "updated_at": "2025-03-07T19:59:06Z"
+  },
+  {
+    "name": "Pepins-Test",
+    "description": "Pepin's Primality Test on Fermat Numbers",
+    "html_url": "https://github.com/ojoaosoares/Pepins-Test",
+    "language": "C++",
+    "topics": [
+      "fermat",
+      "fermat-numbers",
+      "primality-test"
+    ],
+    "stars": 0,
+    "updated_at": "2025-03-07T19:57:01Z"
+  },
+  {
+    "name": "Mersenne-Primality-Checker",
+    "description": "A Mersenne Primality Test that implements the Lucas-Lehmer Test",
+    "html_url": "https://github.com/ojoaosoares/Mersenne-Primality-Checker",
+    "language": "C++",
+    "topics": [
+      "cpp",
+      "mersenne",
+      "mersenne-numbers",
+      "mersenne-prime",
+      "primality-check",
+      "primality-test",
+      "primality-testing",
+      "prime-numbers"
+    ],
+    "stars": 0,
+    "updated_at": "2025-02-27T02:19:23Z"
+  },
+  {
+    "name": "The-Lost-Woods",
+    "description": "Dijkstra vs A* and Adjacency Matrix vs Lists comparison",
+    "html_url": "https://github.com/ojoaosoares/The-Lost-Woods",
+    "language": "C++",
+    "topics": [
+      "astar",
+      "astar-algorithm",
+      "astar-pathfinding",
+      "astar-search",
+      "astar-search-algorithm",
+      "dijkstra",
+      "dijkstra-algorithm",
+      "dijkstra-shortest-path",
+      "dijkstras-algorithm"
+    ],
+    "stars": 0,
+    "updated_at": "2025-02-14T05:35:49Z"
+  },
+  {
+    "name": "Q-Learning",
+    "description": "An implementation of Q-Learning for a college work",
+    "html_url": "https://github.com/ojoaosoares/Q-Learning",
+    "language": "Python",
+    "topics": [
+      "python",
+      "q-learning",
+      "q-learning-algorithm",
+      "reinforcement-learning",
+      "reinforcement-learning-algorithms"
+    ],
+    "stars": 0,
+    "updated_at": "2025-02-14T05:07:51Z"
+  },
+  {
+    "name": "spoj",
+    "description": "Spoj solutions",
+    "html_url": "https://github.com/ojoaosoares/spoj",
+    "language": "C",
+    "topics": [
+      "c",
+      "c-plus",
+      "c-plusplus",
+      "cpp",
+      "spoj",
+      "spoj-classic",
+      "spoj-problems",
+      "spoj-solutions"
+    ],
+    "stars": 0,
+    "updated_at": "2025-02-14T04:59:02Z"
+  },
+  {
+    "name": "codeForces",
+    "description": "CodeForces solutions",
+    "html_url": "https://github.com/ojoaosoares/codeForces",
+    "language": "C++",
+    "topics": [
+      "c",
+      "c-plus-plus",
+      "c-plusplus",
+      "codeforces",
+      "codeforces-problems",
+      "codeforces-solutions",
+      "codeforces-solutions-github",
+      "cpp"
+    ],
+    "stars": 0,
+    "updated_at": "2025-02-14T04:58:12Z"
+  },
+  {
+    "name": "Minimum-Path",
+    "description": "Shortest path algorithms and graph analysis in C++.",
+    "html_url": "https://github.com/ojoaosoares/Minimum-Path",
+    "language": "C++",
+    "topics": [
+      "algorithms",
+      "graphs",
+      "c++"
+    ],
+    "stars": 0,
+    "updated_at": "2024-12-10T19:46:21Z"
+  },
+  {
+    "name": "Carmichael-Numbers",
+    "description": "Carmichael numbers analysis and primality testing algorithms in C++.",
+    "html_url": "https://github.com/ojoaosoares/Carmichael-Numbers",
+    "language": "C++",
+    "topics": [
+      "number-theory",
+      "algorithms",
+      "c++"
+    ],
+    "stars": 0,
+    "updated_at": "2024-09-21T22:54:07Z"
+  },
+  {
+    "name": "Prime-Counting",
+    "description": "A study about prime numbers density",
+    "html_url": "https://github.com/ojoaosoares/Prime-Counting",
+    "language": "C++",
+    "topics": [
+      "number-theory",
+      "prime-numbers"
+    ],
+    "stars": 0,
+    "updated_at": "2024-09-05T02:42:33Z"
+  },
+  {
+    "name": "Sieve-of-Eratosthenes",
+    "description": "Eratosthenes prime number generator method",
+    "html_url": "https://github.com/ojoaosoares/Sieve-of-Eratosthenes",
+    "language": "C++",
+    "topics": [
+      "number-theory",
+      "prime-generation-algorithms",
+      "prime-generator",
+      "prime-numbers",
+      "sieve",
+      "sieve-of-eratosthenes",
+      "sieveoferatosthenes"
+    ],
+    "stars": 0,
+    "updated_at": "2024-08-31T02:12:49Z"
+  },
+  {
+    "name": "Fermat-Factorization",
+    "description": "Fermat's factorization method",
+    "html_url": "https://github.com/ojoaosoares/Fermat-Factorization",
+    "language": "C++",
+    "topics": [
+      "criptography",
+      "factorization",
+      "fermat",
+      "fermat-factorization",
+      "number-theory",
+      "prime-factorization",
+      "prime-numbers"
+    ],
+    "stars": 0,
+    "updated_at": "2024-08-29T03:08:29Z"
+  },
+  {
+    "name": "algorithms",
+    "description": "Algorithms and Data Structures",
+    "html_url": "https://github.com/ojoaosoares/algorithms",
+    "language": "C++",
+    "topics": [
+      "algorithm",
+      "algorithms",
+      "algorithms-and-data-structures",
+      "c",
+      "c-plus-plus",
+      "c-plusplus",
+      "cpp",
+      "data-structures"
+    ],
+    "stars": 0,
+    "updated_at": "2024-07-07T20:10:40Z"
+  },
+  {
+    "name": "Teacher-Pay-Student-Performance",
+    "description": "Data science analysis on education metrics and student performance.",
+    "html_url": "https://github.com/ojoaosoares/Teacher-Pay-Student-Performance",
+    "language": "Jupyter Notebook",
+    "topics": [
+      "data-analysis",
+      "python",
+      "jupyter"
+    ],
+    "stars": 0,
+    "updated_at": "2024-06-24T02:31:33Z"
+  },
+  {
+    "name": "atividade-semana-3-iJunior",
+    "description": "Web development activities and exercises in TypeScript.",
+    "html_url": "https://github.com/ojoaosoares/atividade-semana-3-iJunior",
+    "language": "TypeScript",
+    "topics": [
+      "typescript",
+      "web"
+    ],
+    "stars": 0,
+    "updated_at": "2024-05-13T03:10:19Z"
+  },
+  {
+    "name": "orcamento-pessoal",
+    "description": "A JavaScript-based database designed using localStorage",
+    "html_url": "https://github.com/ojoaosoares/orcamento-pessoal",
+    "language": "HTML",
+    "topics": [
+      "css",
+      "database",
+      "html",
+      "javascript",
+      "localstorage"
+    ],
+    "stars": 0,
+    "updated_at": "2024-03-06T06:32:47Z"
+  },
+  {
+    "name": "school_sharp",
+    "description": "An e-commerce of a E-Learning plataform ",
+    "html_url": "https://github.com/ojoaosoares/school_sharp",
+    "language": "HTML",
+    "topics": [
+      "css",
+      "ecommerce",
+      "front-end",
+      "frontend",
+      "html",
+      "javascript"
+    ],
+    "stars": 0,
+    "updated_at": "2024-03-06T06:04:52Z"
+  },
+  {
+    "name": "section-dropdown-nav",
+    "description": "Intro Section with Dropdown Navigation",
+    "html_url": "https://github.com/ojoaosoares/section-dropdown-nav",
+    "language": "HTML",
+    "topics": [
+      "css",
+      "dropdown",
+      "ecommerce",
+      "front-end",
+      "frontend",
+      "html",
+      "javascript"
+    ],
+    "stars": 0,
+    "updated_at": "2024-03-06T06:04:41Z"
+  },
+  {
+    "name": "e-commerce-programming-school",
+    "description": "An e-commerce of a programming school",
+    "html_url": "https://github.com/ojoaosoares/e-commerce-programming-school",
+    "language": "CSS",
+    "topics": [
+      "css",
+      "ecommerce",
+      "front-end",
+      "frontend",
+      "html",
+      "javascript"
+    ],
+    "stars": 0,
+    "updated_at": "2024-03-06T06:04:29Z"
+  },
+  {
+    "name": "tic-tac-toe",
+    "description": "Tic tac toe using javascript",
+    "html_url": "https://github.com/ojoaosoares/tic-tac-toe",
+    "language": "JavaScript",
+    "topics": [
+      "css",
+      "html",
+      "javascript",
+      "tic-tac-toe",
+      "tictactoe-game"
+    ],
+    "stars": 0,
+    "updated_at": "2024-03-06T06:03:17Z"
+  },
+  {
+    "name": "beecrowd",
+    "description": "BeeCrowd solutions",
+    "html_url": "https://github.com/ojoaosoares/beecrowd",
+    "language": "C++",
+    "topics": [
+      "beecrowd",
+      "beecrowd-problems",
+      "beecrowd-solution-in-c-plus-plus",
+      "beecrowd-solutions",
+      "c-plus-plus",
+      "c-plusplus",
+      "cpp"
+    ],
+    "stars": 0,
+    "updated_at": "2024-03-06T06:01:07Z"
+  },
+  {
+    "name": "JoinUs",
+    "description": "Join Us is a web application that collects and manages emails using MySQL",
+    "html_url": "https://github.com/ojoaosoares/JoinUs",
+    "language": "JavaScript",
+    "topics": [
+      "ejs",
+      "ejs-express",
+      "express",
+      "expressjs",
+      "javascript",
+      "mysql",
+      "node-js",
+      "nodejs",
+      "nodejs-server",
+      "sql"
+    ],
+    "stars": 0,
+    "updated_at": "2024-03-06T06:00:28Z"
+  }
+];
 
-      filterBtns.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          filterBtns.forEach((b) => b.classList.remove("active"));
-          btn.classList.add("active");
-          const filterValue = btn.getAttribute("data-filter");
+      // Dynamic Projects Engine
+      let allReposData = FALLBACK_REPOS;
+      let currentSortMode = "stars";
+      let isProjectsExpanded = false;
 
-          projectCards.forEach((card) => {
-            if (filterValue === "all" || card.getAttribute("data-category") === filterValue) {
-              card.style.display = "flex";
-              card.style.opacity = "1";
-            } else {
-              card.style.display = "none";
-              card.style.opacity = "0";
-            }
-          });
+      const projectsGrid = document.getElementById("projects-grid");
+      const sortStarsBtn = document.getElementById("sort-stars-btn");
+      const sortRecentBtn = document.getElementById("sort-recent-btn");
+      const btnExpandProjects = document.getElementById("btn-expand-projects");
+      const expandBtnText = document.getElementById("expand-btn-text");
+      const expandBtnIcon = document.getElementById("expand-btn-icon");
+      const expandProjectsContainer = document.getElementById("expand-projects-container");
+
+      function formatRepoDate(dateString, lang) {
+        if (!dateString) return "";
+        try {
+          const d = new Date(dateString);
+          if (isNaN(d.getTime())) return "";
+          return lang === "pt"
+            ? d.toLocaleDateString("pt-BR", { month: "short", year: "numeric" })
+            : d.toLocaleDateString("en-US", { month: "short", year: "numeric" });
+        } catch (e) {
+          return "";
+        }
+      }
+
+      function escapeHtml(str) {
+        if (!str) return "";
+        return String(str)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;");
+      }
+
+      function renderProjectsGrid() {
+        if (!projectsGrid) return;
+
+        // Filter out user profile README repo and any obsidian vault
+        const validRepos = allReposData.filter((r) => {
+          if (!r || !r.name) return false;
+          const n = r.name.toLowerCase();
+          return n !== "ojoaosoares" && !n.includes("obsidian");
         });
-      });
+
+        // Sort: "stars" (with tie-break by most recent push) OR "recent"
+        const sorted = [...validRepos].sort((a, b) => {
+          if (currentSortMode === "stars") {
+            const starsA = a.stars || 0;
+            const starsB = b.stars || 0;
+            if (starsB !== starsA) return starsB - starsA;
+            const timeA = new Date(a.updated_at || 0).getTime();
+            const timeB = new Date(b.updated_at || 0).getTime();
+            return timeB - timeA;
+          } else {
+            const timeA = new Date(a.updated_at || 0).getTime();
+            const timeB = new Date(b.updated_at || 0).getTime();
+            return timeB - timeA;
+          }
+        });
+
+        const displayRepos = isProjectsExpanded ? sorted : sorted.slice(0, 10);
+        projectsGrid.innerHTML = "";
+
+        displayRepos.forEach((repo) => {
+          const card = document.createElement("div");
+          card.className = "project-card";
+
+          // Keywords (palavras-chaves) in gold
+          let keywords = Array.isArray(repo.topics) && repo.topics.length > 0
+            ? repo.topics
+            : (repo.language ? [repo.language] : []);
+
+          const keywordsHtml = keywords.map(kw => 
+            `<span class="keyword-tag">${escapeHtml(kw)}</span>`
+          ).join("");
+
+          // Star badge (if stars > 0)
+          const starBadge = (repo.stars && repo.stars > 0)
+            ? `<span class="project-star-badge" title="${repo.stars} ${repo.stars === 1 ? (currentLang === 'pt' ? 'estrela' : 'star') : (currentLang === 'pt' ? 'estrelas' : 'stars')}"><i class="fa-solid fa-star"></i> ${repo.stars}</span>`
+            : "";
+
+          // External paper link if AtesN-DS
+          let extraLinks = "";
+          if (repo.name === "AtesN-DS") {
+            extraLinks = `
+              <a href="https://sol.sbc.org.br/index.php/sbesc_estendido/article/view/39485" target="_blank" rel="noopener noreferrer" class="project-link-icon" title="Artigo SBESC">
+                <i class="fa-solid fa-book-bookmark"></i>
+              </a>`;
+          }
+
+          const desc = repo.description 
+            ? escapeHtml(repo.description) 
+            : (currentLang === "pt" ? "Sem descrição fornecida." : "No description provided.");
+
+          const dateStr = formatRepoDate(repo.updated_at, currentLang);
+
+          card.innerHTML = `
+            <div>
+              <div class="project-header">
+                <h3 class="project-title">
+                  <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">${escapeHtml(repo.name)}</a>
+                </h3>
+                <div class="project-links">
+                  ${starBadge}
+                  ${extraLinks}
+                  <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer" class="project-link-icon" title="Repositório GitHub">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
+              </div>
+              <!-- Palavras-chaves em dourado e acima da descrição -->
+              <div class="project-keywords">
+                ${keywordsHtml}
+              </div>
+              <p class="project-desc">${desc}</p>
+            </div>
+            <div class="project-card-footer">
+              <span class="repo-lang"><i class="fa-solid fa-code"></i> ${escapeHtml(repo.language || "Code")}</span>
+              ${dateStr ? `<span class="repo-date"><i class="fa-regular fa-calendar"></i> ${dateStr}</span>` : ""}
+            </div>
+          `;
+          projectsGrid.appendChild(card);
+        });
+
+        // Update expand button state and text
+        if (expandProjectsContainer) {
+          if (sorted.length <= 10) {
+            expandProjectsContainer.style.display = "none";
+          } else {
+            expandProjectsContainer.style.display = "flex";
+            if (isProjectsExpanded) {
+              expandBtnText.textContent = translations[currentLang].show_less_projects;
+              expandBtnIcon.className = "fa-solid fa-chevron-up";
+            } else {
+              const remaining = sorted.length - 10;
+              expandBtnText.textContent = currentLang === "pt" 
+                ? `Ver mais repositórios (${remaining})` 
+                : `Show more repositories (${remaining})`;
+              expandBtnIcon.className = "fa-solid fa-chevron-down";
+            }
+          }
+        }
+      }
+
+      // Sort button listeners
+      if (sortStarsBtn) {
+        sortStarsBtn.addEventListener("click", () => {
+          if (currentSortMode !== "stars") {
+            currentSortMode = "stars";
+            sortStarsBtn.classList.add("active");
+            sortRecentBtn.classList.remove("active");
+            renderProjectsGrid();
+          }
+        });
+      }
+
+      if (sortRecentBtn) {
+        sortRecentBtn.addEventListener("click", () => {
+          if (currentSortMode !== "recent") {
+            currentSortMode = "recent";
+            sortRecentBtn.classList.add("active");
+            sortStarsBtn.classList.remove("active");
+            renderProjectsGrid();
+          }
+        });
+      }
+
+      if (btnExpandProjects) {
+        btnExpandProjects.addEventListener("click", () => {
+          isProjectsExpanded = !isProjectsExpanded;
+          renderProjectsGrid();
+          if (!isProjectsExpanded) {
+            const projectsSection = document.getElementById("projetos");
+            if (projectsSection) {
+              projectsSection.scrollIntoView({ behavior: "smooth" });
+            }
+          }
+        });
+      }
 
       // Copy Email to Clipboard
       copyEmailBtn.addEventListener("click", () => {
@@ -3802,18 +4453,23 @@
 
           if (data.last_sync && syncDateText) {
             const date = new Date(data.last_sync);
-            syncDateText.textContent = `Última sincronização: ${date.toLocaleDateString()}`;
+            syncDateText.textContent = currentLang === "pt"
+              ? `Última sincronização: ${date.toLocaleDateString("pt-BR")}`
+              : `Last sync: ${date.toLocaleDateString("en-US")}`;
           }
 
-          // If GitHub has updated stars, we can reflect them
-          if (data.github && data.github.total_stars > 0) {
-            console.log(`Synced GitHub repositories: ${data.github.public_repos}, Total Stars: ${data.github.total_stars}`);
+          if (data.github && Array.isArray(data.github.repos)) {
+            allReposData = data.github.repos;
+            renderProjectsGrid();
           }
         } catch (e) {
-          // Gracefully fallback to static embedded values
-          console.debug("Local data loaded.");
+          console.debug("Local fallback data loaded.");
         }
       }
+
+      // Initial Render
+      renderProjectsGrid();
+      loadSyncedData();
 
       // Minimalist Atmospheric Canvas (Stars & Faint Nebula)
       const canvas = document.getElementById("fog-canvas");

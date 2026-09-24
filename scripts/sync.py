@@ -29,6 +29,7 @@ def fetch_json(url, headers=None):
     if headers is None:
         headers = {}
     headers.setdefault("User-Agent", "Mozilla/5.0 (Portfolio-Sync-Bot)")
+    headers.setdefault("Accept", "application/vnd.github+json")
     req = urllib.request.Request(url, headers=headers)
     try:
         with urllib.request.urlopen(req, timeout=15) as response:
@@ -42,6 +43,40 @@ def sync_github(username):
     user_data = fetch_json(f"https://api.github.com/users/{username}")
     repos_data = fetch_json(f"https://api.github.com/users/{username}/repos?per_page=100&sort=pushed") or []
 
+    # Curated fallbacks for repos with missing topics or descriptions on GitHub
+    default_topics = {
+        "GPSR-NS3": ["ns-3", "c++", "routing", "simulation"],
+        "Location-Service-NS3": ["ns-3", "c++", "manet", "routing"],
+        "unbound_AF_XDP": ["af_xdp", "ebpf", "dns", "c"],
+        "xv6-riscv-lottery-scheduler": ["c", "risc-v", "kernel", "os"],
+        "xhttp": ["ebpf", "xdp", "c", "kernel-bypass", "http"],
+        "indexer-and-query-processor": ["spimi", "v-byte", "bm25", "search-engine"],
+        "KIDDS": ["systems", "kernel", "ebpf"],
+        "RIP": ["networking", "routing", "python"],
+        "mock-packet-parser": ["python", "networking", "packets"],
+        "web-crawler": ["python", "crawler", "automation"],
+        "exploring-code-evolution": ["git", "software-engineering", "code-analysis"],
+        "encryption-lab": ["cryptography", "security", "python"],
+        "Minimum-Path": ["algorithms", "graphs", "c++"],
+        "Carmichael-Numbers": ["number-theory", "algorithms", "c++"],
+        "Teacher-Pay-Student-Performance": ["data-analysis", "python", "jupyter"],
+        "atividade-semana-3-iJunior": ["typescript", "web"]
+    }
+
+    default_descriptions = {
+        "Location-Service-NS3": "Location Service implementation in ns-3 simulator for mobile ad-hoc networks (MANET).",
+        "unbound_AF_XDP": "High-performance recursive DNS resolver accelerated with AF_XDP and eBPF in-kernel processing.",
+        "RIP": "Routing Information Protocol (RIP) implementation in Python.",
+        "mock-packet-parser": "Network packet parser and packet analysis utility in Python.",
+        "PyJupyter": "Interactive Jupyter environment and Python utilities.",
+        "web-crawler": "Automated web crawler and scraper built with Python.",
+        "encryption-lab": "Cryptographic algorithms and security protocols laboratory.",
+        "Minimum-Path": "Shortest path algorithms and graph analysis in C++.",
+        "Carmichael-Numbers": "Carmichael numbers analysis and primality testing algorithms in C++.",
+        "Teacher-Pay-Student-Performance": "Data science analysis on education metrics and student performance.",
+        "atividade-semana-3-iJunior": "Web development activities and exercises in TypeScript."
+    }
+
     # Filter out forks or keep interesting repos
     curated_repos = []
     featured_names = [
@@ -54,21 +89,36 @@ def sync_github(username):
         "DPDK_ping",
         "xhttp",
         "QuantumSimulator",
-        "KIDDS"
+        "KIDDS",
+        "unbound_AF_XDP"
     ]
 
     total_stars = 0
     for r in repos_data:
+        name = r.get("name")
+        if not name:
+            continue
+        # Exclude special user profile readme repo or any obsidian notes vault
+        if name.lower() == username.lower() or "obsidian" in name.lower():
+            continue
+
         stars = r.get("stargazers_count", 0)
         total_stars += stars
-        name = r.get("name")
+
         if name in featured_names or not r.get("fork"):
+            topics = r.get("topics") or []
+            if not topics:
+                topics = default_topics.get(name, [r.get("language")] if r.get("language") else [])
+
+            desc = r.get("description") or default_descriptions.get(name, "")
+
             curated_repos.append({
                 "name": name,
                 "full_name": r.get("full_name"),
-                "description": r.get("description") or "",
+                "description": desc,
                 "html_url": r.get("html_url"),
                 "language": r.get("language") or "Code",
+                "topics": topics,
                 "stars": stars,
                 "forks": r.get("forks_count", 0),
                 "updated_at": r.get("pushed_at"),

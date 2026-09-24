@@ -1,5 +1,5 @@
 {
-  "last_sync": "2026-09-20T02:34:23.209113+00:00",
+  "last_sync": "2026-09-24T13:15:14.009997+00:00",
   "profile": {
     "name": "João Soares",
     "institution": "Universidade Federal de Minas Gerais (UFMG)",
@@ -18,14 +18,20 @@
     "total_stars": 4,
     "repos": [
       {
-        "name": "ojoaosoares",
-        "full_name": "ojoaosoares/ojoaosoares",
-        "description": "",
-        "html_url": "https://github.com/ojoaosoares/ojoaosoares",
-        "language": "Code",
+        "name": "ojoaosoares.github.io",
+        "full_name": "ojoaosoares/ojoaosoares.github.io",
+        "description": "My personal site",
+        "html_url": "https://github.com/ojoaosoares/ojoaosoares.github.io",
+        "language": "HTML",
+        "topics": [
+          "css",
+          "github-actions",
+          "html",
+          "python"
+        ],
         "stars": 0,
         "forks": 0,
-        "updated_at": "2026-09-19T15:14:45Z",
+        "updated_at": "2026-09-20T02:34:23Z",
         "is_featured": false
       },
       {
@@ -34,21 +40,15 @@
         "description": "High-performance DPDK ICMP Echo (Ping) server using kernel bypass",
         "html_url": "https://github.com/ojoaosoares/DPDK_ping",
         "language": "C",
+        "topics": [
+          "dpdk",
+          "dpdk-examples",
+          "ping"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2026-09-15T02:58:31Z",
         "is_featured": true
-      },
-      {
-        "name": "ojoaosoares.github.io",
-        "full_name": "ojoaosoares/ojoaosoares.github.io",
-        "description": "My personal site",
-        "html_url": "https://github.com/ojoaosoares/ojoaosoares.github.io",
-        "language": "HTML",
-        "stars": 0,
-        "forks": 0,
-        "updated_at": "2026-09-14T17:51:51Z",
-        "is_featured": false
       },
       {
         "name": "QuantumSimulator",
@@ -56,6 +56,11 @@
         "description": "Financial simulator and portfolio optimizer using Monte Carlo simulations, GBM, and Modern Portfolio Theory, with a FastAPI backend and Streamlit frontend",
         "html_url": "https://github.com/ojoaosoares/QuantumSimulator",
         "language": "Python",
+        "topics": [
+          "finance",
+          "financial-analysis",
+          "python"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2026-09-12T19:15:46Z",
@@ -67,6 +72,12 @@
         "description": "High-speed ICMP and UDP packet generator using eBPF/XDP and Linux's BPF_PROG_RUN Live Frames for low-overhead packet injection and network benchmarking.",
         "html_url": "https://github.com/ojoaosoares/xdp_ping",
         "language": "C",
+        "topics": [
+          "c",
+          "ebpf",
+          "ping",
+          "xdp"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2026-09-12T15:06:20Z",
@@ -78,6 +89,13 @@
         "description": "A cross-platform movie app with personal libraries, audio reviews, and offline-first support.",
         "html_url": "https://github.com/ojoaosoares/moovy-mvp",
         "language": "TypeScript",
+        "topics": [
+          "nestjs",
+          "react",
+          "react-native",
+          "typescript",
+          "watermelondb"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2026-09-12T15:00:29Z",
@@ -89,6 +107,12 @@
         "description": "Gerador de currículos técnicos LaTeX ATS de 1 página com IA, busca semântica e métricas reais",
         "html_url": "https://github.com/ojoaosoares/curriculum-gen",
         "language": "Python",
+        "topics": [
+          "information-retrieval",
+          "python",
+          "react",
+          "token-optimization"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2026-09-11T06:51:21Z",
@@ -100,6 +124,14 @@
         "description": "A High-Performance Hybrid Recursive DNS Resolver Leveraging XDP",
         "html_url": "https://github.com/ojoaosoares/AtesN-DS",
         "language": "C",
+        "topics": [
+          "dns",
+          "dns-resolver",
+          "ebpf",
+          "ebpf-programs",
+          "in-kernel",
+          "xdp"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2026-09-11T01:31:28Z",
@@ -111,6 +143,12 @@
         "description": "GPSR in NS3",
         "html_url": "https://github.com/ojoaosoares/GPSR-NS3",
         "language": "C++",
+        "topics": [
+          "ns-3",
+          "c++",
+          "routing",
+          "simulation"
+        ],
         "stars": 2,
         "forks": 0,
         "updated_at": "2026-07-02T23:48:22Z",
@@ -119,9 +157,14 @@
       {
         "name": "RIP",
         "full_name": "ojoaosoares/RIP",
-        "description": "",
+        "description": "Routing Information Protocol (RIP) implementation in Python.",
         "html_url": "https://github.com/ojoaosoares/RIP",
         "language": "Python",
+        "topics": [
+          "networking",
+          "routing",
+          "python"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2026-06-24T20:37:09Z",
@@ -133,6 +176,11 @@
         "description": "Este projeto foi desenvolvido como parte de uma atividade acadêmica com o objetivo principal de explorar e configurar o GitHub Actions para integração contínua (CI).",
         "html_url": "https://github.com/ojoaosoares/mock-packet-parser",
         "language": "Python",
+        "topics": [
+          "python",
+          "networking",
+          "packets"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2026-06-12T11:53:43Z",
@@ -141,9 +189,12 @@
       {
         "name": "PyJupyter",
         "full_name": "ojoaosoares/PyJupyter",
-        "description": "",
+        "description": "Interactive Jupyter environment and Python utilities.",
         "html_url": "https://github.com/ojoaosoares/PyJupyter",
         "language": "Python",
+        "topics": [
+          "Python"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2026-04-27T00:53:31Z",
@@ -152,9 +203,14 @@
       {
         "name": "web-crawler",
         "full_name": "ojoaosoares/web-crawler",
-        "description": "",
+        "description": "Automated web crawler and scraper built with Python.",
         "html_url": "https://github.com/ojoaosoares/web-crawler",
         "language": "Python",
+        "topics": [
+          "python",
+          "crawler",
+          "automation"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2026-04-12T22:35:28Z",
@@ -166,6 +222,18 @@
         "description": "A sorting algorithm analysis",
         "html_url": "https://github.com/ojoaosoares/Sorting-Algorithm-Analysis",
         "language": "C++",
+        "topics": [
+          "bubble-sort",
+          "bucket-sort",
+          "counting-sort",
+          "insertion-sort",
+          "mergesort",
+          "quicksort",
+          "radix-sort",
+          "selection-sort",
+          "sorting-algorithms",
+          "sorting-algorithms-implemented"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2025-11-10T13:45:28Z",
@@ -174,9 +242,14 @@
       {
         "name": "encryption-lab",
         "full_name": "ojoaosoares/encryption-lab",
-        "description": "",
+        "description": "Cryptographic algorithms and security protocols laboratory.",
         "html_url": "https://github.com/ojoaosoares/encryption-lab",
         "language": "Python",
+        "topics": [
+          "cryptography",
+          "security",
+          "python"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2025-09-12T03:12:22Z",
@@ -185,9 +258,15 @@
       {
         "name": "Location-Service-NS3",
         "full_name": "ojoaosoares/Location-Service-NS3",
-        "description": "",
+        "description": "Location Service implementation in ns-3 simulator for mobile ad-hoc networks (MANET).",
         "html_url": "https://github.com/ojoaosoares/Location-Service-NS3",
         "language": "C++",
+        "topics": [
+          "ns-3",
+          "c++",
+          "manet",
+          "routing"
+        ],
         "stars": 1,
         "forks": 0,
         "updated_at": "2025-09-05T18:17:13Z",
@@ -199,10 +278,28 @@
         "description": "How to use SonarQube Localy",
         "html_url": "https://github.com/ojoaosoares/local-sonarqube-guide",
         "language": "Code",
+        "topics": [],
         "stars": 0,
         "forks": 0,
         "updated_at": "2025-08-05T22:40:53Z",
         "is_featured": false
+      },
+      {
+        "name": "unbound_AF_XDP",
+        "full_name": "ojoaosoares/unbound_AF_XDP",
+        "description": "Unbound is a validating, recursive, and caching DNS resolver.",
+        "html_url": "https://github.com/ojoaosoares/unbound_AF_XDP",
+        "language": "Code",
+        "topics": [
+          "af_xdp",
+          "ebpf",
+          "dns",
+          "c"
+        ],
+        "stars": 1,
+        "forks": 0,
+        "updated_at": "2025-05-13T13:31:11Z",
+        "is_featured": true
       },
       {
         "name": "myConfiguration",
@@ -210,6 +307,18 @@
         "description": "My Configuration",
         "html_url": "https://github.com/ojoaosoares/myConfiguration",
         "language": "Vim Script",
+        "topics": [
+          "bash",
+          "bashrc",
+          "bashrc-configs",
+          "tmux",
+          "tmux-conf",
+          "tmux-configs",
+          "vim",
+          "vimrc",
+          "vimrc-configuration",
+          "vimrc-settings"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2025-03-11T18:13:34Z",
@@ -221,6 +330,12 @@
         "description": "Fermat Number Factors and Primality Test",
         "html_url": "https://github.com/ojoaosoares/Fermat-Numbers-Factors",
         "language": "C++",
+        "topics": [
+          "euler",
+          "euler-method",
+          "fermat",
+          "fermat-factorization"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2025-03-07T19:59:06Z",
@@ -232,6 +347,11 @@
         "description": "Pepin's Primality Test on Fermat Numbers",
         "html_url": "https://github.com/ojoaosoares/Pepins-Test",
         "language": "C++",
+        "topics": [
+          "fermat",
+          "fermat-numbers",
+          "primality-test"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2025-03-07T19:57:01Z",
@@ -243,6 +363,16 @@
         "description": "A Mersenne Primality Test that implements the Lucas-Lehmer Test",
         "html_url": "https://github.com/ojoaosoares/Mersenne-Primality-Checker",
         "language": "C++",
+        "topics": [
+          "cpp",
+          "mersenne",
+          "mersenne-numbers",
+          "mersenne-prime",
+          "primality-check",
+          "primality-test",
+          "primality-testing",
+          "prime-numbers"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2025-02-27T02:19:23Z",
@@ -254,6 +384,17 @@
         "description": "Dijkstra vs A* and Adjacency Matrix vs Lists comparison",
         "html_url": "https://github.com/ojoaosoares/The-Lost-Woods",
         "language": "C++",
+        "topics": [
+          "astar",
+          "astar-algorithm",
+          "astar-pathfinding",
+          "astar-search",
+          "astar-search-algorithm",
+          "dijkstra",
+          "dijkstra-algorithm",
+          "dijkstra-shortest-path",
+          "dijkstras-algorithm"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2025-02-14T05:35:49Z",
@@ -265,6 +406,13 @@
         "description": "An implementation of Q-Learning for a college work",
         "html_url": "https://github.com/ojoaosoares/Q-Learning",
         "language": "Python",
+        "topics": [
+          "python",
+          "q-learning",
+          "q-learning-algorithm",
+          "reinforcement-learning",
+          "reinforcement-learning-algorithms"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2025-02-14T05:07:51Z",
@@ -276,6 +424,16 @@
         "description": "Spoj solutions",
         "html_url": "https://github.com/ojoaosoares/spoj",
         "language": "C",
+        "topics": [
+          "c",
+          "c-plus",
+          "c-plusplus",
+          "cpp",
+          "spoj",
+          "spoj-classic",
+          "spoj-problems",
+          "spoj-solutions"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2025-02-14T04:59:02Z",
@@ -287,6 +445,16 @@
         "description": "CodeForces solutions",
         "html_url": "https://github.com/ojoaosoares/codeForces",
         "language": "C++",
+        "topics": [
+          "c",
+          "c-plus-plus",
+          "c-plusplus",
+          "codeforces",
+          "codeforces-problems",
+          "codeforces-solutions",
+          "codeforces-solutions-github",
+          "cpp"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2025-02-14T04:58:12Z",
@@ -295,9 +463,14 @@
       {
         "name": "Minimum-Path",
         "full_name": "ojoaosoares/Minimum-Path",
-        "description": "",
+        "description": "Shortest path algorithms and graph analysis in C++.",
         "html_url": "https://github.com/ojoaosoares/Minimum-Path",
         "language": "C++",
+        "topics": [
+          "algorithms",
+          "graphs",
+          "c++"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2024-12-10T19:46:21Z",
@@ -306,9 +479,14 @@
       {
         "name": "Carmichael-Numbers",
         "full_name": "ojoaosoares/Carmichael-Numbers",
-        "description": "",
+        "description": "Carmichael numbers analysis and primality testing algorithms in C++.",
         "html_url": "https://github.com/ojoaosoares/Carmichael-Numbers",
         "language": "C++",
+        "topics": [
+          "number-theory",
+          "algorithms",
+          "c++"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2024-09-21T22:54:07Z",
@@ -320,6 +498,10 @@
         "description": "A study about prime numbers density",
         "html_url": "https://github.com/ojoaosoares/Prime-Counting",
         "language": "C++",
+        "topics": [
+          "number-theory",
+          "prime-numbers"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2024-09-05T02:42:33Z",
@@ -331,6 +513,15 @@
         "description": "Eratosthenes prime number generator method",
         "html_url": "https://github.com/ojoaosoares/Sieve-of-Eratosthenes",
         "language": "C++",
+        "topics": [
+          "number-theory",
+          "prime-generation-algorithms",
+          "prime-generator",
+          "prime-numbers",
+          "sieve",
+          "sieve-of-eratosthenes",
+          "sieveoferatosthenes"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2024-08-31T02:12:49Z",
@@ -342,6 +533,15 @@
         "description": "Fermat's factorization method",
         "html_url": "https://github.com/ojoaosoares/Fermat-Factorization",
         "language": "C++",
+        "topics": [
+          "criptography",
+          "factorization",
+          "fermat",
+          "fermat-factorization",
+          "number-theory",
+          "prime-factorization",
+          "prime-numbers"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2024-08-29T03:08:29Z",
@@ -353,6 +553,16 @@
         "description": "Algorithms and Data Structures",
         "html_url": "https://github.com/ojoaosoares/algorithms",
         "language": "C++",
+        "topics": [
+          "algorithm",
+          "algorithms",
+          "algorithms-and-data-structures",
+          "c",
+          "c-plus-plus",
+          "c-plusplus",
+          "cpp",
+          "data-structures"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2024-07-07T20:10:40Z",
@@ -361,9 +571,14 @@
       {
         "name": "Teacher-Pay-Student-Performance",
         "full_name": "ojoaosoares/Teacher-Pay-Student-Performance",
-        "description": "",
+        "description": "Data science analysis on education metrics and student performance.",
         "html_url": "https://github.com/ojoaosoares/Teacher-Pay-Student-Performance",
         "language": "Jupyter Notebook",
+        "topics": [
+          "data-analysis",
+          "python",
+          "jupyter"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2024-06-24T02:31:33Z",
@@ -372,9 +587,13 @@
       {
         "name": "atividade-semana-3-iJunior",
         "full_name": "ojoaosoares/atividade-semana-3-iJunior",
-        "description": "",
+        "description": "Web development activities and exercises in TypeScript.",
         "html_url": "https://github.com/ojoaosoares/atividade-semana-3-iJunior",
         "language": "TypeScript",
+        "topics": [
+          "typescript",
+          "web"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2024-05-13T03:10:19Z",
@@ -386,6 +605,13 @@
         "description": "A JavaScript-based database designed using localStorage",
         "html_url": "https://github.com/ojoaosoares/orcamento-pessoal",
         "language": "HTML",
+        "topics": [
+          "css",
+          "database",
+          "html",
+          "javascript",
+          "localstorage"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2024-03-06T06:32:47Z",
@@ -397,6 +623,14 @@
         "description": "An e-commerce of a E-Learning plataform ",
         "html_url": "https://github.com/ojoaosoares/school_sharp",
         "language": "HTML",
+        "topics": [
+          "css",
+          "ecommerce",
+          "front-end",
+          "frontend",
+          "html",
+          "javascript"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2024-03-06T06:04:52Z",
@@ -408,6 +642,15 @@
         "description": "Intro Section with Dropdown Navigation",
         "html_url": "https://github.com/ojoaosoares/section-dropdown-nav",
         "language": "HTML",
+        "topics": [
+          "css",
+          "dropdown",
+          "ecommerce",
+          "front-end",
+          "frontend",
+          "html",
+          "javascript"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2024-03-06T06:04:41Z",
@@ -419,6 +662,14 @@
         "description": "An e-commerce of a programming school",
         "html_url": "https://github.com/ojoaosoares/e-commerce-programming-school",
         "language": "CSS",
+        "topics": [
+          "css",
+          "ecommerce",
+          "front-end",
+          "frontend",
+          "html",
+          "javascript"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2024-03-06T06:04:29Z",
@@ -430,6 +681,13 @@
         "description": "Tic tac toe using javascript",
         "html_url": "https://github.com/ojoaosoares/tic-tac-toe",
         "language": "JavaScript",
+        "topics": [
+          "css",
+          "html",
+          "javascript",
+          "tic-tac-toe",
+          "tictactoe-game"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2024-03-06T06:03:17Z",
@@ -441,6 +699,15 @@
         "description": "BeeCrowd solutions",
         "html_url": "https://github.com/ojoaosoares/beecrowd",
         "language": "C++",
+        "topics": [
+          "beecrowd",
+          "beecrowd-problems",
+          "beecrowd-solution-in-c-plus-plus",
+          "beecrowd-solutions",
+          "c-plus-plus",
+          "c-plusplus",
+          "cpp"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2024-03-06T06:01:07Z",
@@ -452,6 +719,18 @@
         "description": "Join Us is a web application that collects and manages emails using MySQL",
         "html_url": "https://github.com/ojoaosoares/JoinUs",
         "language": "JavaScript",
+        "topics": [
+          "ejs",
+          "ejs-express",
+          "express",
+          "expressjs",
+          "javascript",
+          "mysql",
+          "node-js",
+          "nodejs",
+          "nodejs-server",
+          "sql"
+        ],
         "stars": 0,
         "forks": 0,
         "updated_at": "2024-03-06T06:00:28Z",
