@@ -1,5 +1,5 @@
 {
-  "last_sync": "2026-10-11T03:05:11.976160+00:00",
+  "last_sync": "2026-10-18T02:17:47.397291+00:00",
   "profile": {
     "name": "João Soares",
     "institution": "Universidade Federal de Minas Gerais (UFMG)",
@@ -18,6 +18,23 @@
     "total_stars": 4,
     "repos": [
       {
+        "name": "ojoaosoares.github.io",
+        "full_name": "ojoaosoares/ojoaosoares.github.io",
+        "description": "My personal site",
+        "html_url": "https://github.com/ojoaosoares/ojoaosoares.github.io",
+        "language": "HTML",
+        "topics": [
+          "css",
+          "github-actions",
+          "html",
+          "python"
+        ],
+        "stars": 0,
+        "forks": 0,
+        "updated_at": "2026-10-11T03:05:12Z",
+        "is_featured": false
+      },
+      {
         "name": "AtesN-DS",
         "full_name": "ojoaosoares/AtesN-DS",
         "description": "A High-Performance Hybrid Recursive DNS Resolver Leveraging XDP",
@@ -35,23 +52,6 @@
         "forks": 0,
         "updated_at": "2026-10-10T01:06:41Z",
         "is_featured": true
-      },
-      {
-        "name": "ojoaosoares.github.io",
-        "full_name": "ojoaosoares/ojoaosoares.github.io",
-        "description": "My personal site",
-        "html_url": "https://github.com/ojoaosoares/ojoaosoares.github.io",
-        "language": "HTML",
-        "topics": [
-          "css",
-          "github-actions",
-          "html",
-          "python"
-        ],
-        "stars": 0,
-        "forks": 0,
-        "updated_at": "2026-10-04T03:32:27Z",
-        "is_featured": false
       },
       {
         "name": "DPDK_ping",
